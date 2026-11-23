@@ -243,7 +243,7 @@ function threatRow(t, compact) {
   return `<div class="threat">${clockSvg(t, ticks)}<div class="body"><div style="display:flex;gap:6px;align-items:center"><b class="serif">${esc(t.name)}</b> <span class="muted small">${ticks}/${t.segments}</span>${compact ? "" : srcBadge(t)}
     <span style="margin-left:auto" class="btn-row"><button class="btn sm ghost" data-act="untick" data-id="${esc(t.id)}" aria-label="Back one">−</button>${compact ? "" : `<button class="btn sm" data-act="edit-threat" data-id="${esc(t.id)}">Edit</button>`}</span></div>
     ${compact ? (ticks && t.steps?.[ticks - 1] ? `<div class="small" style="color:var(--accent)">Now: ${esc(t.steps[ticks - 1])}</div>` : `<div class="small muted">${esc(t.desc || "")}</div>`)
-      : `<div class="small muted">${esc(t.desc || "")}</div><ol class="steps">${(t.steps || []).map((s, i) => `<li class="${i < ticks ? "on" : ""}">${esc(s)}</li>`).join("")}</ol>`}
+      : `<div class="small muted">${esc(t.desc || "")}</div>${t.trigger ? `<div class="small"><b>Tick when:</b> ${esc(t.trigger)}</div>` : ""}<ol class="steps">${(t.steps || []).map((s, i) => `<li class="${i < ticks ? "on" : ""}">${esc(s)}</li>`).join("")}</ol>`}
     ${compact && t.steps?.[ticks] ? `<div class="small muted">Next: ${esc(t.steps[ticks])}</div>` : ""}</div></div>`;
 }
 
@@ -274,6 +274,7 @@ function vOverview() {
   </div>
   <div class="card"><div class="card-head"><h2>Keeper's background</h2>${srcBadge({ src: "added" })}</div>
     <div class="pre">${esc(m.backstory || "—")}</div>
+    ${block("The night of the death — fixed facts", m.timeline)}
     ${m.victimId ? `<div class="section-label">Victim</div><div class="chips">${npcLink(m.victimId)}</div>` : ""}
     <div class="section-label">Suspects</div><div class="chips">${(m.suspects || []).map(npcLink).join("")}</div>
   </div>
@@ -328,7 +329,7 @@ function vSolutions() {
     const mod = have - m.complexity;
     return `<div class="card"><div class="card-head"><h3>${esc(s.title)}</h3>${srcBadge(s)}<button class="btn sm ghost" data-act="edit-solution" data-id="${esc(s.id)}">Edit</button></div>
       <div class="chips">${s.culprit ? npcLink(s.culprit) : `<span class="chip">No single culprit</span>`}</div>
-      ${block("Motive", s.motive)}${block("Method", s.method)}
+      ${block("Motive", s.motive)}${block("Method", s.method)}${block("10–11 · the wrinkle", s.wrinkle)}${block("7–9 · the culprit's upper hand", s.upperHand)}
       <div class="section-label">Supporting clues · ${have}/${s.clues.length} found · roll ${mod >= 0 ? "+" : ""}${mod}</div>
       <div class="chips">${s.clues.map(clueChip).join("")}</div></div>`;
   }).join("")}</div>`;
@@ -620,11 +621,14 @@ const SCH = {
   ],
   threat: [
     { key: "name", label: "Name" }, { key: "desc", label: "What it is", type: "textarea", rows: 2 }, { key: "segments", label: "Clock segments", type: "number" },
+    { key: "trigger", label: "Tick when…", type: "textarea", rows: 2 },
     { key: "steps", label: "Steps (one per segment)", type: "list" },
   ],
   solution: [
     { key: "title", label: "Theory name" }, { key: "culprit", label: "Culprit", type: "select", options: optNpcs("No single culprit") },
-    { key: "motive", label: "Motive", type: "textarea", rows: 3 }, { key: "method", label: "Method", type: "textarea", rows: 3 }, { key: "clues", label: "Supporting clues", type: "multi", options: optClues },
+    { key: "motive", label: "Motive", type: "textarea", rows: 3 }, { key: "method", label: "Method", type: "textarea", rows: 3 },
+    { key: "wrinkle", label: "10–11: the wrinkle", type: "textarea", rows: 2 }, { key: "upperHand", label: "7–9: the culprit's upper hand", type: "textarea", rows: 2 },
+    { key: "clues", label: "Supporting clues", type: "multi", options: optClues },
   ],
   rel: [
     { key: "a", label: "From", type: "select", options: optNpcs() }, { key: "b", label: "To", type: "select", options: optNpcs() }, { key: "label", label: "Label" },
@@ -636,6 +640,7 @@ const SCH = {
     { key: "presenting", label: "Presenting the mystery", type: "textarea", rows: 2 }, { key: "hook", label: "Hook", type: "textarea", rows: 6 },
     { key: "establishing", label: "Establishing question", type: "textarea", rows: 2 }, { key: "openingLocationId", label: "Opening location", type: "select", options: optLocs("—") },
     { key: "backstory", label: "Keeper's background", type: "textarea", rows: 6 },
+    { key: "timeline", label: "The night of the death — fixed facts", type: "textarea", rows: 10 },
     { key: "paint", label: "Paint-the-scene questions", type: "rows", fields: [{ key: "locationId", label: "Location", type: "select", options: optLocs("Anywhere") }, { key: "q", label: "Question", type: "textarea" }] },
     { key: "victimId", label: "Victim", type: "select", options: optNpcs("—") }, { key: "suspects", label: "Suspects", type: "multi", options: optNpcs() },
     { key: "featuredTownsfolk", label: "Townsfolk in this mystery", type: "multi", options: () => SET().npcs.map((n) => ({ v: n.id, l: n.name })) },
