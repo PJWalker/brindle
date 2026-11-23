@@ -13,7 +13,7 @@ Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindle
 - Search (⌘K), JSON export/import, works offline once loaded.
 - Minimal pure black & white UI for eInk tablets: no colour, greys, shadows or animation; state shown by fill, weight and line style. The contrast button inverts to white-on-black.
 
-Content tagged **added** was written for this app; untagged content comes from the published mystery. Rules text is paraphrased — check your rulebook.
+Content tagged **added** was written for this app (Dad Overboard was revised after blind playtests — see `docs/playtests/dad-overboard.md`); untagged content comes from the published mystery. Rules text is paraphrased — check your rulebook.
 
 ## Run
 Static site, no build. Serve the folder (`python3 -m http.server`) or deploy with GitHub Pages
