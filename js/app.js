@@ -63,7 +63,7 @@ function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.ad
 const srcBadge = (o) => (o && o.src === "added" ? `<span class="badge added" title="Fleshed-out content, not from the published mystery">added</span>` : "");
 const npcName = (id) => npcById(id)?.name || (id ? "Unknown" : "—");
 const locName = (id) => locById(id)?.name || "";
-function npcLink(id) { const n = npcById(id); return n ? `<a class="chip" href="#/npc/${esc(id)}">${esc(n.name)}${isSuspect(id) ? " ·<span style='color:var(--accent)'>S</span>" : ""}</a>` : ""; }
+function npcLink(id) { const n = npcById(id); return n ? `<a class="chip" href="#/npc/${esc(id)}">${esc(n.name)}${isSuspect(id) ? " ·<b>S</b>" : ""}</a>` : ""; }
 function locLink(id) { const l = locById(id); return l ? `<a class="chip" href="#/loc/${esc(id)}">${esc(l.name)}</a>` : ""; }
 function clueChip(id) {
   const c = byId(M()?.clues, id); if (!c) return "";
@@ -76,37 +76,37 @@ const block = (label, text, cls = "") => (text ? `<div class="section-label">${e
 /* ---------------- Navigation ---------------- */
 const NAV = [
   { group: "At the table", items: [
-    { to: "#/play", ico: "🎲", label: "Session", tab: true, short: "Play" },
+    { to: "#/play", label: "Session", tab: true, short: "Play" },
   ]},
   { group: "Mystery", items: [
-    { to: "#/mystery/overview", ico: "🕯", label: "Overview", tab: true, short: "Mystery", match: "#/mystery" },
-    { to: "#/mystery/cast", ico: "👥", label: "Cast & Suspects", count: () => castOf().length },
-    { to: "#/mystery/clues", ico: "🔎", label: "Clues", count: () => `${Object.keys(P()?.found || {}).filter((k) => byId(M()?.clues, k)).length}/${M()?.clues.length || 0}` },
-    { to: "#/mystery/threats", ico: "⏳", label: "Threats" },
-    { to: "#/mystery/solutions", ico: "💡", label: "Possible Solutions" },
-    { to: "#/mystery/web", ico: "🕸", label: "Relationship Web" },
+    { to: "#/mystery/overview", label: "Overview", tab: true, short: "Mystery", match: "#/mystery" },
+    { to: "#/mystery/cast", label: "Cast & Suspects", count: () => castOf().length },
+    { to: "#/mystery/clues", label: "Clues", count: () => `${Object.keys(P()?.found || {}).filter((k) => byId(M()?.clues, k)).length}/${M()?.clues.length || 0}` },
+    { to: "#/mystery/threats", label: "Threats" },
+    { to: "#/mystery/solutions", label: "Possible Solutions" },
+    { to: "#/mystery/web", label: "Relationship Web" },
   ]},
   { group: "Setting", items: [
-    { to: "#/town/map", ico: "🗺", label: "Town Map", tab: true, short: "Town", match: "#/town" },
-    { to: "#/town/places", ico: "🏠", label: "Locations" },
-    { to: "#/town/folk", ico: "🧑‍🌾", label: "Townsfolk" },
+    { to: "#/town/map", label: "Town Map", tab: true, short: "Town", match: "#/town" },
+    { to: "#/town/places", label: "Locations" },
+    { to: "#/town/folk", label: "Townsfolk" },
   ]},
   { group: "Players", items: [
-    { to: "#/mavens", ico: "🧶", label: "Mavens", tab: true, short: "Mavens" },
+    { to: "#/mavens", label: "Mavens", tab: true, short: "Mavens" },
   ]},
   { group: "Reference", items: [
-    { to: "#/rules", ico: "📖", label: "Moves & Rules", tab: true, short: "Rules" },
-    { to: "#/library", ico: "🗂", label: "Library & Backup" },
+    { to: "#/rules", label: "Moves & Rules", tab: true, short: "Rules" },
+    { to: "#/library", label: "Library & Backup" },
   ]},
 ];
 function renderNav(hash) {
   const active = (it) => hash === it.to || (it.match && hash.startsWith(it.match) && hash === it.to) || hash.startsWith(it.to);
   $("#sidebar").innerHTML = NAV.map((g) => `<div class="group"><div class="group-title">${esc(g.group)}</div>${g.items.map((it) =>
-    `<a href="${it.to}" class="${active(it) ? "active" : ""}"><span class="ico">${it.ico}</span>${esc(it.label)}${it.count ? `<span class="count">${esc(it.count())}</span>` : ""}</a>`).join("")}</div>`).join("");
+    `<a href="${it.to}" class="${active(it) ? "active" : ""}">${esc(it.label)}${it.count ? `<span class="count">${esc(it.count())}</span>` : ""}</a>`).join("")}</div>`).join("");
   const tabs = NAV.flatMap((g) => g.items).filter((i) => i.tab);
   $("#tabbar").innerHTML = tabs.map((it) => {
     const on = hash.startsWith(it.match || it.to) || (it.to === "#/mystery/overview" && hash.startsWith("#/npc")) || (it.to === "#/town/map" && hash.startsWith("#/loc")) || (it.to === "#/rules" && hash.startsWith("#/library"));
-    return `<a href="${it.to}" class="${on ? "active" : ""}"><span class="ico">${it.ico}</span>${esc(it.short)}</a>`;
+    return `<a href="${it.to}" class="${on ? "active" : ""}">${esc(it.short)}</a>`;
   }).join("");
   const m = M();
   $("#brandSub").textContent = m ? `${m.title} · ${SET(m)?.name || ""}` : "No mystery loaded";
@@ -157,12 +157,12 @@ function vPlay() {
   const sceneLoc = locById(sc.locationId);
   return `
   <div class="page-head"><div class="grow"><div class="eyebrow">Session ${p.session} · Complexity ${m.complexity}</div><h1>${esc(m.title)}</h1></div>
-    <div class="btn-row"><button class="btn" data-act="theorize">💡 Theorize</button><button class="btn" data-act="complication">🎴 Complication</button></div></div>
+    <div class="btn-row"><button class="btn" data-act="theorize">Theorize</button><button class="btn" data-act="complication">Complication</button></div></div>
 
   <div class="play-grid">
   <div>
     <div class="card">
-      <div class="card-head"><h3>🎬 Current scene</h3><button class="btn sm" data-act="scene-edit">Set scene</button></div>
+      <div class="card-head"><h3>Current scene</h3><button class="btn sm" data-act="scene-edit">Set scene</button></div>
       ${sceneLoc ? `<div><a href="#/loc/${esc(sceneLoc.id)}" class="serif" style="font-size:1.15rem;font-weight:600">${esc(sceneLoc.name)}</a> <span class="muted small">${esc(sceneLoc.kind || "")}</span></div>
         <p class="small muted" style="margin-top:4px">${esc(trunc(sceneLoc.desc, 220))}</p>
         ${(sceneLoc.paint || []).map((q) => `<div class="small"><b>Paint the scene:</b> ${esc(q)}</div>`).join("")}` : `<p class="muted">No scene set. Opening location: ${esc(locName(m.openingLocationId) || "—")}.</p>`}
@@ -172,7 +172,7 @@ function vPlay() {
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>🔎 Clues <span class="muted small">${nFound}/${nClue} found · ${nVoid} void</span></h3><a class="btn sm ghost" href="#/mystery/clues">Manage</a></div>
+      <div class="card-head"><h3>Clues <span class="muted small">${nFound}/${nClue} found · ${nVoid} void</span></h3><a class="btn sm ghost" href="#/mystery/clues">Manage</a></div>
       <div class="seg-ctl" style="margin-bottom:8px">${[["open", "Unfound"], ["found", "Found"], ["void", "Void"], ["all", "All"]].map(([k, l]) => `<button class="${filter === k ? "on" : ""}" data-act="clue-filter" data-v="${k}">${l}</button>`).join("")}</div>
       <ul class="list">${clues.map((c) => clueRow(c)).join("") || `<li class="muted">Nothing here.</li>`}</ul>
     </div>
@@ -180,29 +180,29 @@ function vPlay() {
 
   <div>
     <div class="card">
-      <div class="card-head"><h3>⏳ Threats</h3><a class="btn sm ghost" href="#/mystery/threats">Manage</a></div>
+      <div class="card-head"><h3>Threats</h3><a class="btn sm ghost" href="#/mystery/threats">Manage</a></div>
       ${m.threats.map((t) => threatRow(t, true)).join("") || `<p class="muted">No threats.</p>`}
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>📝 Session log</h3><button class="btn sm ghost" data-act="new-session">New session</button></div>
+      <div class="card-head"><h3>Session log</h3><button class="btn sm ghost" data-act="new-session">New session</button></div>
       <form class="inline-input" data-form="log"><input type="text" name="text" placeholder="Quick note… (Enter to add)" autocomplete="off"><button class="btn primary">Add</button></form>
       <ul class="log" style="margin-top:10px">${p.log.map((e) => `<li class="k-${esc(e.kind)}"><span class="t">${esc(hhmm(e.at))}</span><span class="x">${esc(e.text)}</span><button data-act="log-del" data-id="${esc(e.id)}" aria-label="Delete">×</button></li>`).join("") || `<li class="muted">Log is empty.</li>`}</ul>
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>🖌 Paint the scene</h3></div>
+      <div class="card-head"><h3>Paint the scene</h3></div>
       <ul class="list">${m.paint.map((q, i) => `<li><button class="check ${p.asked[i] ? "on" : ""}" data-act="paint-ask" data-i="${i}" aria-label="Asked">✓</button><div class="body"><div>${esc(q.q)}</div>${q.locationId ? `<div class="meta">${esc(locName(q.locationId))}</div>` : ""}</div></li>`).join("")}</ul>
       <div class="section-label">Establishing question</div><div class="serif">${esc(m.establishing)}</div>
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>🧶 Mavens</h3><a class="btn sm ghost" href="#/mavens">Edit</a></div>
+      <div class="card-head"><h3>Mavens</h3><a class="btn sm ghost" href="#/mavens">Edit</a></div>
       ${S.mavens.length ? S.mavens.map((mv) => `<div style="display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)"><div style="flex:1"><b>${esc(mv.name)}</b> <span class="muted small">${esc(mv.player || "")}</span><div class="chips" style="margin-top:3px">${(mv.conditions || []).map((c) => `<span class="badge suspect">${esc(c)}</span>`).join("")}</div></div><span class="badge">XP ${mv.xp || 0}/${sys.xpMax}</span>${(mv.crowns || []).length ? `<span class="badge void">♛ ${(mv.crowns || []).length}</span>` : ""}</div>`).join("") : `<p class="muted">No Mavens yet. <a href="#/mavens">Add the players' Mavens</a>.</p>`}
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>🌙 End of session</h3></div>
+      <div class="card-head"><h3>End of session</h3></div>
       <ul class="list">${sys.endOfSession.map((q, i) => `<li><button class="check ${p.eos[i] ? "on" : ""}" data-act="eos" data-i="${i}">✓</button><div class="body">${esc(q)}</div></li>`).join("")}</ul>
       <div class="btn-row" style="margin-top:8px"><button class="btn" data-act="eos-award" ${S.mavens.length ? "" : "disabled"}>Give each Maven +${Object.values(p.eos).filter(Boolean).length} XP</button></div>
     </div>
@@ -310,10 +310,10 @@ function vClues() {
       return `<li class="${f ? "done" : ""}"><button class="check ${type === "void" ? "void" : ""} ${f ? "on" : ""}" data-act="clue-toggle" data-id="${esc(c.id)}">✓</button>
       <div class="body"><div class="clue-text" data-act="clue-open" data-id="${esc(c.id)}">${esc(c.text)}</div>
       ${c.notes ? `<div class="small muted">${esc(c.notes)}</div>` : ""}
-      <div class="chips" style="margin-top:6px">${(c.where || []).map((id) => `<span class="badge sea">📍 ${esc(locName(id))}</span>`).join("")}${(c.points || []).map((id) => `<span class="badge suspect">→ ${esc(npcName(id))}</span>`).join("")}</div></div>
+      <div class="chips" style="margin-top:6px">${(c.where || []).map((id) => `<span class="badge sea">@ ${esc(locName(id))}</span>`).join("")}${(c.points || []).map((id) => `<span class="badge suspect">→ ${esc(npcName(id))}</span>`).join("")}</div></div>
       <button class="btn sm ghost" data-act="edit-clue" data-id="${esc(c.id)}">Edit</button></li>`;
     }).join("") || `<li class="muted">None yet.</li>`}</ul></div>`;
-  return `<div class="note-banner">Clues aren't hidden in fixed places — hand one out whenever a Maven earns it. 📍 = suggested places it could surface; → = who it might point to.</div>` + sect("clue", "Clues") + sect("void", "Void clues");
+  return `<div class="note-banner">Clues aren't hidden in fixed places — hand one out whenever a Maven earns it. @ = suggested places it could surface; → = who it might point to.</div>` + sect("clue", "Clues") + sect("void", "Void clues");
 }
 function vThreats() {
   return `<div class="toolbar"><span class="grow muted small">Tap a clock to advance it. Each step is a beat you can bring into play.</span><button class="btn" data-act="add-threat">+ Threat</button></div>
@@ -335,7 +335,8 @@ function vSolutions() {
 }
 
 /* --- Relationship web --- */
-const KIND_COLORS = { family: "var(--sea)", romance: "var(--accent)", money: "var(--brass)", conflict: "#c0602a", ally: "var(--ok)", void: "var(--void)", other: "var(--muted)" };
+const KIND_DASH = { family: "", romance: "2 4", money: "9 4", conflict: "14 4 2 4", ally: "", void: "2 4 9 4", other: "1 3" };
+const dashLine = (k, secret) => `<svg width="28" height="8" aria-hidden="true"><line x1="0" y1="4" x2="28" y2="4" stroke="currentColor" stroke-width="${secret ? 4 : k === "ally" ? 1 : 2}" stroke-dasharray="${KIND_DASH[k] ?? ""}"/></svg>`;
 function vWeb() {
   const m = M(), showSecret = S.ui.webSecrets !== false, sel = S.ui.webSel;
   const rels = m.relationships.filter((r) => showSecret || !r.secret);
@@ -357,22 +358,23 @@ function vWeb() {
     const lx = 0.25 * A.x + 0.5 * qx + 0.25 * B.x, ly = 0.25 * A.y + 0.5 * qy + 0.25 * B.y;
     const dim = sel && r.a !== sel && r.b !== sel ? "web-dim" : "";
     const showLabel = sel ? !dim : S.ui.webLabels;
-    return `<g class="${dim}"><path class="web-edge ${r.secret ? "secret" : ""}" stroke="${KIND_COLORS[r.kind] || KIND_COLORS.other}" d="M${A.x},${A.y} Q${qx},${qy} ${B.x},${B.y}"/>${showLabel ? `<text class="web-elabel" x="${lx}" y="${ly}">${esc(trunc(r.label, 30))}</text>` : ""}</g>`;
+    return `<g class="${dim}"><path class="web-edge ${r.secret ? "secret" : ""}" stroke="currentColor" stroke-dasharray="${KIND_DASH[r.kind] ?? KIND_DASH.other}" data-kind="${esc(r.kind || "other")}" d="M${A.x},${A.y} Q${qx},${qy} ${B.x},${B.y}"/>${showLabel ? `<text class="web-elabel" x="${lx}" y="${ly}">${esc(trunc(r.label, 30))}</text>` : ""}</g>`;
   }).join("");
   const nodes = ids.map((id) => {
     const n = npcById(id), q = pos[id]; if (!q) return "";
     const linked = !sel || id === sel || rels.some((r) => (r.a === sel && r.b === id) || (r.b === sel && r.a === id));
-    const fill = id === m.victimId ? "var(--ink)" : isSuspect(id) ? "var(--accent)" : byId(SET().npcs, id) ? "var(--sea)" : "var(--brass)";
+    const ncls = id === m.victimId ? "victim" : isSuspect(id) ? "suspect" : byId(SET().npcs, id) ? "townsfolk" : "cast";
     const short = n.name.replace(/^(Sheriff|Deputy|Dr\.|Cpl\.)\s+/, "").split(" ")[0];
-    return `<g class="web-node ${linked ? "" : "web-dim"}" data-act="web-sel" data-id="${esc(id)}"><circle cx="${q.x}" cy="${q.y}" r="${id === center ? 30 : 22}" fill="${fill}"/><text x="${q.x}" y="${q.y + (id === center ? 46 : 38)}">${esc(short)}</text><text class="role" x="${q.x}" y="${q.y + (id === center ? 59 : 51)}">${esc(trunc(n.role || "", 26))}</text></g>`;
+    return `<g class="web-node ${ncls} ${linked ? "" : "web-dim"}" data-act="web-sel" data-id="${esc(id)}"><circle cx="${q.x}" cy="${q.y}" r="${id === center ? 30 : 22}"/><text x="${q.x}" y="${q.y + (id === center ? 46 : 38)}">${esc(short)}</text><text class="role" x="${q.x}" y="${q.y + (id === center ? 59 : 51)}">${esc(trunc(n.role || "", 26))}</text></g>`;
   }).join("");
   const selRels = sel ? m.relationships.filter((r) => r.a === sel || r.b === sel) : [];
   return `<div class="toolbar"><label class="chip" style="cursor:pointer"><input type="checkbox" data-act="web-secrets" ${showSecret ? "checked" : ""}> Secret links</label><label class="chip" style="cursor:pointer"><input type="checkbox" data-act="web-labels" ${S.ui.webLabels ? "checked" : ""}> All labels</label><span class="muted small">Tap a person to focus their links.</span>
     <span class="grow"></span><button class="btn" data-act="add-rel">+ Link</button></div>
-  <div class="legend">${Object.entries(KIND_COLORS).map(([k, c]) => `<span style="--c:${c}">${k}</span>`).join("")}<span style="--c:var(--muted)">- - secret</span></div>
+  <div class="legend">${Object.keys(KIND_DASH).map((k) => `<span>${dashLine(k)}${k}</span>`).join("")}<span>${dashLine("family", true)}secret</span></div>
+  <div class="legend"><span><i class="dot victim"></i>victim</span><span><i class="dot suspect"></i>suspect</span><span><i class="dot cast"></i>cast</span><span><i class="dot townsfolk"></i>townsfolk</span></div>
   <div class="web-wrap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Relationship web"><rect width="${W}" height="${H}" fill="transparent" data-act="web-sel" data-id=""/>${edges}${nodes}</svg></div>
   <div class="card" style="margin-top:14px"><div class="card-head"><h3>${sel ? esc(npcName(sel)) : "All links"}</h3>${sel ? `<a class="btn sm" href="#/npc/${esc(sel)}">Open NPC</a>` : ""}</div>
-    <ul class="list">${(sel ? selRels : m.relationships).map((r) => `<li><div class="body"><b>${esc(npcName(r.a))}</b> ↔ <b>${esc(npcName(r.b))}</b> — ${esc(r.label)} <span class="badge" style="color:${KIND_COLORS[r.kind] || ""}">${esc(r.kind || "")}</span>${r.secret ? ` <span class="badge void">secret</span>` : ""}</div><button class="btn sm ghost" data-act="edit-rel" data-id="${esc(r.id)}">Edit</button></li>`).join("")}</ul></div>`;
+    <ul class="list">${(sel ? selRels : m.relationships).map((r) => `<li><div class="body"><b>${esc(npcName(r.a))}</b> ↔ <b>${esc(npcName(r.b))}</b> — ${esc(r.label)} <span class="badge">${esc(r.kind || "")}</span>${r.secret ? ` <span class="badge void">secret</span>` : ""}</div><button class="btn sm ghost" data-act="edit-rel" data-id="${esc(r.id)}">Edit</button></li>`).join("")}</ul></div>`;
 }
 
 /* --- NPC detail --- */
@@ -427,11 +429,11 @@ function vMap() {
       <text x="${left ? l.mapX - 2.3 : l.mapX + 2.3}" y="${l.mapY + 0.8}" text-anchor="${left ? "end" : "start"}">${esc(trunc(l.name.replace(/^The /, ""), 26))}</text></g>`;
   }).join("");
   const selLoc = locById(sel);
-  return `<div class="toolbar"><span class="grow muted small">${placing ? `<b style="color:var(--accent)">Tap the map to place “${esc(locName(placing))}”.</b>` : "Tap a pin for details. Red = this mystery."}</span>
+  return `<div class="toolbar"><span class="grow muted small">${placing ? `<b style="color:var(--accent)">Tap the map to place “${esc(locName(placing))}”.</b>` : "Tap a pin for details. Filled = this mystery."}</span>
     ${placing ? `<button class="btn" data-act="place-cancel">Cancel</button>` : `<select data-act="place-start" style="width:auto;min-height:40px"><option value="">Move a pin…</option>${locs.map((l) => `<option value="${esc(l.id)}">${esc(l.name)}</option>`).join("")}</select>`}</div>
   <div class="map-wrap"><svg viewBox="0 0 100 70" data-act="map-click" role="img" aria-label="Map of ${esc(SET().name)}">
     <rect class="map-water" width="100" height="70"/>
-    <path d="M70,58 q6,-2 12,0 M74,64 q6,-2 12,0 M80,34 q5,-2 10,0" stroke="var(--sea)" stroke-width=".3" fill="none" opacity=".5"/>
+    <path d="M70,58 q6,-2 12,0 M74,64 q6,-2 12,0 M80,34 q5,-2 10,0" stroke="var(--fg)" stroke-width=".3" fill="none"/>
     <path class="map-land" d="${landPath()}"/>
     <path class="map-road" d="M6,8 C20,20 22,40 18,66 M18,30 C30,34 44,30 58,22 M10,46 C26,46 40,50 58,50 M30,46 C34,56 44,60 56,62 M44,32 C40,40 38,48 38,58"/>
     <rect x="55" y="48.5" width="9" height="1.6" fill="var(--line)"/><rect x="51" y="60.5" width="11" height="1.6" fill="var(--line)"/>
@@ -447,7 +449,7 @@ const YACHT_ZONES = [
 ];
 function yachtSvg(l) {
   const sel = S.ui.zoneSel;
-  return `<div class="map-wrap" style="background:var(--water)"><svg class="yacht" viewBox="0 0 200 70" role="img" aria-label="Deck plan">
+  return `<div class="map-wrap" ><svg class="yacht" viewBox="0 0 200 70" role="img" aria-label="Deck plan">
     <path class="hull" d="M8,14 L150,14 C176,14 192,30 197,35 C192,40 176,56 150,56 L8,56 Z"/>
     ${(l.areas || []).slice(0, YACHT_ZONES.length).map((a, i) => { const z = YACHT_ZONES[i]; const words = a.name.replace(/\(.*\)/, "").trim().split(/\s*&\s*|\s+/);
       const mid = Math.ceil(words.length / 2); const l1 = words.slice(0, mid).join(" "), l2 = words.slice(mid).join(" ");
@@ -471,7 +473,7 @@ function vLoc(id) {
     <div class="card"><h3>Clues that could surface here</h3><ul class="list">${clues.map((c) => clueRow(c)).join("") || `<li class="muted">No suggested clues — any clue can appear anywhere.</li>`}</ul></div>
   </div>
   ${l.map === "yacht" ? `<h2 style="margin-top:8px">Deck plan</h2>${yachtSvg(l)}` : ""}
-  ${(l.areas || []).length ? `<div class="card" style="margin-top:14px"><h3>Areas</h3><ul class="list">${l.areas.map((a, i) => `<li style="${zs === i ? "background:var(--brass-soft);border-radius:10px;padding-left:8px" : ""}" id="area-${i}"><div class="body"><b>${esc(a.name)}</b><div class="small">${esc(a.desc)}</div></div></li>`).join("")}</ul></div>` : ""}`;
+  ${(l.areas || []).length ? `<div class="card" style="margin-top:14px"><h3>Areas</h3><ul class="list">${l.areas.map((a, i) => `<li class="${zs === i ? "sel" : ""}" id="area-${i}"><div class="body"><b>${esc(a.name)}</b><div class="small">${esc(a.desc)}</div></div></li>`).join("")}</ul></div>` : ""}`;
 }
 
 /* ---------------- Views: Mavens ---------------- */
@@ -595,7 +597,7 @@ function openEditor({ title, schema, obj, onSave, onDelete }) {
 /* --- option providers & schemas --- */
 const optNpcs = (blank) => () => [...(blank ? [{ v: "", l: blank }] : []), ...allNpcs().map((n) => ({ v: n.id, l: n.name }))];
 const optLocs = (blank) => () => [...(blank ? [{ v: "", l: blank }] : []), ...allLocs().map((l) => ({ v: l.id, l: l.name }))];
-const optClues = () => M().clues.map((c) => ({ v: c.id, l: (c.type === "void" ? "🌀 " : "") + trunc(c.text, 50) }));
+const optClues = () => M().clues.map((c) => ({ v: c.id, l: (c.type === "void" ? "◎ " : "") + trunc(c.text, 50) }));
 const SCH = {
   npc: [
     { key: "name", label: "Name" }, { key: "role", label: "Role / one-liner" }, { key: "quote", label: "Signature quote", type: "textarea", rows: 2 },
@@ -626,7 +628,7 @@ const SCH = {
   ],
   rel: [
     { key: "a", label: "From", type: "select", options: optNpcs() }, { key: "b", label: "To", type: "select", options: optNpcs() }, { key: "label", label: "Label" },
-    { key: "kind", label: "Kind", type: "select", options: () => Object.keys(KIND_COLORS).map((k) => ({ v: k, l: k })) }, { key: "secret", label: "Secret (Keeper only)", type: "checkbox" },
+    { key: "kind", label: "Kind", type: "select", options: () => Object.keys(KIND_DASH).map((k) => ({ v: k, l: k })) }, { key: "secret", label: "Secret (Keeper only)", type: "checkbox" },
   ],
   mystery: [
     { key: "title", label: "Title" }, { key: "complexity", label: "Complexity", type: "number" },
@@ -672,7 +674,7 @@ function locOwner(id) { const m = M(); return byId(m.locations, id) ? m.location
 function openClue(id) {
   const m = M(), c = byId(m.clues, id), f = P().found[id] || {};
   if (!c) return;
-  openModal(`<form class="modal-inner" data-form="clue" data-id="${esc(id)}"><div class="modal-head"><h2>${c.type === "void" ? "🌀 Void clue" : "🔎 Clue"}</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
+  openModal(`<form class="modal-inner" data-form="clue" data-id="${esc(id)}"><div class="modal-head"><h2>${c.type === "void" ? "◎ Void clue" : "Clue"}</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
     <div class="modal-body"><div class="quote big">${esc(c.text)}</div>${block("Keeper notes", c.notes)}
       <div class="chips" style="margin:8px 0 14px">${(c.where || []).map(locLink).join("")}${(c.points || []).map(npcLink).join("")}</div>
       <div class="hr"></div>
@@ -697,13 +699,13 @@ function openTheorize(keep) {
   const foundClues = m.clues.filter((c) => p.found[c.id]);
   const n = t.clues.filter((id) => p.found[id]).length, mod = n - m.complexity;
   const sols = m.solutions.map((s) => ({ s, k: s.clues.filter((id) => t.clues.includes(id)).length + (t.culprit && s.culprit === t.culprit ? 2 : 0) })).filter((x) => x.k > 0).sort((a, b) => b.k - a.k).slice(0, 3);
-  openModal(`<form class="modal-inner" data-form="theory"><div class="modal-head"><h2>💡 Theorize</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
+  openModal(`<form class="modal-inner" data-form="theory"><div class="modal-head"><h2>Theorize</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
     <div class="modal-body">
       <div style="display:flex;gap:18px;align-items:center;margin-bottom:6px"><div><div class="big-num">${mod >= 0 ? "+" : ""}${mod}</div><div class="small muted">${n} clue${n === 1 ? "" : "s"} − complexity ${m.complexity}</div></div><div style="flex:1">${oddsHtml(mod)}</div></div>
       <div class="field"><label>Culprit</label><select name="culprit" data-act="theory-field"><option value="">— (who did it?)</option>${allNpcs().map((x) => `<option value="${esc(x.id)}" ${t.culprit === x.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select></div>
       <div class="field"><label>The theory (how & why)</label><textarea name="text" rows="3" data-act="theory-field" placeholder="Jot the players' theory as they explain it…">${esc(t.text)}</textarea></div>
       <div class="field"><div class="lbl">Clues the theory accounts for — tap as the players explain</div>
-        <div class="multi" style="max-height:300px">${foundClues.map((c) => `<label><input type="checkbox" data-act="theory-clue" value="${esc(c.id)}" ${t.clues.includes(c.id) ? "checked" : ""}>${c.type === "void" ? "🌀 " : ""}${esc(trunc(c.text, 60))}</label>`).join("") || `<span class="muted small">No clues found yet.</span>`}</div></div>
+        <div class="multi" style="max-height:300px">${foundClues.map((c) => `<label><input type="checkbox" data-act="theory-clue" value="${esc(c.id)}" ${t.clues.includes(c.id) ? "checked" : ""}>${c.type === "void" ? "◎ " : ""}${esc(trunc(c.text, 60))}</label>`).join("") || `<span class="muted small">No clues found yet.</span>`}</div></div>
       ${sols.length ? `<div class="section-label">Closest prepared theories</div>${sols.map(({ s }) => `<div class="small" style="margin-bottom:6px"><b>${esc(s.title)}</b> — ${esc(trunc(s.method, 140))}</div>`).join("")}` : ""}
       <div class="field" style="margin-top:12px"><label>Roll total (optional)</label><input type="number" inputmode="numeric" name="roll" placeholder="2d6 + ${mod}"></div>
       <div class="note-banner">${esc(byId(SYS().moves, "mv-theorize")?.text || "12+ right & caught · 10–11 right, wrinkle · 7–9 right, culprit gets upper hand · 6− wrong")}</div>
@@ -714,7 +716,7 @@ function bandFor(total) { return total >= 12 ? "12+ — right, caught cleanly" :
 
 function openScene() {
   const sc = P().scene;
-  openModal(`<form class="modal-inner" data-form="scene"><div class="modal-head"><h2>🎬 Set the scene</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
+  openModal(`<form class="modal-inner" data-form="scene"><div class="modal-head"><h2>Set the scene</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
     <div class="modal-body"><div class="field"><label>Location</label><select name="loc"><option value="">—</option>${allLocs().map((l) => `<option value="${esc(l.id)}" ${sc.locationId === l.id ? "selected" : ""}>${esc(l.name)}</option>`).join("")}</select></div>
     <div class="field"><div class="lbl">Who's here</div><div class="multi">${castOf().concat(SET().npcs.filter((n) => !castOf().includes(n))).map((n) => `<label><input type="checkbox" data-multi="npcs" value="${esc(n.id)}" ${sc.npcs.includes(n.id) ? "checked" : ""}>${esc(n.name)}</label>`).join("")}</div></div></div>
     <div class="modal-foot"><span class="spacer"></span><button type="button" class="btn" data-act="modal-close">Cancel</button><button class="btn primary">Set scene</button></div></form>`);
@@ -791,7 +793,7 @@ const A = {
   "go": (el) => { location.hash = el.dataset.to; },
   "nav-toggle": () => document.body.classList.toggle("nav-open"),
   "close-overlays": () => closeSheet(),
-  "theme": () => { const cur = S.ui.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); S.ui.theme = cur === "dark" ? "light" : "dark"; applyTheme(); save(); },
+  "theme": () => { const cur = S.ui.theme || "light"; S.ui.theme = cur === "dark" ? "light" : "dark"; applyTheme(); save(); },
   "search": () => openSearch(),
   "moves-sheet": () => openMovesSheet(),
   "modal-close": () => closeModal(),
@@ -806,7 +808,7 @@ const A = {
   "eos-award": () => { const p = P(), n = Object.values(p.eos).filter(Boolean).length; if (!n) return toast("Tick the questions answered “yes” first"); S.mavens.forEach((mv) => (mv.xp = (mv.xp || 0) + n)); log(`End of session: each Maven +${n} XP`, "session"); p.eos = {}; commit(); toast(`+${n} XP each`); },
   "new-session": () => { const p = P(); if (!confirm(`Start session ${p.session + 1}? Clues and clocks carry over.`)) return; p.session++; p.asked = {}; p.eos = {}; log(`Session ${p.session} begins`, "session"); commit(); },
   "log-del": (el) => { const p = P(); p.log = p.log.filter((e) => e.id !== el.dataset.id); commit(); },
-  "complication": () => { const c = M().complications || []; if (!c.length) return toast("No complications listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>🎴 Complication</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div></div><div class="modal-foot"><button class="btn" data-act="complication">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
+  "complication": () => { const c = M().complications || []; if (!c.length) return toast("No complications listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Complication</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div></div><div class="modal-foot"><button class="btn" data-act="complication">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
   "complication-log": (el) => { log("Complication: " + el.dataset.v, "note"); closeModal(); commit(); },
   "scene-edit": () => openScene(),
   "scene-drop": (el) => { const p = P(); p.scene.npcs = p.scene.npcs.filter((x) => x !== el.dataset.id); commit(); },

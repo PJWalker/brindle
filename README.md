@@ -10,7 +10,8 @@ Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindle
 - **Mavens** — abilities, XP, Conditions, Crowns of the Void.
 - **Moves & rules** — paraphrased quick reference (editable), Keeper moves, safety tools, theorize odds table. Quick "Moves" sheet from any screen.
 - **Full editor** for everything; new mysteries, settings and game systems (for The Between, Public Access, hacks).
-- Search (⌘K), dark mode, JSON export/import, works offline once loaded.
+- Search (⌘K), JSON export/import, works offline once loaded.
+- Minimal pure black & white UI for eInk tablets: no colour, greys, shadows or animation; state shown by fill, weight and line style. The contrast button inverts to white-on-black.
 
 Content tagged **added** was written for this app; untagged content comes from the published mystery. Rules text is paraphrased — check your rulebook.
 
