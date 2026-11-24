@@ -31,7 +31,7 @@ function save() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
     try { localStorage.setItem(KEY, JSON.stringify(S)); }
-    catch (e) { toast("Couldn't save — storage full or blocked. Export a backup."); }
+    catch (e) { toast("Couldn't save: storage is full or blocked. Export a backup."); }
   }, 150);
 }
 function commit() { save(); render(); }
@@ -60,7 +60,7 @@ function log(text, kind = "note") { const p = P(); if (!p) return; p.log.unshift
 
 /* ---------------- UI helpers ---------------- */
 function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 2200); }
-const srcBadge = (o) => (o && o.src === "added" ? `<span class="badge added" title="Fleshed-out content, not from the published mystery">added</span>` : "");
+const srcBadge = (o) => (o && o.src === "added" ? `<span class="badge added" title="Written for this app; not in the published mystery">added</span>` : "");
 const npcName = (id) => npcById(id)?.name || (id ? "Unknown" : "—");
 const locName = (id) => locById(id)?.name || "";
 function npcLink(id) { const n = npcById(id); return n ? `<a class="chip" href="#/npc/${esc(id)}">${esc(n.name)}${isSuspect(id) ? " ·<b>S</b>" : ""}</a>` : ""; }
@@ -278,7 +278,7 @@ function vOverview() {
   </div>
   <div class="card"><div class="card-head"><h2>Keeper's background</h2>${srcBadge({ src: "added" })}</div>
     <div class="pre">${esc(m.backstory || "—")}</div>
-    ${block("The night — what's certain, and what's loose", m.timeline)}
+    ${block("The night: fixed and open", m.timeline)}
     ${m.victimId ? `<div class="section-label">Victim</div><div class="chips">${npcLink(m.victimId)}</div>` : ""}
     <div class="section-label">Suspects</div><div class="chips">${(m.suspects || []).map(npcLink).join("")}</div>
   </div>
@@ -318,7 +318,7 @@ function vClues() {
       <div class="chips" style="margin-top:6px">${(c.where || []).map((id) => `<span class="badge sea">@ ${esc(locName(id))}</span>`).join("")}${(c.points || []).map((id) => `<span class="badge suspect">→ ${esc(npcName(id))}</span>`).join("")}</div></div>
       <button class="btn sm ghost" data-act="edit-clue" data-id="${esc(c.id)}">Edit</button></li>`;
     }).join("") || `<li class="muted">None yet.</li>`}</ul></div>`;
-  return `<div class="note-banner">Clues aren't hidden in fixed places — hand one out whenever a Maven earns it. @ = suggested places it could surface; → = who it might point to.</div>` + sect("clue", "Clues") + sect("void", "Void clues");
+  return `<div class="note-banner">Clues don't sit in fixed places. Hand one out whenever a Maven earns it. @ marks places it could surface; → marks who it might point to.</div>` + sect("clue", "Clues") + sect("void", "Void clues");
 }
 function vThreats() {
   return `<div class="toolbar"><span class="grow muted small">Tap a clock to advance it. Each step is a beat you can bring into play.</span><button class="btn" data-act="add-threat">+ Threat</button></div>
@@ -326,7 +326,7 @@ function vThreats() {
 }
 function vSolutions() {
   const m = M(), p = P();
-  return `<div class="note-banner">There's no canonical culprit. These are prepared theories to help you recognise where the players are heading and to make whatever they land on hang together. The Mavens' successful theory is the truth.</div>
+  return `<div class="note-banner">No culprit is fixed. Use these to spot where the players are heading and to make whatever they land on hang together. If the Mavens' theory succeeds, it's the truth.</div>
   <div class="toolbar"><span class="grow"></span><button class="btn" data-act="add-solution">+ Solution</button></div>
   <div class="grid cols-2">${m.solutions.map((s) => {
     const have = s.clues.filter((id) => p.found[id]).length;
@@ -379,7 +379,7 @@ function vWeb() {
   <div class="legend"><span><i class="dot victim"></i>victim</span><span><i class="dot suspect"></i>suspect</span><span><i class="dot cast"></i>cast</span><span><i class="dot townsfolk"></i>townsfolk</span></div>
   <div class="web-wrap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Relationship web"><rect width="${W}" height="${H}" fill="transparent" data-act="web-sel" data-id=""/>${edges}${nodes}</svg></div>
   <div class="card" style="margin-top:14px"><div class="card-head"><h3>${sel ? esc(npcName(sel)) : "All links"}</h3>${sel ? `<a class="btn sm" href="#/npc/${esc(sel)}">Open NPC</a>` : ""}</div>
-    <ul class="list">${(sel ? selRels : m.relationships).map((r) => `<li><div class="body"><b>${esc(npcName(r.a))}</b> ↔ <b>${esc(npcName(r.b))}</b> — ${esc(r.label)} <span class="badge">${esc(r.kind || "")}</span>${r.secret ? ` <span class="badge void">secret</span>` : ""}</div><button class="btn sm ghost" data-act="edit-rel" data-id="${esc(r.id)}">Edit</button></li>`).join("")}</ul></div>`;
+    <ul class="list">${(sel ? selRels : m.relationships).map((r) => `<li><div class="body"><b>${esc(npcName(r.a))}</b> ↔ <b>${esc(npcName(r.b))}</b>: ${esc(r.label)} <span class="badge">${esc(r.kind || "")}</span>${r.secret ? ` <span class="badge void">secret</span>` : ""}</div><button class="btn sm ghost" data-act="edit-rel" data-id="${esc(r.id)}">Edit</button></li>`).join("")}</ul></div>`;
 }
 
 /* --- NPC detail --- */
@@ -400,7 +400,7 @@ function vNpc(id) {
       ${n.notes ? block("Notes", n.notes) : ""}
     </div>
     <div>
-      <div class="card"><h3>Relationships</h3><ul class="list">${rels.map((r) => { const o = r.a === id ? r.b : r.a; return `<li><div class="body"><a href="#/npc/${esc(o)}">${esc(npcName(o))}</a> — ${esc(r.label)} ${r.secret ? `<span class="badge void">secret</span>` : ""}</div></li>`; }).join("") || `<li class="muted">None recorded.</li>`}</ul></div>
+      <div class="card"><h3>Relationships</h3><ul class="list">${rels.map((r) => { const o = r.a === id ? r.b : r.a; return `<li><div class="body"><a href="#/npc/${esc(o)}">${esc(npcName(o))}</a>: ${esc(r.label)} ${r.secret ? `<span class="badge void">secret</span>` : ""}</div></li>`; }).join("") || `<li class="muted">None recorded.</li>`}</ul></div>
       <div class="card"><h3>Clues that could point here</h3><div class="chips">${clues.map((c) => clueChip(c.id)).join("") || `<span class="muted">None.</span>`}</div></div>
       ${sols.length ? `<div class="card"><h3>Prepared theories naming them</h3>${sols.map((s) => `<div><b>${esc(s.title)}</b><div class="small muted">${esc(s.motive)}</div></div>`).join("<div class='hr'></div>")}</div>` : ""}
     </div>
@@ -475,7 +475,7 @@ function vLoc(id) {
   <div class="grid cols-2">
     <div class="card">${block("Description", l.desc)}${block("Keeper details", l.details)}
       ${paint.length ? `<div class="section-label">Paint the scene</div>${paint.map((q) => `<div class="quote">${esc(q)}</div>`).join("")}` : ""}</div>
-    <div class="card"><h3>Clues that could surface here</h3><ul class="list">${clues.map((c) => clueRow(c)).join("") || `<li class="muted">No suggested clues — any clue can appear anywhere.</li>`}</ul></div>
+    <div class="card"><h3>Clues that could surface here</h3><ul class="list">${clues.map((c) => clueRow(c)).join("") || `<li class="muted">No suggested clues. Any clue can turn up anywhere.</li>`}</ul></div>
   </div>
   ${l.map === "yacht" ? `<h2 style="margin-top:8px">Deck plan</h2>${yachtSvg(l)}` : ""}
   ${(l.areas || []).length ? `<div class="card" style="margin-top:14px"><h3>Areas</h3><ul class="list">${l.areas.map((a, i) => `<li class="${zs === i ? "sel" : ""}" id="area-${i}"><div class="body"><b>${esc(a.name)}</b><div class="small">${esc(a.desc)}</div></div></li>`).join("")}</ul></div>` : ""}`;
@@ -541,14 +541,14 @@ function vLibrary() {
       <p class="small muted">For other Carved-in-Brindlewood games (The Between, Public Access, your own hacks) create a system, set its ability names and moves, then point a setting at it.</p>
       <ul class="list">${S.systems.map((s) => `<li><div class="body"><b>${esc(s.name)}</b><div class="meta">${s.moves.length} moves · ${esc(s.attributes.join(", "))}</div></div><button class="btn sm ghost danger" data-act="del-system" data-id="${esc(s.id)}">Delete</button></li>`).join("")}</ul></div>
     <div class="card"><h2>Backup & sharing</h2>
-      <p class="small">Everything is stored on this device only. Export regularly — especially before clearing Safari data — and import to move between iPad and iPhone.</p>
+      <p class="small">Everything is stored on this device only. Export before clearing Safari data, and use Import to move data between iPad and iPhone.</p>
       <div class="btn-row"><button class="btn primary" data-act="export">Export everything</button><button class="btn" data-act="export-mystery">Export this mystery</button><label class="btn">Import…<input type="file" accept="application/json,.json" data-act="import" hidden></label></div>
       <div class="hr"></div>
       <div class="btn-row"><button class="btn" data-act="reset-play">Reset session state</button><button class="btn" data-act="restore-dad">Restore “Dad Overboard”</button><button class="btn ghost danger" data-act="factory">Erase all & reload defaults</button></div>
       <p class="small muted" style="margin-top:10px">Tip: on iPad, tap Share → Add to Home Screen to install. It then works fully offline.</p></div>
     <div class="card"><h2>On-device AI <span class="badge">experimental</span></h2>
       <p class="small">A small language model (SmolLM2 360M) that runs on this device: NPC line ideas, scene details, ideas for how a clue turns up, and townsfolk names. Nothing is sent anywhere. One-time download of about ${AI?.SIZE_MB || 400} MB, then it works offline.</p>
-      <p class="small muted">It's tiny, so results are rough and often miss. Treat them as prompts, not canon. It never sees the solutions.</p>
+      <p class="small muted">It's tiny, so results are rough and often miss. Use them as prompts. It never sees the solutions.</p>
       <p class="small"><b id="aiStatus">${esc(aiStatusText())}</b></p>
       <div class="btn-row">${!AI?.supported ? "" : !S.ui.aiOn ? `<button class="btn primary" data-act="ai-enable">${aiDownloaded ? "Turn on" : "Turn on & download"}</button>` : `<button class="btn" data-act="ai-disable">Turn off</button>`}
         ${AI?.supported && (aiDownloaded || S.ui.aiOn) ? `<button class="btn ghost danger" data-act="ai-delete">Delete model</button>` : ""}</div></div>
@@ -651,7 +651,7 @@ const SCH = {
     { key: "presenting", label: "Presenting the mystery", type: "textarea", rows: 2 }, { key: "hook", label: "Hook", type: "textarea", rows: 6 },
     { key: "establishing", label: "Establishing question", type: "textarea", rows: 2 }, { key: "openingLocationId", label: "Opening location", type: "select", options: optLocs("—") },
     { key: "backstory", label: "Keeper's background", type: "textarea", rows: 6 },
-    { key: "timeline", label: "The night — what's certain, and what's loose", type: "textarea", rows: 10 },
+    { key: "timeline", label: "The night: fixed and open", type: "textarea", rows: 10 },
     { key: "paint", label: "Paint-the-scene questions", type: "rows", fields: [{ key: "locationId", label: "Location", type: "select", options: optLocs("Anywhere") }, { key: "q", label: "Question", type: "textarea" }] },
     { key: "victimId", label: "Victim", type: "select", options: optNpcs("—") }, { key: "suspects", label: "Suspects", type: "multi", options: optNpcs() },
     { key: "featuredTownsfolk", label: "Townsfolk in this mystery", type: "multi", options: () => SET().npcs.map((n) => ({ v: n.id, l: n.name })) },
@@ -707,7 +707,7 @@ function markClue(id, on, extra = {}) {
   if (on) {
     const was = !!p.found[id];
     p.found[id] = { ...(p.found[id] || {}), at: p.found[id]?.at || nowIso(), where: p.found[id]?.where || p.scene.locationId || "", ...extra };
-    if (!was) log(`${c.type === "void" ? "Void clue" : "Clue"}: ${c.text}${extra.by ? " — " + extra.by : ""}`, c.type === "void" ? "void" : "clue");
+    if (!was) log(`${c.type === "void" ? "Void clue" : "Clue"}: ${c.text}${extra.by ? " (" + extra.by + ")" : ""}`, c.type === "void" ? "void" : "clue");
   } else if (p.found[id]) { delete p.found[id]; }
 }
 
@@ -719,17 +719,17 @@ function openTheorize(keep) {
   openModal(`<form class="modal-inner" data-form="theory"><div class="modal-head"><h2>Theorize</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
     <div class="modal-body">
       <div style="display:flex;gap:18px;align-items:center;margin-bottom:6px"><div><div class="big-num">${mod >= 0 ? "+" : ""}${mod}</div><div class="small muted">${n} clue${n === 1 ? "" : "s"} − complexity ${m.complexity}</div></div><div style="flex:1">${oddsHtml(mod)}</div></div>
-      <div class="field"><label>Culprit</label><select name="culprit" data-act="theory-field"><option value="">— (who did it?)</option>${allNpcs().map((x) => `<option value="${esc(x.id)}" ${t.culprit === x.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select></div>
+      <div class="field"><label>Culprit</label><select name="culprit" data-act="theory-field"><option value="">Who did it?</option>${allNpcs().map((x) => `<option value="${esc(x.id)}" ${t.culprit === x.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select></div>
       <div class="field"><label>The theory (how & why)</label><textarea name="text" rows="3" data-act="theory-field" placeholder="Jot the players' theory as they explain it…">${esc(t.text)}</textarea></div>
-      <div class="field"><div class="lbl">Clues the theory accounts for — tap as the players explain</div>
+      <div class="field"><div class="lbl">Clues the theory explains (tick each as the players make the case)</div>
         <div class="multi" style="max-height:300px">${foundClues.map((c) => `<label><input type="checkbox" data-act="theory-clue" value="${esc(c.id)}" ${t.clues.includes(c.id) ? "checked" : ""}>${c.type === "void" ? "◎ " : ""}${esc(trunc(c.text, 60))}</label>`).join("") || `<span class="muted small">No clues found yet.</span>`}</div></div>
-      ${sols.length ? `<div class="section-label">Closest prepared theories</div>${sols.map(({ s }) => `<div class="small" style="margin-bottom:6px"><b>${esc(s.title)}</b> — ${esc(trunc(s.method, 140))}</div>`).join("")}` : ""}
+      ${sols.length ? `<div class="section-label">Closest prepared theories</div>${sols.map(({ s }) => `<div class="small" style="margin-bottom:6px"><b>${esc(s.title)}</b>: ${esc(trunc(s.method, 140))}</div>`).join("")}` : ""}
       <div class="field" style="margin-top:12px"><label>Roll total (optional)</label><input type="number" inputmode="numeric" name="roll" placeholder="2d6 + ${mod}"></div>
       <div class="note-banner">${esc(byId(SYS().moves, "mv-theorize")?.text || "12+ right & caught · 10–11 right, wrinkle · 7–9 right, culprit gets upper hand · 6− wrong")}</div>
     </div>
     <div class="modal-foot"><button type="button" class="btn ghost" data-act="theory-clear">Clear</button><span class="spacer"></span><button class="btn primary">Log theory</button></div></form>`, keep);
 }
-function bandFor(total) { return total >= 12 ? "12+ — right, caught cleanly" : total >= 10 ? "10–11 — right, with a wrinkle" : total >= 7 ? "7–9 — right, culprit gets the upper hand" : "6− — wrong"; }
+function bandFor(total) { return total >= 12 ? "12+: right, caught cleanly" : total >= 10 ? "10–11: right, with a wrinkle" : total >= 7 ? "7–9: right, culprit gets the upper hand" : "6−: wrong"; }
 
 function openScene() {
   const sc = P().scene;
@@ -807,7 +807,7 @@ function aiQueue(plan) {
     for (const g of v.groups) for (let i = 0; i < g.results.length; i++) {
       const r = g.results[i]; if (!r.busy) continue;
       if (run !== aiRun) return;
-      try { const out = await AI.run(g.make(i)); r.text = typeof out === "string" ? out : out ? `${out.name} — ${out.role}` : ""; r.data = out; }
+      try { const out = await AI.run(g.make(i)); r.text = typeof out === "string" ? out : out ? `${out.name}, ${out.role}` : ""; r.data = out; }
       catch (e) { r.text = ""; r.err = e.message; }
       r.busy = false;
       if (run !== aiRun) return;
@@ -942,7 +942,7 @@ const A = {
   "new-session": () => { const p = P(); if (!confirm(`Start session ${p.session + 1}? Clues and clocks carry over.`)) return; p.session++; p.asked = {}; p.eos = {}; log(`Session ${p.session} begins`, "session"); commit(); },
   "log-del": (el) => { const p = P(); p.log = p.log.filter((e) => e.id !== el.dataset.id); commit(); },
   "complication": () => { const c = M().complications || []; if (!c.length) return toast("No complications listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Complication</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div></div><div class="modal-foot"><button class="btn" data-act="complication">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
-  "happening": () => { const c = SET().happenings || []; if (!c.length) return toast("No town happenings listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Meanwhile, in town…</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div><p class="small muted">Bring it to the Mavens as an interruption, an invitation or an errand. It needn't touch the murder.</p></div><div class="modal-foot"><button class="btn" data-act="happening">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
+  "happening": () => { const c = SET().happenings || []; if (!c.length) return toast("No town happenings listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Meanwhile, in town…</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div><p class="small muted">Bring it to the Mavens as an interruption, an invitation or an errand. It doesn't have to touch the murder.</p></div><div class="modal-foot"><button class="btn" data-act="happening">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
   "complication-log": (el) => { log("Complication: " + el.dataset.v, "note"); closeModal(); commit(); },
   "scene-edit": () => openScene(),
   "scene-drop": (el) => { const p = P(); p.scene.npcs = p.scene.npcs.filter((x) => x !== el.dataset.id); commit(); },
@@ -1080,7 +1080,7 @@ document.addEventListener("submit", (ev) => {
     const roll = parseInt(form.elements.roll.value, 10);
     const rec = { id: uid("th"), at: nowIso(), culprit: t.culprit, text: t.text, clues: [...t.clues], mod, roll: isNaN(roll) ? null : roll };
     P().theories.push(rec);
-    log(`Theory: ${t.culprit ? npcName(t.culprit) + " — " : ""}${t.text || "(no summary)"} · ${n} clues, mod ${mod >= 0 ? "+" : ""}${mod}${rec.roll != null ? ` · rolled ${roll}: ${bandFor(roll)}` : ""}`, "theory");
+    log(`Theory: ${t.culprit ? npcName(t.culprit) + ": " : ""}${t.text || "(no summary)"} · ${n} clues, mod ${mod >= 0 ? "+" : ""}${mod}${rec.roll != null ? ` · rolled ${roll}: ${bandFor(roll)}` : ""}`, "theory");
     closeModal(); commit(); toast("Theory logged"); return;
   }
 });
