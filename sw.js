@@ -1,5 +1,5 @@
 // Offline cache. Stale-while-revalidate: instant loads, updates picked up on next launch.
-const CACHE = "keepersdesk-v5-ai";
+const CACHE = "keepersdesk-v6";
 const LIB = "keepersdesk-lib"; // on-device AI library: pinned, versioned CDN files (never change)
 const ASSETS = ["./", "index.html", "css/app.css", "js/seed.js", "js/ai.js", "js/ai-worker.js", "js/app.js", "manifest.webmanifest", "icons/icon.svg", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png"];
 

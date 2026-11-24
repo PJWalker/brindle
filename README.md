@@ -3,11 +3,10 @@
 Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindlewood games. Optimised for iPad, usable on iPhone. Ships with **Dad Overboard** preloaded and fleshed out.
 
 ## Features
-- **Session dashboard** — current scene + on-stage NPC cue cards, clue tracker (who/where found), threat clocks, session log, paint-the-scene prompts, end-of-session XP.
+- **Session dashboard** — current scene + on-stage NPC cue cards, clue tracker (who/where found), threat clocks, session log, paint-the-scene prompts, end-of-session questions.
 - **Theorize board** — tick the clues the players' theory explains; shows modifier (clues − complexity), odds for each result band, and closest prepared theories.
 - **Mystery** — hook, establishing question, cast & suspects, clues (suggested locations / who they might point to), threats, possible solutions, relationship web.
 - **Setting** — town map with pins, locations (yacht deck plan for The Regal Lady), recurring townsfolk.
-- **Mavens** — abilities, XP, Conditions, Crowns of the Void.
 - **Moves & rules** — paraphrased quick reference (editable), Keeper moves, safety tools, theorize odds table. Quick "Moves" sheet from any screen.
 - **Full editor** for everything; new mysteries, settings and game systems (for The Between, Public Access, hacks).
 - **Session recap** — places, clues, threats, theories and notes from the log, grouped per session, with copy.

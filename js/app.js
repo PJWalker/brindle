@@ -22,7 +22,7 @@ function load() {
   return clone(window.BRINDLE_SEED);
 }
 function migrate(d) {
-  d.mavens ||= []; d.play ||= {}; d.ui ||= {};
+  d.play ||= {}; d.ui ||= {};
   d.systems ||= []; d.settings ||= []; d.mysteries ||= [];
   return d;
 }
@@ -91,9 +91,6 @@ const NAV = [
     { to: "#/town/places", label: "Locations" },
     { to: "#/town/folk", label: "Townsfolk" },
   ]},
-  { group: "Players", items: [
-    { to: "#/mavens", label: "Mavens", tab: true, short: "Mavens" },
-  ]},
   { group: "Reference", items: [
     { to: "#/rules", label: "Moves & Rules", tab: true, short: "Rules" },
     { to: "#/library", label: "Library & Backup" },
@@ -120,14 +117,13 @@ function render() {
   const main = $("#main");
   let html;
   try {
-    if (!M() && !["library", "rules", "mavens"].includes(parts[0])) html = vNoMystery();
+    if (!M() && !["library", "rules"].includes(parts[0])) html = vNoMystery();
     else switch (parts[0]) {
       case "play": html = vPlay(); break;
       case "mystery": html = vMystery(parts[1] || "overview"); break;
       case "npc": html = vNpc(decodeURIComponent(parts[1])); break;
       case "loc": html = vLoc(decodeURIComponent(parts[1])); break;
       case "town": html = vTown(parts[1] || "map"); break;
-      case "mavens": html = vMavens(); break;
       case "rules": html = vRules(); break;
       case "library": html = vLibrary(); break;
       default: html = vPlay();
@@ -198,14 +194,8 @@ function vPlay() {
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>Mavens</h3><a class="btn sm ghost" href="#/mavens">Edit</a></div>
-      ${S.mavens.length ? S.mavens.map((mv) => `<div style="display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)"><div style="flex:1"><b>${esc(mv.name)}</b> <span class="muted small">${esc(mv.player || "")}</span><div class="chips" style="margin-top:3px">${(mv.conditions || []).map((c) => `<span class="badge suspect">${esc(c)}</span>`).join("")}</div></div><span class="badge">XP ${mv.xp || 0}/${sys.xpMax}</span>${(mv.crowns || []).length ? `<span class="badge void">♛ ${(mv.crowns || []).length}</span>` : ""}</div>`).join("") : `<p class="muted">No Mavens yet. <a href="#/mavens">Add the players' Mavens</a>.</p>`}
-    </div>
-
-    <div class="card">
       <div class="card-head"><h3>End of session</h3></div>
       <ul class="list">${sys.endOfSession.map((q, i) => `<li><button class="check ${p.eos[i] ? "on" : ""}" data-act="eos" data-i="${i}">✓</button><div class="body">${esc(q)}</div></li>`).join("")}</ul>
-      <div class="btn-row" style="margin-top:8px"><button class="btn" data-act="eos-award" ${S.mavens.length ? "" : "disabled"}>Give each Maven +${Object.values(p.eos).filter(Boolean).length} XP</button></div>
     </div>
   </div>
   </div>`;
@@ -481,21 +471,6 @@ function vLoc(id) {
   ${(l.areas || []).length ? `<div class="card" style="margin-top:14px"><h3>Areas</h3><ul class="list">${l.areas.map((a, i) => `<li class="${zs === i ? "sel" : ""}" id="area-${i}"><div class="body"><b>${esc(a.name)}</b><div class="small">${esc(a.desc)}</div></div></li>`).join("")}</ul></div>` : ""}`;
 }
 
-/* ---------------- Views: Mavens ---------------- */
-function vMavens() {
-  const sys = SYS();
-  return `<div class="page-head"><div class="grow"><div class="eyebrow">Players</div><h1>${esc(sys.pcTitle || "Maven")}s</h1></div><button class="btn primary" data-act="add-maven">+ ${esc(sys.pcTitle || "Maven")}</button></div>
-  ${S.mavens.length ? `<div class="grid cols-2">${S.mavens.map((mv) => `<div class="card">
-    <div class="card-head"><div style="flex:1"><h2 style="margin:0">${esc(mv.name)}</h2><div class="muted small">${esc(mv.player ? "Played by " + mv.player : "")}</div></div><button class="btn sm" data-act="edit-maven" data-id="${esc(mv.id)}">Edit</button></div>
-    <div class="attrs">${sys.attributes.map((a) => `<div class="attr"><div class="v">${(mv.attrs?.[a] ?? 0) >= 0 ? "+" : ""}${mv.attrs?.[a] ?? 0}</div><div class="k">${esc(a)}</div></div>`).join("")}</div>
-    <div class="section-label">Experience</div><div class="boxes">${Array.from({ length: sys.xpMax }, (_, i) => `<button class="box ${i < (mv.xp || 0) ? "on" : ""}" data-act="xp" data-id="${esc(mv.id)}" data-i="${i}" aria-label="XP ${i + 1}"></button>`).join("")}</div>
-    <div class="section-label">Conditions</div><div class="chips">${(mv.conditions || []).map((c, i) => `<span class="chip">${esc(c)}<button data-act="cond-del" data-id="${esc(mv.id)}" data-i="${i}">×</button></span>`).join("")}<button class="chip" data-act="cond-add" data-id="${esc(mv.id)}">+ Condition</button></div>
-    <div class="section-label">Crowns of the Void · ${(mv.crowns || []).length}/${sys.crownsMax}</div><div class="boxes">${Array.from({ length: sys.crownsMax }, (_, i) => `<span class="box crown ${i < (mv.crowns || []).length ? "on" : ""}"></span>`).join("")}</div>
-    ${(mv.crowns || []).length ? `<ul class="steps">${mv.crowns.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
-    ${block("Cozy activity", mv.cozy)}${block("Advances", (mv.advances || []).join("\n"))}${block("Notes", mv.notes)}
-  </div>`).join("")}</div>` : `<div class="empty"><p>No ${esc(sys.pcTitle || "Maven")}s yet.</p><button class="btn primary" data-act="add-maven">Add the first one</button></div>`}`;
-}
-
 /* ---------------- Views: Rules ---------------- */
 function vRules() {
   const sys = SYS();
@@ -538,8 +513,8 @@ function vLibrary() {
     <div class="card"><div class="card-head"><h2>Settings (towns)</h2><button class="btn sm" data-act="new-setting">+ New</button></div>
       <ul class="list">${S.settings.map((s) => `<li><div class="body"><b>${esc(s.name)}</b><div class="meta">${esc(byId(S.systems, s.systemId)?.name || "")} · ${s.locations.length} locations · ${s.npcs.length} townsfolk</div></div><button class="btn sm ghost danger" data-act="del-setting" data-id="${esc(s.id)}">Delete</button></li>`).join("")}</ul></div>
     <div class="card"><div class="card-head"><h2>Game systems</h2><button class="btn sm" data-act="new-system">+ New</button></div>
-      <p class="small muted">For other Carved-in-Brindlewood games (The Between, Public Access, your own hacks) create a system, set its ability names and moves, then point a setting at it.</p>
-      <ul class="list">${S.systems.map((s) => `<li><div class="body"><b>${esc(s.name)}</b><div class="meta">${s.moves.length} moves · ${esc(s.attributes.join(", "))}</div></div><button class="btn sm ghost danger" data-act="del-system" data-id="${esc(s.id)}">Delete</button></li>`).join("")}</ul></div>
+      <p class="small muted">For other Carved-in-Brindlewood games (The Between, Public Access, your own hacks) create a system, set its moves, then point a setting at it.</p>
+      <ul class="list">${S.systems.map((s) => `<li><div class="body"><b>${esc(s.name)}</b><div class="meta">${s.moves.length} moves</div></div><button class="btn sm ghost danger" data-act="del-system" data-id="${esc(s.id)}">Delete</button></li>`).join("")}</ul></div>
     <div class="card"><h2>Backup & sharing</h2>
       <p class="small">Everything is stored on this device only. Export regularly — especially before clearing Safari data — and import to move between iPad and iPhone.</p>
       <div class="btn-row"><button class="btn primary" data-act="export">Export everything</button><button class="btn" data-act="export-mystery">Export this mystery</button><label class="btn">Import…<input type="file" accept="application/json,.json" data-act="import" hidden></label></div>
@@ -576,7 +551,6 @@ function fieldHtml(f, v) {
     case "multi": { const set = new Set(v || []); return `<div class="field"><div class="lbl">${esc(f.label)}</div><div class="multi">${(f.options() || []).map((o) => `<label><input type="checkbox" data-multi="${f.key}" value="${esc(o.v)}" ${set.has(o.v) ? "checked" : ""}>${esc(o.l)}</label>`).join("") || `<span class="muted small">Nothing to choose yet.</span>`}</div>${hint}</div>`; }
     case "list": return `<div class="field"><div class="lbl">${esc(f.label)}</div><div class="rows" data-rows="${f.key}">${(v || []).map((x) => listRow(f, x)).join("")}</div><button type="button" class="btn sm" data-act="row-add" data-key="${f.key}">+ Add</button><template data-tpl="${f.key}">${listRow(f, "")}</template>${hint}</div>`;
     case "rows": return `<div class="field"><div class="lbl">${esc(f.label)}</div><div class="rows" data-rows="${f.key}">${(v || []).map((x) => objRow(f, x)).join("")}</div><button type="button" class="btn sm" data-act="row-add" data-key="${f.key}">+ Add</button><template data-tpl="${f.key}">${objRow(f, {})}</template>${hint}</div>`;
-    case "attrs": return `<div class="field"><div class="lbl">${esc(f.label)}</div><div class="attr-inputs">${f.attrs().map((a) => `<div><label>${esc(a)}</label><input type="number" inputmode="numeric" data-attr="${esc(a)}" value="${esc(v?.[a] ?? 0)}"></div>`).join("")}</div></div>`;
     default: return `<div class="field">${lab}<input id="${id}" type="text" name="${f.key}" value="${esc(v ?? "")}" ${f.placeholder ? `placeholder="${esc(f.placeholder)}"` : ""}>${hint}</div>`;
   }
 }
@@ -591,7 +565,6 @@ function readForm(form, schema) {
     if (f.type === "multi") out[f.key] = $$(`[data-multi="${f.key}"]:checked`, form).map((i) => i.value);
     else if (f.type === "list") out[f.key] = $$(`[data-rows="${f.key}"] [data-item]`, form).map((i) => i.value.trim()).filter(Boolean);
     else if (f.type === "rows") out[f.key] = $$(`[data-rows="${f.key}"] [data-obj]`, form).map((r) => Object.fromEntries($$("[data-sub]", r).map((i) => [i.dataset.sub, i.value.trim()]))).filter((o) => Object.values(o).some(Boolean));
-    else if (f.type === "attrs") out[f.key] = Object.fromEntries($$("[data-attr]", form).map((i) => [i.dataset.attr, parseInt(i.value, 10) || 0]));
     else if (f.type === "checkbox") out[f.key] = !!form.elements[f.key]?.checked;
     else if (f.type === "number") { const n = parseInt(form.elements[f.key]?.value, 10); out[f.key] = isNaN(n) ? 0 : n; }
     else out[f.key] = form.elements[f.key]?.value ?? "";
@@ -657,16 +630,10 @@ const SCH = {
     { key: "featuredTownsfolk", label: "Townsfolk in this mystery", type: "multi", options: () => SET().npcs.map((n) => ({ v: n.id, l: n.name })) },
     { key: "complications", label: "Complications & twists", type: "list", long: true },
   ],
-  maven: () => [
-    { key: "name", label: "Name" }, { key: "player", label: "Player" }, { key: "attrs", label: "Abilities", type: "attrs", attrs: () => SYS().attributes },
-    { key: "xp", label: "XP", type: "number" }, { key: "cozy", label: "Cozy activity" }, { key: "conditions", label: "Conditions", type: "list" },
-    { key: "crowns", label: "Crowns of the Void taken", type: "list" }, { key: "advances", label: "Advances taken", type: "list" }, { key: "notes", label: "Notes", type: "textarea" },
-  ],
   move: [{ key: "name", label: "Name" }, { key: "category", label: "Category" }, { key: "trigger", label: "Trigger", type: "textarea", rows: 2 }, { key: "text", label: "Effect", type: "textarea", rows: 7 }, { key: "gm", label: "Keeper tip", type: "textarea", rows: 3 }],
   rule: [{ key: "title", label: "Title" }, { key: "text", label: "Text", type: "textarea", rows: 10 }],
   system: [
-    { key: "name", label: "Game name" }, { key: "gmTitle", label: "GM title" }, { key: "pcTitle", label: "Player character title" },
-    { key: "attributes", label: "Abilities", type: "list" }, { key: "xpMax", label: "XP track length", type: "number" }, { key: "crownsMax", label: "Crowns track length", type: "number" },
+    { key: "name", label: "Game name" }, { key: "gmTitle", label: "GM title" },
     { key: "endOfSession", label: "End-of-session questions", type: "list", long: true }, { key: "note", label: "Banner note", type: "textarea", rows: 2 },
   ],
   setting: [
@@ -696,7 +663,7 @@ function openClue(id) {
       <div class="chips" style="margin:8px 0 14px">${(c.where || []).map(locLink).join("")}${(c.points || []).map(npcLink).join("")}</div>
       <div class="hr"></div>
       <div class="field"><label class="chip" style="cursor:pointer"><input type="checkbox" name="found" ${P().found[id] ? "checked" : ""}> Found</label></div>
-      <div class="field"><label>Found by</label>${S.mavens.length ? `<select name="by"><option value="">—</option>${S.mavens.map((mv) => `<option ${f.by === mv.name ? "selected" : ""}>${esc(mv.name)}</option>`).join("")}</select>` : `<input type="text" name="by" value="${esc(f.by || "")}" placeholder="Maven name">`}</div>
+      <div class="field"><label>Found by</label><input type="text" name="by" value="${esc(f.by || "")}" placeholder="Maven name"></div>
       <div class="field"><label>Where</label><select name="where"><option value="">—</option>${allLocs().map((l) => `<option value="${esc(l.id)}" ${(f.where || P().scene.locationId) === l.id ? "selected" : ""}>${esc(l.name)}</option>`).join("")}</select></div>
       <div class="field"><label>How it came up</label><input type="text" name="note" value="${esc(f.note || "")}" placeholder="e.g. Rolled up behind the pollock"></div>
     </div>
@@ -888,7 +855,6 @@ function runSearch(q) {
   m?.threats.forEach((t) => hit(t.name, t.desc, t.steps) && res.push(["Threat", t.name, t.desc, "#/mystery/threats"]));
   sys.moves.forEach((mv) => hit(mv.name, mv.trigger, mv.text, mv.gm) && res.push(["Move", mv.name, mv.trigger, "#/rules"]));
   sys.rules.forEach((r) => hit(r.title, r.text) && res.push(["Rules", r.title, "", "#/rules"]));
-  S.mavens.forEach((mv) => hit(mv.name, mv.player, mv.notes) && res.push(["Maven", mv.name, mv.player, "#/mavens"]));
   const mk = (s) => esc(s || "").replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "ig"), (x) => `<mark>${x}</mark>`);
   box.innerHTML = res.slice(0, 60).map(([k, t, sub, to]) => to.startsWith("clue:") ? `<a class="res" href="javascript:void 0" data-act="clue-open" data-id="${esc(to.slice(5))}"><div class="k">${k}</div>${mk(t)}<div class="small muted">${mk(trunc(sub, 90))}</div></a>`
     : `<a class="res" href="${esc(to)}" data-act="close-overlays"><div class="k">${k}</div>${mk(t)}<div class="small muted">${mk(trunc(sub, 90))}</div></a>`).join("") || `<p class="muted">No matches.</p>`;
@@ -938,7 +904,6 @@ const A = {
   "untick": (el) => { const p = P(); p.ticks[el.dataset.id] = Math.max(0, (p.ticks[el.dataset.id] || 0) - 1); commit(); },
   "paint-ask": (el) => { const p = P(); p.asked[el.dataset.i] = !p.asked[el.dataset.i]; commit(); },
   "eos": (el) => { const p = P(); p.eos[el.dataset.i] = !p.eos[el.dataset.i]; commit(); },
-  "eos-award": () => { const p = P(), n = Object.values(p.eos).filter(Boolean).length; if (!n) return toast("Tick the questions answered “yes” first"); S.mavens.forEach((mv) => (mv.xp = (mv.xp || 0) + n)); log(`End of session: each Maven +${n} XP`, "session"); p.eos = {}; commit(); toast(`+${n} XP each`); },
   "new-session": () => { const p = P(); if (!confirm(`Start session ${p.session + 1}? Clues and clocks carry over.`)) return; p.session++; p.asked = {}; p.eos = {}; log(`Session ${p.session} begins`, "session"); commit(); },
   "log-del": (el) => { const p = P(); p.log = p.log.filter((e) => e.id !== el.dataset.id); commit(); },
   "complication": () => { const c = M().complications || []; if (!c.length) return toast("No complications listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Complication</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div></div><div class="modal-foot"><button class="btn" data-act="complication">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
@@ -990,11 +955,6 @@ const A = {
   "edit-solution": (el) => editItem("solution", M().solutions, byId(M().solutions, el.dataset.id), "Edit solution"),
   "add-rel": () => editItem("rel", M().relationships, { id: uid("rel"), a: M().victimId || "", b: "", label: "", kind: "other" }, "New link", true),
   "edit-rel": (el) => editItem("rel", M().relationships, byId(M().relationships, el.dataset.id), "Edit link"),
-  "add-maven": () => editItem("maven", S.mavens, { id: uid("mv"), name: "", attrs: {}, xp: 0, conditions: [], crowns: [], advances: [] }, "New Maven", true),
-  "edit-maven": (el) => editItem("maven", S.mavens, byId(S.mavens, el.dataset.id), "Edit Maven"),
-  "xp": (el) => { const mv = byId(S.mavens, el.dataset.id), i = +el.dataset.i; mv.xp = mv.xp === i + 1 ? i : i + 1; commit(); },
-  "cond-add": (el) => { const c = prompt("Condition (e.g. Frightened, Angry, Guilty):"); if (c) { byId(S.mavens, el.dataset.id).conditions.push(c.trim()); commit(); } },
-  "cond-del": (el) => { byId(S.mavens, el.dataset.id).conditions.splice(+el.dataset.i, 1); commit(); },
   "add-move": () => editItem("move", SYS().moves, { id: uid("mv"), name: "", category: "Core" }, "New move", true),
   "edit-move": (el) => editItem("move", SYS().moves, byId(SYS().moves, el.dataset.id), "Edit move"),
   "add-rule": () => editItem("rule", SYS().rules, { id: uid("r"), title: "", text: "" }, "New rules section", true),
@@ -1015,7 +975,7 @@ const A = {
   "export": () => download(`keepers-desk-backup-${new Date().toISOString().slice(0, 10)}.json`, S),
   "export-mystery": () => { const m = M(); download(`${m.title.replace(/\W+/g, "-").toLowerCase()}.json`, { kind: "keepersdesk-mystery", mystery: m, setting: SET(m), system: SYS() }); },
   "reset-play": () => { if (!confirm("Clear found clues, clocks, log and scene for this mystery?")) return; delete S.play[M().id]; commit(); },
-  "restore-dad": () => { if (!confirm("Restore Dad Overboard (and the Brindlewood Bay setting & rules) to the original content? Your edits to them will be lost; Mavens and other mysteries are kept.")) return;
+  "restore-dad": () => { if (!confirm("Restore Dad Overboard (and the Brindlewood Bay setting & rules) to the original content? Your edits to them will be lost; other mysteries are kept.")) return;
     const seed = clone(window.BRINDLE_SEED);
     for (const k of ["systems", "settings", "mysteries"]) seed[k].forEach((item) => { const i = S[k].findIndex((x) => x.id === item.id); if (i >= 0) S[k][i] = item; else S[k].push(item); });
     S.ui.activeMysteryId = "mys-dad"; commit(); toast("Restored"); },

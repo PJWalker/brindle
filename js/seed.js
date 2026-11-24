@@ -9,10 +9,6 @@ window.BRINDLE_SEED = {
       id: "sys-bb",
       name: "Brindlewood Bay",
       gmTitle: "Keeper",
-      pcTitle: "Maven",
-      attributes: ["Vitality", "Composure", "Reason", "Presence", "Sensitivity"],
-      xpMax: 5,
-      crownsMax: 7,
       note: "Paraphrased GM summaries for quick table reference. Check your rulebook for exact wording and tap Edit to replace any entry.",
       moves: [
         {
@@ -457,7 +453,6 @@ window.BRINDLE_SEED = {
     }
   ],
 
-  mavens: [],
   play: {},
   ui: { activeMysteryId: "mys-dad" }
 };
