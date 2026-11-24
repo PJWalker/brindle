@@ -705,23 +705,25 @@ function markClue(id, on, extra = {}) {
 
 function openTheorize(keep) {
   const m = M(), p = P(), t = (S.ui.theory ||= { culprit: "", text: "", clues: [] });
-  const foundClues = m.clues.filter((c) => p.found[c.id]);
-  const n = t.clues.filter((id) => p.found[id]).length, mod = n - m.complexity;
+  const foundClues = m.clues.filter((c) => p.found[c.id] && c.type !== "void");
+  const n = theoryCount(m, p, t.clues), mod = n - m.complexity, need = Math.ceil(m.complexity / 2);
   const sols = m.solutions.map((s) => ({ s, k: s.clues.filter((id) => t.clues.includes(id)).length + (t.culprit && s.culprit === t.culprit ? 2 : 0) })).filter((x) => x.k > 0).sort((a, b) => b.k - a.k).slice(0, 3);
   openModal(`<form class="modal-inner" data-form="theory"><div class="modal-head"><h2>Theorize</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
     <div class="modal-body">
       <div style="display:flex;gap:18px;align-items:center;margin-bottom:6px"><div><div class="big-num">${mod >= 0 ? "+" : ""}${mod}</div><div class="small muted">${n} clue${n === 1 ? "" : "s"} − complexity ${m.complexity}</div></div><div style="flex:1">${oddsHtml(mod)}</div></div>
+      ${foundClues.length < need ? `<div class="note-banner">Theorize opens once the Mavens have found at least ${need} Clues (half the Complexity, rounded up). They have ${foundClues.length}.</div>` : ""}
       <div class="field"><label>Culprit</label><select name="culprit" data-act="theory-field"><option value="">— (who did it?)</option>${allNpcs().map((x) => `<option value="${esc(x.id)}" ${t.culprit === x.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select></div>
       <div class="field"><label>The theory (how & why)</label><textarea name="text" rows="3" data-act="theory-field" placeholder="Jot the players' theory as they explain it…">${esc(t.text)}</textarea></div>
-      <div class="field"><div class="lbl">Clues the theory accounts for — tap as the players explain</div>
-        <div class="multi" style="max-height:300px">${foundClues.map((c) => `<label><input type="checkbox" data-act="theory-clue" value="${esc(c.id)}" ${t.clues.includes(c.id) ? "checked" : ""}>${c.type === "void" ? "◎ " : ""}${esc(trunc(c.text, 60))}</label>`).join("") || `<span class="muted small">No clues found yet.</span>`}</div></div>
+      <div class="field"><div class="lbl">Clues incorporated or explained away — tap as the players explain (Void Clues don't count)</div>
+        <div class="multi" style="max-height:300px">${foundClues.map((c) => `<label><input type="checkbox" data-act="theory-clue" value="${esc(c.id)}" ${t.clues.includes(c.id) ? "checked" : ""}>${esc(trunc(c.text, 60))}</label>`).join("") || `<span class="muted small">No clues found yet.</span>`}</div></div>
       ${sols.length ? `<div class="section-label">Closest prepared theories</div>${sols.map(({ s }) => `<div class="small" style="margin-bottom:6px"><b>${esc(s.title)}</b> — ${esc(trunc(s.method, 140))}</div>`).join("")}` : ""}
       <div class="field" style="margin-top:12px"><label>Roll total (optional)</label><input type="number" inputmode="numeric" name="roll" placeholder="2d6 + ${mod}"></div>
-      <div class="note-banner">${esc(byId(SYS().moves, "mv-theorize")?.text || "12+ right & caught · 10–11 right, wrinkle · 7–9 right, culprit gets upper hand · 6− wrong")}</div>
+      <div class="note-banner">${esc(byId(SYS().moves, "mv-theorize")?.text || "10+ correct, chance to take down the culprit · 7–9 correct, with a complication or dangerous opportunity · 6− wrong, Keeper reacts · 12+ also a conspirator reveals themself")}</div>
     </div>
     <div class="modal-foot"><button type="button" class="btn ghost" data-act="theory-clear">Clear</button><span class="spacer"></span><button class="btn primary">Log theory</button></div></form>`, keep);
 }
-function bandFor(total) { return total >= 12 ? "12+ — right, caught cleanly" : total >= 10 ? "10–11 — right, with a wrinkle" : total >= 7 ? "7–9 — right, culprit gets the upper hand" : "6− — wrong"; }
+function bandFor(total) { return total >= 12 ? "12+ — correct; a conspirator reveals themself" : total >= 10 ? "10+ — correct; take down the culprit" : total >= 7 ? "7–9 — correct, with a complication" : "6− — wrong; Keeper reacts"; }
+function theoryCount(m, p, ids) { return ids.filter((id) => p.found[id] && byId(m.clues, id)?.type !== "void").length; }
 
 function openScene() {
   const sc = P().scene;
@@ -742,9 +744,9 @@ function closeSheet() { document.body.classList.remove("sheet-open", "nav-open")
 function openMovesSheet() {
   const sys = SYS();
   openSheet(`<div class="sheet-head"><h2>Moves</h2><button class="icon-btn" data-act="close-overlays">✕</button></div><div class="sheet-body">
-    ${sys.moves.map((mv, i) => moveHtml(mv, false, i < 2)).join("")}
-    <div class="section-label">Keeper moves</div><div class="pre small">${esc(byId(sys.rules, "r-gmmoves")?.text || "")}</div>
-    <div class="section-label">Theorize odds (current clues)</div>${oddsHtml(Object.keys(P()?.found || {}).length - (M()?.complexity || 0))}
+    ${sys.moves.map((mv) => moveHtml(mv, false, mv.id === "mv-meddle" || mv.id === "mv-theorize")).join("")}
+    <div class="section-label">Keeper reactions</div><div class="pre small">${esc(byId(sys.rules, "r-gmmoves")?.text || "")}</div>
+    <div class="section-label">Theorize odds (current clues)</div>${oddsHtml((M() ? M().clues.filter((c) => P()?.found[c.id] && c.type !== "void").length : 0) - (M()?.complexity || 0))}
     <a class="btn" href="#/rules" data-act="close-overlays">Full reference</a></div>`);
 }
 function openSearch() {
@@ -851,7 +853,7 @@ const A = {
   "add-maven": () => editItem("maven", S.mavens, { id: uid("mv"), name: "", attrs: {}, xp: 0, conditions: [], crowns: [], advances: [] }, "New Maven", true),
   "edit-maven": (el) => editItem("maven", S.mavens, byId(S.mavens, el.dataset.id), "Edit Maven"),
   "xp": (el) => { const mv = byId(S.mavens, el.dataset.id), i = +el.dataset.i; mv.xp = mv.xp === i + 1 ? i : i + 1; commit(); },
-  "cond-add": (el) => { const c = prompt("Condition (e.g. Frightened, Angry, Guilty):"); if (c) { byId(S.mavens, el.dataset.id).conditions.push(c.trim()); commit(); } },
+  "cond-add": (el) => { const c = prompt("Condition (e.g. Unnerved, Sprained Ankle, Haunted). Max 3; a 4th marks a Crown instead:"); if (c) { byId(S.mavens, el.dataset.id).conditions.push(c.trim()); commit(); } },
   "cond-del": (el) => { byId(S.mavens, el.dataset.id).conditions.splice(+el.dataset.i, 1); commit(); },
   "add-move": () => editItem("move", SYS().moves, { id: uid("mv"), name: "", category: "Core" }, "New move", true),
   "edit-move": (el) => editItem("move", SYS().moves, byId(SYS().moves, el.dataset.id), "Edit move"),
@@ -863,7 +865,7 @@ const A = {
   "editor-delete": () => { const cur = openEditor.current; if (cur?.onDelete && confirm("Delete this?")) { cur.onDelete(); closeModal(); commit(); history.length > 1 && /#\/(npc|loc)\//.test(location.hash) && history.back(); } },
 
   "activate": (el) => { S.ui.activeMysteryId = el.dataset.id; commit(); toast("Mystery loaded"); },
-  "new-mystery": () => { const m = { id: uid("mys"), settingId: SET()?.id || S.settings[0]?.id, title: "New Mystery", complexity: 5, presenting: "", hook: "", establishing: "", backstory: "", paint: [], locations: [], npcs: [], featuredTownsfolk: [], suspects: [], relationships: [], clues: [], threats: [], solutions: [], complications: [], notes: "" }; if (!m.settingId) return toast("Create a setting first"); S.mysteries.push(m); S.ui.activeMysteryId = m.id; save(); location.hash = "#/mystery/overview"; setTimeout(() => editItem("mystery", [], m, "New mystery"), 50); },
+  "new-mystery": () => { const m = { id: uid("mys"), settingId: SET()?.id || S.settings[0]?.id, title: "New Mystery", complexity: 6, presenting: "", hook: "", establishing: "", backstory: "", paint: [], locations: [], npcs: [], featuredTownsfolk: [], suspects: [], relationships: [], clues: [], threats: [], solutions: [], complications: [], notes: "" }; if (!m.settingId) return toast("Create a setting first"); S.mysteries.push(m); S.ui.activeMysteryId = m.id; save(); location.hash = "#/mystery/overview"; setTimeout(() => editItem("mystery", [], m, "New mystery"), 50); },
   "dup-mystery": (el) => { const m = clone(byId(S.mysteries, el.dataset.id)); m.id = uid("mys"); m.title += " (copy)"; S.mysteries.push(m); commit(); },
   "del-mystery": (el) => { const m = byId(S.mysteries, el.dataset.id); if (!confirm(`Delete “${m.title}” and its session state?`)) return; S.mysteries = S.mysteries.filter((x) => x !== m); delete S.play[m.id]; if (S.ui.activeMysteryId === m.id) S.ui.activeMysteryId = S.mysteries[0]?.id; commit(); },
   "new-setting": () => { const s = { id: uid("set"), systemId: S.systems[0]?.id, name: "New Town", intro: "", tone: "", locations: [], npcs: [] }; S.settings.push(s); editItem("setting", [], s, "New setting"); },
@@ -934,7 +936,7 @@ document.addEventListener("submit", (ev) => {
   }
   if (kind === "scene") { setScene(form.elements.loc.value, $$('[data-multi="npcs"]:checked', form).map((i) => i.value)); closeModal(); commit(); return; }
   if (kind === "theory") {
-    const t = S.ui.theory, m = M(), n = t.clues.filter((id) => P().found[id]).length, mod = n - m.complexity;
+    const t = S.ui.theory, m = M(), n = theoryCount(m, P(), t.clues), mod = n - m.complexity;
     const roll = parseInt(form.elements.roll.value, 10);
     const rec = { id: uid("th"), at: nowIso(), culprit: t.culprit, text: t.text, clues: [...t.clues], mod, roll: isNaN(roll) ? null : roll };
     P().theories.push(rec);

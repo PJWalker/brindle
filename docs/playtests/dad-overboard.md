@@ -40,3 +40,14 @@ We ran three simulated sessions. Each had one AI Keeper and three AI players. Th
 
 ## Note on the simulation
 The players were AI models told to act like specific kinds of human players, and so were the Keepers. They are fast to agree with each other and generous with clues, so read the clue counts as an upper bound.
+
+## Rulebook alignment (later revision)
+
+The app's rules were later checked against the *Brindlewood Bay* rulebook's Keeper chapters. Where the playtest changes contradicted the book, the book now wins by default:
+
+- Dad Overboard is back to **Complexity 6**.
+- Every Meddling hit finds a Clue, and Keepers are told to be generous about triggering it.
+- Void Clues don't count at Theorize.
+- Theorize opens once the Mavens have found half the Complexity in Clues.
+
+The playtest changes (Complexity 8, a clue budget, "talking is free", strict counting) are now listed under **Optional House Rules** in Moves & Rules.

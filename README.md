@@ -4,11 +4,11 @@ Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindle
 
 ## Features
 - **Session dashboard** — current scene + on-stage NPC cue cards, clue tracker (who/where found), threat clocks, session log, paint-the-scene prompts, end-of-session XP.
-- **Theorize board** — tick the clues the players' theory explains; shows modifier (clues − complexity), odds for each result band, and closest prepared theories.
+- **Theorize board** — tick the clues the players' theory incorporates (Void Clues excluded; opens at half the Complexity); shows modifier (clues − complexity), odds for each result band, and closest prepared theories.
 - **Mystery** — hook, establishing question, cast & suspects, clues (suggested locations / who they might point to), threats, possible solutions, relationship web.
 - **Setting** — town map with pins, locations (yacht deck plan for The Regal Lady), recurring townsfolk.
 - **Mavens** — abilities, XP, Conditions, Crowns of the Void.
-- **Moves & rules** — paraphrased quick reference (editable), Keeper moves, safety tools, theorize odds table. Quick "Moves" sheet from any screen.
+- **Moves & rules** — quick reference paraphrased from the rulebook (editable): basic moves, Keeper principles and reactions, Danger & Harm, safety tools, theorize odds table. Optional playtest house rules are kept separate and tagged **added**. Quick "Moves" sheet from any screen.
 - **Full editor** for everything; new mysteries, settings and game systems (for The Between, Public Access, hacks).
 - Search (⌘K), JSON export/import, works offline once loaded.
 - Minimal pure black & white UI for eInk tablets: no colour, greys, shadows or animation; state shown by fill, weight and line style. The contrast button inverts to white-on-black.
