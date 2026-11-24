@@ -157,7 +157,7 @@ function vPlay() {
   const sceneLoc = locById(sc.locationId);
   return `
   <div class="page-head"><div class="grow"><div class="eyebrow">Session ${p.session} · Complexity ${m.complexity}</div><h1>${esc(m.title)}</h1></div>
-    <div class="btn-row"><button class="btn" data-act="theorize">Theorize</button><button class="btn" data-act="complication">Complication</button></div></div>
+    <div class="btn-row"><button class="btn" data-act="theorize">Theorize</button><button class="btn" data-act="happening">Town life</button><button class="btn" data-act="complication">Complication</button></div></div>
 
   <div class="play-grid">
   <div>
@@ -222,6 +222,8 @@ function npcCue(n) {
   return `<div style="margin-bottom:12px"><div><a href="#/npc/${esc(n.id)}" class="serif" style="font-weight:600">${esc(n.name)}</a> <span class="muted small">${esc(n.role || "")}</span></div>
   ${n.quote ? `<div class="quote">“${esc(n.quote)}”</div>` : ""}
   <div class="small">${n.voice ? `<b>Voice:</b> ${esc(n.voice)} ` : ""}${n.mannerism ? `<b>Does:</b> ${esc(n.mannerism)}` : ""}</div>
+  ${n.life ? `<div class="small"><b>Right now:</b> ${esc(n.life)}</div>` : ""}
+  ${n.guarded ? `<div class="small"><b>If the murder comes up:</b> ${esc(n.guarded)}</div>` : ""}
   ${n.wants ? `<div class="small"><b>Wants:</b> ${esc(n.wants)}</div>` : ""}
   ${n.hides ? `<div class="small"><b>Hides:</b> ${esc(n.hides)}</div>` : ""}
   ${(n.prompts || []).length ? `<div class="small"><b>Play it:</b> ${n.prompts.map(esc).join(" / ")}</div>` : ""}</div>`;
@@ -243,7 +245,7 @@ function threatRow(t, compact) {
   return `<div class="threat">${clockSvg(t, ticks)}<div class="body"><div style="display:flex;gap:6px;align-items:center"><b class="serif">${esc(t.name)}</b> <span class="muted small">${ticks}/${t.segments}</span>${compact ? "" : srcBadge(t)}
     <span style="margin-left:auto" class="btn-row"><button class="btn sm ghost" data-act="untick" data-id="${esc(t.id)}" aria-label="Back one">−</button>${compact ? "" : `<button class="btn sm" data-act="edit-threat" data-id="${esc(t.id)}">Edit</button>`}</span></div>
     ${compact ? (ticks && t.steps?.[ticks - 1] ? `<div class="small" style="color:var(--accent)">Now: ${esc(t.steps[ticks - 1])}</div>` : `<div class="small muted">${esc(t.desc || "")}</div>`)
-      : `<div class="small muted">${esc(t.desc || "")}</div><ol class="steps">${(t.steps || []).map((s, i) => `<li class="${i < ticks ? "on" : ""}">${esc(s)}</li>`).join("")}</ol>`}
+      : `<div class="small muted">${esc(t.desc || "")}</div>${t.trigger ? `<div class="small"><b>Tick when:</b> ${esc(t.trigger)}</div>` : ""}<ol class="steps">${(t.steps || []).map((s, i) => `<li class="${i < ticks ? "on" : ""}">${esc(s)}</li>`).join("")}</ol>`}
     ${compact && t.steps?.[ticks] ? `<div class="small muted">Next: ${esc(t.steps[ticks])}</div>` : ""}</div></div>`;
 }
 
@@ -274,6 +276,7 @@ function vOverview() {
   </div>
   <div class="card"><div class="card-head"><h2>Keeper's background</h2>${srcBadge({ src: "added" })}</div>
     <div class="pre">${esc(m.backstory || "—")}</div>
+    ${block("The night — what's certain, and what's loose", m.timeline)}
     ${m.victimId ? `<div class="section-label">Victim</div><div class="chips">${npcLink(m.victimId)}</div>` : ""}
     <div class="section-label">Suspects</div><div class="chips">${(m.suspects || []).map(npcLink).join("")}</div>
   </div>
@@ -328,7 +331,7 @@ function vSolutions() {
     const mod = have - m.complexity;
     return `<div class="card"><div class="card-head"><h3>${esc(s.title)}</h3>${srcBadge(s)}<button class="btn sm ghost" data-act="edit-solution" data-id="${esc(s.id)}">Edit</button></div>
       <div class="chips">${s.culprit ? npcLink(s.culprit) : `<span class="chip">No single culprit</span>`}</div>
-      ${block("Motive", s.motive)}${block("Method", s.method)}
+      ${block("Motive", s.motive)}${block("Method", s.method)}${block("10–11 · the wrinkle", s.wrinkle)}${block("7–9 · the culprit's upper hand", s.upperHand)}
       <div class="section-label">Supporting clues · ${have}/${s.clues.length} found · roll ${mod >= 0 ? "+" : ""}${mod}</div>
       <div class="chips">${s.clues.map(clueChip).join("")}</div></div>`;
   }).join("")}</div>`;
@@ -390,7 +393,7 @@ function vNpc(id) {
     <div class="btn-row"><button class="btn ${onStage ? "" : "primary"}" data-act="stage-toggle" data-id="${esc(id)}">${onStage ? "Remove from scene" : "Put on stage"}</button><button class="btn" data-act="edit-npc" data-id="${esc(id)}">Edit</button></div></div>
   <div class="grid cols-2">
     <div class="card">${n.quote ? `<div class="quote big">“${esc(n.quote)}”</div>` : ""}
-      <dl class="dl">${[["Look", n.look], ["Personality", n.personality], ["Voice", n.voice], ["Mannerism", n.mannerism], ["Wants", n.wants], ["Hides", n.hides]].filter((x) => x[1]).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+      <dl class="dl">${[["Their life right now", n.life], ["If the murder comes up", n.guarded], ["Look", n.look], ["Personality", n.personality], ["Voice", n.voice], ["Mannerism", n.mannerism], ["Wants", n.wants], ["Hides", n.hides]].filter((x) => x[1]).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
       ${(n.prompts || []).length ? `<div class="section-label">Ways to play them</div><ul class="steps">${n.prompts.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
       ${n.notes ? block("Notes", n.notes) : ""}
     </div>
@@ -409,7 +412,7 @@ function vTown(tab) {
   const head = `<div class="page-head"><div class="grow"><div class="eyebrow">Setting</div><h1>${esc(st.name)}</h1></div></div>${tabs}`;
   if (tab === "folk") return head + `<div class="toolbar"><span class="grow muted small">Recurring NPCs shared by every mystery in this setting.</span><button class="btn" data-act="add-npc" data-scope="setting">+ Townsfolk</button></div><div class="grid cols-2">${st.npcs.map(npcCard).join("")}</div>`;
   if (tab === "places") return head + `<div class="toolbar"><span class="grow"></span><button class="btn" data-act="add-loc" data-scope="setting">+ Town location</button><button class="btn" data-act="add-loc" data-scope="mystery">+ Mystery location</button></div><div class="grid cols-3">${allLocs().map(locCard).join("")}</div>`;
-  if (tab === "about") return head + `<div class="card"><div class="card-head"><h2>About ${esc(st.name)}</h2>${srcBadge(st)}<button class="btn sm" data-act="edit-setting">Edit</button></div>${block("Overview", st.intro)}${block("Tone", st.tone)}</div>`;
+  if (tab === "about") return head + `<div class="card"><div class="card-head"><h2>About ${esc(st.name)}</h2>${srcBadge(st)}<button class="btn sm" data-act="edit-setting">Edit</button></div>${block("Overview", st.intro)}${block("Tone", st.tone)}${(st.happenings || []).length ? `<div class="section-label">This week in town</div><ul class="steps">${st.happenings.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`;
   return head + vMap();
 }
 function locCard(l) {
@@ -602,6 +605,7 @@ const SCH = {
   npc: [
     { key: "name", label: "Name" }, { key: "role", label: "Role / one-liner" }, { key: "quote", label: "Signature quote", type: "textarea", rows: 2 },
     { key: "look", label: "Look", type: "textarea", rows: 2 }, { key: "personality", label: "Personality", type: "textarea", rows: 2 },
+    { key: "life", label: "Their life right now (not the murder)", type: "textarea", rows: 3 }, { key: "guarded", label: "If the murder comes up", type: "textarea", rows: 2 },
     { key: "voice", label: "Voice" }, { key: "mannerism", label: "Mannerism" }, { key: "wants", label: "Wants", type: "textarea", rows: 2 },
     { key: "hides", label: "Hides (Keeper only)", type: "textarea", rows: 2 }, { key: "prompts", label: "Ways to play them", type: "list", long: true }, { key: "notes", label: "Notes", type: "textarea", rows: 3 },
   ],
@@ -620,11 +624,14 @@ const SCH = {
   ],
   threat: [
     { key: "name", label: "Name" }, { key: "desc", label: "What it is", type: "textarea", rows: 2 }, { key: "segments", label: "Clock segments", type: "number" },
+    { key: "trigger", label: "Tick when…", type: "textarea", rows: 2 },
     { key: "steps", label: "Steps (one per segment)", type: "list" },
   ],
   solution: [
     { key: "title", label: "Theory name" }, { key: "culprit", label: "Culprit", type: "select", options: optNpcs("No single culprit") },
-    { key: "motive", label: "Motive", type: "textarea", rows: 3 }, { key: "method", label: "Method", type: "textarea", rows: 3 }, { key: "clues", label: "Supporting clues", type: "multi", options: optClues },
+    { key: "motive", label: "Motive", type: "textarea", rows: 3 }, { key: "method", label: "Method", type: "textarea", rows: 3 },
+    { key: "wrinkle", label: "10–11: the wrinkle", type: "textarea", rows: 2 }, { key: "upperHand", label: "7–9: the culprit's upper hand", type: "textarea", rows: 2 },
+    { key: "clues", label: "Supporting clues", type: "multi", options: optClues },
   ],
   rel: [
     { key: "a", label: "From", type: "select", options: optNpcs() }, { key: "b", label: "To", type: "select", options: optNpcs() }, { key: "label", label: "Label" },
@@ -636,6 +643,7 @@ const SCH = {
     { key: "presenting", label: "Presenting the mystery", type: "textarea", rows: 2 }, { key: "hook", label: "Hook", type: "textarea", rows: 6 },
     { key: "establishing", label: "Establishing question", type: "textarea", rows: 2 }, { key: "openingLocationId", label: "Opening location", type: "select", options: optLocs("—") },
     { key: "backstory", label: "Keeper's background", type: "textarea", rows: 6 },
+    { key: "timeline", label: "The night — what's certain, and what's loose", type: "textarea", rows: 10 },
     { key: "paint", label: "Paint-the-scene questions", type: "rows", fields: [{ key: "locationId", label: "Location", type: "select", options: optLocs("Anywhere") }, { key: "q", label: "Question", type: "textarea" }] },
     { key: "victimId", label: "Victim", type: "select", options: optNpcs("—") }, { key: "suspects", label: "Suspects", type: "multi", options: optNpcs() },
     { key: "featuredTownsfolk", label: "Townsfolk in this mystery", type: "multi", options: () => SET().npcs.map((n) => ({ v: n.id, l: n.name })) },
@@ -656,6 +664,7 @@ const SCH = {
   setting: [
     { key: "name", label: "Name" }, { key: "systemId", label: "Game system", type: "select", options: () => S.systems.map((s) => ({ v: s.id, l: s.name })) },
     { key: "intro", label: "Overview", type: "textarea", rows: 5 }, { key: "tone", label: "Tone", type: "textarea", rows: 3 },
+    { key: "happenings", label: "This week in town (distractions, errands, invitations)", type: "list", long: true },
   ],
 };
 
@@ -748,7 +757,7 @@ function runSearch(q) {
   if (q.length < 2) { box.innerHTML = `<p class="muted small">Start typing.</p>`; return; }
   const m = M(), sys = SYS(), res = [];
   const hit = (...xs) => xs.flat().filter(Boolean).join(" ").toLowerCase().includes(q);
-  allNpcs().forEach((n) => hit(n.name, n.role, n.look, n.personality, n.wants, n.hides, n.quote, n.prompts) && res.push(["NPC", n.name, n.role, `#/npc/${n.id}`]));
+  allNpcs().forEach((n) => hit(n.name, n.role, n.life, n.look, n.personality, n.wants, n.hides, n.quote, n.prompts) && res.push(["NPC", n.name, n.role, `#/npc/${n.id}`]));
   allLocs().forEach((l) => hit(l.name, l.desc, l.details, (l.areas || []).map((a) => a.name + " " + a.desc)) && res.push(["Location", l.name, l.kind, `#/loc/${l.id}`]));
   m?.clues.forEach((c) => hit(c.text, c.notes) && res.push([c.type === "void" ? "Void clue" : "Clue", c.text, c.notes, `clue:${c.id}`]));
   m?.solutions.forEach((s) => hit(s.title, s.motive, s.method) && res.push(["Solution", s.title, s.motive, "#/mystery/solutions"]));
@@ -809,6 +818,7 @@ const A = {
   "new-session": () => { const p = P(); if (!confirm(`Start session ${p.session + 1}? Clues and clocks carry over.`)) return; p.session++; p.asked = {}; p.eos = {}; log(`Session ${p.session} begins`, "session"); commit(); },
   "log-del": (el) => { const p = P(); p.log = p.log.filter((e) => e.id !== el.dataset.id); commit(); },
   "complication": () => { const c = M().complications || []; if (!c.length) return toast("No complications listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Complication</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div></div><div class="modal-foot"><button class="btn" data-act="complication">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
+  "happening": () => { const c = SET().happenings || []; if (!c.length) return toast("No town happenings listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Meanwhile, in town…</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div><p class="small muted">Bring it to the Mavens as an interruption, an invitation or an errand. It needn't touch the murder.</p></div><div class="modal-foot"><button class="btn" data-act="happening">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
   "complication-log": (el) => { log("Complication: " + el.dataset.v, "note"); closeModal(); commit(); },
   "scene-edit": () => openScene(),
   "scene-drop": (el) => { const p = P(); p.scene.npcs = p.scene.npcs.filter((x) => x !== el.dataset.id); commit(); },
