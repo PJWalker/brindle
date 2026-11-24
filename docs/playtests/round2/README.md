@@ -50,3 +50,25 @@ All six sessions were cut short at the organiser's request after a usage-limit p
 - Keepers rolled every die via the script, so players "never rolled". That's an artefact of the setup.
 - Character sheet details (ability spread, Crown box texts, End of Session questions) aren't in the rulebook text, so Keepers used stand-ins.
 - The players were AI models told to act like specific kinds of human players. They converge quickly and accept retcons readily, so treat Clue counts and Theorize ease as an upper bound.
+
+## Changes made after round 2
+- **Theorize:** `mv-theorize` now defines "incorporated" (why it exists, who left it, what it shows), with an example and a way to settle splits. It tells Keepers what to do when the roll can't miss, and that players may Theorize early. The Theorize board warns when the lowest roll is already a hit. Optional House Rules now lead with strict counting and NPC deflection, add a modifier cap and a "locked Clue", and drop the clue budget and "spread suspicion".
+- **Hook:** restored the book's "earlier today", the deadline ("forced to let the family take Albert back to Boston") and "he does not need them to solve the whole mystery", plus an explicit deadline line. The Fixed Facts now start "last night".
+- **Player card:** `r-pitch` rewritten to cover the dice, abilities, what a Clue is versus a free fact, Theorize counting, Conditions, A Cozy Little Place, and the Crowns in the book's terms.
+- **Data fixes:** Pratt → Prentiss; Allison's "twenty years" → thirty-five; Sorensen's times aligned to Hollis's log; Sorensen now waits in the study during dinner; Tiago is a deckhand; the rug (c1) is consistent with Etienne's notes; the Inn's two event managers merged into Philippa Hale.
+- **Book content restored:** Captain Curly (with Fixed Facts, relationships and a solution, s12), "Back of the Fish Market" and its Paint the Scene question, the marina's location, the six Moments (a new mystery field, shown on the dashboard and overview), and c18's "in his pockets" option.
+- **Maven moves:** the 20 classic moves added as reference entries, with Keeper notes for the tricky ones. Scarecrow's default gift is c16.
+- **Void and Dark Conspiracy:** Layer One is the Midwives scene at the end of the session in which the first Void Clue is encountered (rulebook p. 69 and the Children of Persephone entries). Dad Overboard now has a Midwives scene, a first-glimpse Void Clue (v7) and three Line-safe Void Clues (v8–v10). The dashboard counts Void Clues for the campaign and reminds you about Layer One. The "Something Beneath the Bay" threat (t4) ticks once per scene with a Void Clue. c16 is settled as the safe combination, with the lighthouse bearing as a second reading.
+- **Content flags:** clues and NPCs can carry a ⚠ flag and a Line-safe alternative: c15, c20, v1, v5, Duchess and t4's first step.
+- **Town life:** Bev, the Krauses, Andrew, Tiago, Prentiss and Curly now have "life right now" and "if the murder comes up" notes. Every happening carries a crossover lead. NPC notes that assumed facts about the Mavens are now questions for the players. Emily has a way to be found ashore.
+- **Guidance:**
+  - **Meddling:** free facts vs Clues, one roll per shared search, and saying the stakes before rolling.
+  - **Cozy Move:** a midpoint cue, the rule for several Mavens at their own activities, duplicate Clues, and options for a player who freezes.
+  - **Gold Crown Mysteries Move:** it can't affect Theorize.
+  - **Day/Night Moves:** what a 12+ benefit should be, and that there are no pre-roll trades.
+  - **Crowns:** a worked example.
+  - **Cautious players:** danger that reaches them at home, and night scenes with a companion and a way out.
+  - **Player authorship:** a player's version wins over the Fixed Facts.
+  - **One-shots:** what to do when Clues come fast.
+  - **Warrior's Ball threat (t5):** ticks at each time jump.
+- **End of Session:** each Maven has her own marked questions and extra questions (e.g. Milton Hardcastle), and XP is awarded per Maven. Maven cards also track her Maven move, Cozy Little Place items (✓ = marked) and Crown of the Queen boxes.

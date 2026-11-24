@@ -53,7 +53,7 @@ function P(m = M()) {
   if (!m) return null;
   const p = (S.play[m.id] ||= {});
   p.found ||= {}; p.ticks ||= {}; p.log ||= []; p.theories ||= []; p.asked ||= {};
-  p.scene ||= { locationId: "", npcs: [] }; p.session ||= 1; p.eos ||= {};
+  p.scene ||= { locationId: "", npcs: [] }; p.session ||= 1; p.eos ||= {}; p.eosM ||= {};
   return p;
 }
 function log(text, kind = "note") { const p = P(); if (!p) return; p.log.unshift({ id: uid("l"), at: nowIso(), text, kind, session: p.session }); }
@@ -172,7 +172,7 @@ function vPlay() {
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>Clues <span class="muted small">${nFound}/${nClue} found · ${nVoid} void</span></h3><a class="btn sm ghost" href="#/mystery/clues">Manage</a></div>
+      <div class="card-head"><h3>Clues <span class="muted small">${nFound}/${nClue} found · ${nVoid} void · ${campaignVoid()} void in campaign</span></h3><a class="btn sm ghost" href="#/mystery/clues">Manage</a></div>
       <div class="seg-ctl" style="margin-bottom:8px">${[["open", "Unfound"], ["found", "Found"], ["void", "Void"], ["all", "All"]].map(([k, l]) => `<button class="${filter === k ? "on" : ""}" data-act="clue-filter" data-v="${k}">${l}</button>`).join("")}</div>
       <ul class="list">${clues.map((c) => clueRow(c)).join("") || `<li class="muted">Nothing here.</li>`}</ul>
     </div>
@@ -194,26 +194,35 @@ function vPlay() {
       <div class="card-head"><h3>Paint the scene</h3></div>
       <ul class="list">${m.paint.map((q, i) => `<li><button class="check ${p.asked[i] ? "on" : ""}" data-act="paint-ask" data-i="${i}" aria-label="Asked">✓</button><div class="body"><div>${esc(q.q)}</div>${q.locationId ? `<div class="meta">${esc(locName(q.locationId))}</div>` : ""}</div></li>`).join("")}</ul>
       <div class="section-label">Establishing question</div><div class="serif">${esc(m.establishing)}</div>
+      ${(m.moments || []).length ? `<div class="section-label">Moments to sprinkle in</div><ul class="steps">${m.moments.map((x) => `<li class="small">${esc(x)}</li>`).join("")}</ul>` : ""}
     </div>
 
     <div class="card">
       <div class="card-head"><h3>Mavens</h3><a class="btn sm ghost" href="#/mavens">Edit</a></div>
-      ${S.mavens.length ? S.mavens.map((mv) => `<div style="display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)"><div style="flex:1"><b>${esc(mv.name)}</b> <span class="muted small">${esc(mv.player || "")}</span><div class="chips" style="margin-top:3px">${(mv.conditions || []).map((c) => `<span class="badge suspect">${esc(c)}</span>`).join("")}</div></div><span class="badge">XP ${mv.xp || 0}/${sys.xpMax}</span>${(mv.crowns || []).length ? `<span class="badge void">♛ ${(mv.crowns || []).length}</span>` : ""}</div>`).join("") : `<p class="muted">No Mavens yet. <a href="#/mavens">Add the players' Mavens</a>.</p>`}
+      ${S.mavens.length ? S.mavens.map((mv) => `<div style="display:flex;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)"><div style="flex:1"><b>${esc(mv.name)}</b> <span class="muted small">${esc(mv.player || "")}</span><div class="chips" style="margin-top:3px">${(mv.conditions || []).map((c) => `<span class="badge suspect">${esc(c)}</span>`).join("")}</div></div><span class="badge">XP ${mv.xp || 0}/${sys.xpMax}</span>${(mv.queen || []).length ? `<span class="badge">♕ ${mv.queen.length}</span>` : ""}${(mv.crowns || []).length ? `<span class="badge void">♛ ${(mv.crowns || []).length}</span>` : ""}</div>`).join("") : `<p class="muted">No Mavens yet. <a href="#/mavens">Add the players' Mavens</a>.</p>`}
     </div>
 
     <div class="card">
       <div class="card-head"><h3>End of session</h3></div>
-      <ul class="list">${sys.endOfSession.map((q, i) => `<li><button class="check ${p.eos[i] ? "on" : ""}" data-act="eos" data-i="${i}">✓</button><div class="body">${esc(q)}</div></li>`).join("")}</ul>
-      <div class="btn-row" style="margin-top:8px"><button class="btn" data-act="eos-award" ${S.mavens.length ? "" : "disabled"}>Give each Maven +${Object.values(p.eos).filter(Boolean).length} XP</button></div>
+      ${S.mavens.length ? S.mavens.map((mv) => { const a = (p.eosM[mv.id] ||= {}); return `<div class="section-label">${esc(mv.name)} · +${eosFor(mv).filter((x) => a[x.k]).length} XP</div><ul class="list">${eosFor(mv).map((x) => `<li><button class="check ${a[x.k] ? "on" : ""}" data-act="eosm" data-mv="${esc(mv.id)}" data-k="${x.k}">✓</button><div class="body small">${esc(x.q)}</div></li>`).join("")}</ul>`; }).join("")
+        : `<ul class="list">${sys.endOfSession.map((q, i) => `<li><button class="check ${p.eos[i] ? "on" : ""}" data-act="eos" data-i="${i}">✓</button><div class="body">${esc(q)}</div></li>`).join("")}</ul><p class="small muted">Add Mavens to track each one's own three questions.</p>`}
+      <div class="btn-row" style="margin-top:8px"><button class="btn" data-act="eos-award" ${S.mavens.length ? "" : "disabled"}>Award XP</button></div>
+      ${campaignVoid() ? `<div class="note-banner small" style="margin-top:8px">Layer One: if this session saw the campaign's first Void Clue, play the Midwives scene after Stars & Wishes (Mystery → Overview, Keeper's background). Later layers unlock at the Void Clue totals on your Dark Conspiracy sheet.</div>` : ""}
     </div>
   </div>
   </div>`;
 }
 
+const flagHtml = (o) => (o && o.content ? `<span class="badge" title="${esc(o.alt ? "Line-safe alternative: " + o.alt : "")}">⚠ ${esc(o.content)}</span> ` : "");
+function campaignVoid() { return S.mysteries.reduce((n, m) => n + m.clues.filter((c) => c.type === "void" && S.play[m.id]?.found?.[c.id]).length, 0); }
+function eosFor(mv) {
+  const qs = SYS().endOfSession, marked = new Set(["0", ...((mv.eosMarked && mv.eosMarked.length) ? mv.eosMarked : ["1", "2"])]);
+  return [...qs.map((q, i) => ({ k: "q" + i, q })).filter((_, i) => marked.has(String(i))), ...(mv.eosExtra || []).map((q, i) => ({ k: "x" + i, q }))];
+}
 function clueRow(c) {
   const f = P().found[c.id];
   return `<li class="${f ? "done" : ""}"><button class="check ${c.type === "void" ? "void" : ""} ${f ? "on" : ""}" data-act="clue-toggle" data-id="${esc(c.id)}" aria-label="Found">✓</button>
-    <div class="body"><div class="clue-text" data-act="clue-open" data-id="${esc(c.id)}">${c.type === "void" ? `<span class="badge void">Void</span> ` : ""}${esc(c.text)}</div>
+    <div class="body"><div class="clue-text" data-act="clue-open" data-id="${esc(c.id)}">${c.type === "void" ? `<span class="badge void">Void</span> ` : ""}${flagHtml(c)}${esc(c.text)}</div>
     <div class="meta">${f ? `Found${f.by ? " by " + esc(f.by) : ""}${f.where ? " · " + esc(locName(f.where)) : ""}${f.note ? " · " + esc(f.note) : ""}` : (c.where || []).map(locName).filter(Boolean).map(esc).join(" · ")}</div></div></li>`;
 }
 
@@ -222,6 +231,7 @@ function npcCue(n) {
   return `<div style="margin-bottom:12px"><div><a href="#/npc/${esc(n.id)}" class="serif" style="font-weight:600">${esc(n.name)}</a> <span class="muted small">${esc(n.role || "")}</span></div>
   ${n.quote ? `<div class="quote">“${esc(n.quote)}”</div>` : ""}
   <div class="small">${n.voice ? `<b>Voice:</b> ${esc(n.voice)} ` : ""}${n.mannerism ? `<b>Does:</b> ${esc(n.mannerism)}` : ""}</div>
+  ${n.content ? `<div class="small">${flagHtml(n)}${esc(n.alt || "")}</div>` : ""}
   ${n.life ? `<div class="small"><b>Right now:</b> ${esc(n.life)}</div>` : ""}
   ${n.guarded ? `<div class="small"><b>If the murder comes up:</b> ${esc(n.guarded)}</div>` : ""}
   ${n.wants ? `<div class="small"><b>Wants:</b> ${esc(n.wants)}</div>` : ""}
@@ -281,7 +291,8 @@ function vOverview() {
     <div class="section-label">Suspects</div><div class="chips">${(m.suspects || []).map(npcLink).join("")}</div>
   </div>
   <div class="card"><div class="card-head"><h2>Paint the scene</h2></div>
-    <ul class="list">${m.paint.map((q) => `<li><div class="body">${esc(q.q)}${q.locationId ? `<div class="meta">${esc(locName(q.locationId))}</div>` : ""}</div></li>`).join("")}</ul></div>
+    <ul class="list">${m.paint.map((q) => `<li><div class="body">${esc(q.q)}${q.locationId ? `<div class="meta">${esc(locName(q.locationId))}</div>` : ""}</div></li>`).join("")}</ul>
+    ${(m.moments || []).length ? `<div class="section-label">Moments</div><ul class="steps">${m.moments.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>
   <div class="card"><div class="card-head"><h2>Locations</h2></div><div class="chips">${allLocs().filter((l) => m.locations.includes(l) || (m.clues || []).some((c) => (c.where || []).includes(l.id)) || m.paint.some((q) => q.locationId === l.id)).map((l) => locLink(l.id)).join("")}</div>
     <div class="section-label">Complications & twists</div><ul class="steps">${(m.complications || []).map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>
   <div class="card" style="grid-column:1/-1"><div class="card-head"><h2>Prep notes</h2></div>
@@ -311,8 +322,8 @@ function vClues() {
     <ul class="list">${m.clues.filter((c) => c.type === type).map((c) => {
       const f = P().found[c.id];
       return `<li class="${f ? "done" : ""}"><button class="check ${type === "void" ? "void" : ""} ${f ? "on" : ""}" data-act="clue-toggle" data-id="${esc(c.id)}">✓</button>
-      <div class="body"><div class="clue-text" data-act="clue-open" data-id="${esc(c.id)}">${esc(c.text)}</div>
-      ${c.notes ? `<div class="small muted">${esc(c.notes)}</div>` : ""}
+      <div class="body"><div class="clue-text" data-act="clue-open" data-id="${esc(c.id)}">${flagHtml(c)}${esc(c.text)}</div>
+      ${c.notes ? `<div class="small muted">${esc(c.notes)}</div>` : ""}${c.alt ? `<div class="small"><b>If a Line rules this out:</b> ${esc(c.alt)}</div>` : ""}
       <div class="chips" style="margin-top:6px">${(c.where || []).map((id) => `<span class="badge sea">@ ${esc(locName(id))}</span>`).join("")}${(c.points || []).map((id) => `<span class="badge suspect">→ ${esc(npcName(id))}</span>`).join("")}</div></div>
       <button class="btn sm ghost" data-act="edit-clue" data-id="${esc(c.id)}">Edit</button></li>`;
     }).join("") || `<li class="muted">None yet.</li>`}</ul></div>`;
@@ -488,9 +499,13 @@ function vMavens() {
     <div class="attrs">${sys.attributes.map((a) => `<div class="attr"><div class="v">${(mv.attrs?.[a] ?? 0) >= 0 ? "+" : ""}${mv.attrs?.[a] ?? 0}</div><div class="k">${esc(a)}</div></div>`).join("")}</div>
     <div class="section-label">Experience</div><div class="boxes">${Array.from({ length: sys.xpMax }, (_, i) => `<button class="box ${i < (mv.xp || 0) ? "on" : ""}" data-act="xp" data-id="${esc(mv.id)}" data-i="${i}" aria-label="XP ${i + 1}"></button>`).join("")}</div>
     <div class="section-label">Conditions</div><div class="chips">${(mv.conditions || []).map((c, i) => `<span class="chip">${esc(c)}<button data-act="cond-del" data-id="${esc(mv.id)}" data-i="${i}">×</button></span>`).join("")}<button class="chip" data-act="cond-add" data-id="${esc(mv.id)}">+ Condition</button></div>
-    <div class="section-label">Crowns of the Void · ${(mv.crowns || []).length}/${sys.crownsMax}</div><div class="boxes">${Array.from({ length: sys.crownsMax }, (_, i) => `<span class="box crown ${i < (mv.crowns || []).length ? "on" : ""}"></span>`).join("")}</div>
+    <div class="section-label">Crown of the Void · ${(mv.crowns || []).length}/${sys.crownsMax}</div><div class="boxes">${Array.from({ length: sys.crownsMax }, (_, i) => `<span class="box crown ${i < (mv.crowns || []).length ? "on" : ""}"></span>`).join("")}</div>
     ${(mv.crowns || []).length ? `<ul class="steps">${mv.crowns.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
-    ${block("Cozy activity", mv.cozy)}${block("Advances", (mv.advances || []).join("\n"))}${block("Notes", mv.notes)}
+    ${(mv.queen || []).length ? `<div class="section-label">Crown of the Queen · ${mv.queen.length}</div><ul class="steps">${mv.queen.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
+    ${block("Maven move", mv.move)}${block("Cozy activity", mv.cozy)}
+    ${(mv.cozyItems || []).length ? `<div class="section-label">A Cozy Little Place</div><div class="chips">${mv.cozyItems.map((c) => `<span class="chip ${c.startsWith("✓") ? "found" : ""}">${esc(c)}</span>`).join("")}</div>` : ""}
+    <div class="section-label">End of Session</div><ol class="steps small">${eosFor(mv).map((x) => `<li>${esc(x.q)}</li>`).join("")}</ol>
+    ${block("Advances", (mv.advances || []).join("\n"))}${block("Notes", mv.notes)}
   </div>`).join("")}</div>` : `<div class="empty"><p>No ${esc(sys.pcTitle || "Maven")}s yet.</p><button class="btn primary" data-act="add-maven">Add the first one</button></div>`}`;
 }
 
@@ -621,6 +636,7 @@ const SCH = {
     { key: "type", label: "Type", type: "select", options: () => [{ v: "clue", l: "Clue" }, { v: "void", l: "Void clue" }] },
     { key: "where", label: "Could surface at", type: "multi", options: optLocs() }, { key: "points", label: "Might point to", type: "multi", options: optNpcs() },
     { key: "notes", label: "Keeper notes", type: "textarea", rows: 3 },
+    { key: "content", label: "Content flag (e.g. animal harm)", placeholder: "Leave blank if none" }, { key: "alt", label: "Line-safe alternative", type: "textarea", rows: 2 },
   ],
   threat: [
     { key: "name", label: "Name" }, { key: "desc", label: "What it is", type: "textarea", rows: 2 }, { key: "segments", label: "Clock segments", type: "number" },
@@ -647,12 +663,18 @@ const SCH = {
     { key: "paint", label: "Paint-the-scene questions", type: "rows", fields: [{ key: "locationId", label: "Location", type: "select", options: optLocs("Anywhere") }, { key: "q", label: "Question", type: "textarea" }] },
     { key: "victimId", label: "Victim", type: "select", options: optNpcs("—") }, { key: "suspects", label: "Suspects", type: "multi", options: optNpcs() },
     { key: "featuredTownsfolk", label: "Townsfolk in this mystery", type: "multi", options: () => SET().npcs.map((n) => ({ v: n.id, l: n.name })) },
+    { key: "moments", label: "Moments (colourful bits to sprinkle in)", type: "list", long: true },
     { key: "complications", label: "Complications & twists", type: "list", long: true },
   ],
   maven: () => [
     { key: "name", label: "Name" }, { key: "player", label: "Player" }, { key: "attrs", label: "Abilities", type: "attrs", attrs: () => SYS().attributes },
     { key: "xp", label: "XP", type: "number" }, { key: "cozy", label: "Cozy activity" }, { key: "conditions", label: "Conditions", type: "list" },
-    { key: "crowns", label: "Crowns of the Void taken", type: "list" }, { key: "advances", label: "Advances taken", type: "list" }, { key: "notes", label: "Notes", type: "textarea" },
+    { key: "move", label: "Maven move(s)" },
+    { key: "eosMarked", label: "End of Session questions marked (the first is always marked; pick two more)", type: "multi", options: () => SYS().endOfSession.map((q, i) => ({ v: String(i), l: q })).slice(1) },
+    { key: "eosExtra", label: "Extra End of Session questions (e.g. Milton Hardcastle)", type: "list", long: true },
+    { key: "cozyItems", label: "A Cozy Little Place (put ✓ in front of an item once marked)", type: "list" },
+    { key: "queen", label: "Crown of the Queen boxes marked", type: "list" },
+    { key: "crowns", label: "Crown of the Void boxes marked (in order)", type: "list" }, { key: "advances", label: "Advances taken", type: "list" }, { key: "notes", label: "Notes", type: "textarea" },
   ],
   move: [{ key: "name", label: "Name" }, { key: "category", label: "Category" }, { key: "trigger", label: "Trigger", type: "textarea", rows: 2 }, { key: "text", label: "Effect", type: "textarea", rows: 7 }, { key: "gm", label: "Keeper tip", type: "textarea", rows: 3 }],
   rule: [{ key: "title", label: "Title" }, { key: "text", label: "Text", type: "textarea", rows: 10 }],
@@ -684,7 +706,7 @@ function openClue(id) {
   const m = M(), c = byId(m.clues, id), f = P().found[id] || {};
   if (!c) return;
   openModal(`<form class="modal-inner" data-form="clue" data-id="${esc(id)}"><div class="modal-head"><h2>${c.type === "void" ? "◎ Void clue" : "Clue"}</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
-    <div class="modal-body"><div class="quote big">${esc(c.text)}</div>${block("Keeper notes", c.notes)}
+    <div class="modal-body"><div class="quote big">${esc(c.text)}</div>${c.content ? `<div class="note-banner">⚠ ${esc(c.content)}. Check Lines & Veils.${c.alt ? " Line-safe alternative: " + esc(c.alt) : ""}</div>` : ""}${block("Keeper notes", c.notes)}
       <div class="chips" style="margin:8px 0 14px">${(c.where || []).map(locLink).join("")}${(c.points || []).map(npcLink).join("")}</div>
       <div class="hr"></div>
       <div class="field"><label class="chip" style="cursor:pointer"><input type="checkbox" name="found" ${P().found[id] ? "checked" : ""}> Found</label></div>
@@ -711,10 +733,11 @@ function openTheorize(keep) {
   openModal(`<form class="modal-inner" data-form="theory"><div class="modal-head"><h2>Theorize</h2><button type="button" class="icon-btn" data-act="modal-close">✕</button></div>
     <div class="modal-body">
       <div style="display:flex;gap:18px;align-items:center;margin-bottom:6px"><div><div class="big-num">${mod >= 0 ? "+" : ""}${mod}</div><div class="small muted">${n} clue${n === 1 ? "" : "s"} − complexity ${m.complexity}</div></div><div style="flex:1">${oddsHtml(mod)}</div></div>
+      ${mod >= 5 ? `<div class="note-banner">The lowest possible roll (2 ${mod >= 0 ? "+" : "−"} ${Math.abs(mod)}) is already a hit. The counting is the real check; the dice decide whether the confrontation is clean (10+) or hard (7–9).</div>` : ""}
       ${foundClues.length < need ? `<div class="note-banner">Theorize opens once the Mavens have found at least ${need} Clues (half the Complexity, rounded up). They have ${foundClues.length}.</div>` : ""}
       <div class="field"><label>Culprit</label><select name="culprit" data-act="theory-field"><option value="">— (who did it?)</option>${allNpcs().map((x) => `<option value="${esc(x.id)}" ${t.culprit === x.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select></div>
       <div class="field"><label>The theory (how & why)</label><textarea name="text" rows="3" data-act="theory-field" placeholder="Jot the players' theory as they explain it…">${esc(t.text)}</textarea></div>
-      <div class="field"><div class="lbl">Clues incorporated or explained away — tap as the players explain (Void Clues don't count)</div>
+      <div class="field"><div class="lbl">Clues incorporated or explained away — tap as the players say why each exists, who left it and what it shows (Void Clues don't count)</div>
         <div class="multi" style="max-height:300px">${foundClues.map((c) => `<label><input type="checkbox" data-act="theory-clue" value="${esc(c.id)}" ${t.clues.includes(c.id) ? "checked" : ""}>${esc(trunc(c.text, 60))}</label>`).join("") || `<span class="muted small">No clues found yet.</span>`}</div></div>
       ${sols.length ? `<div class="section-label">Closest prepared theories</div>${sols.map(({ s }) => `<div class="small" style="margin-bottom:6px"><b>${esc(s.title)}</b> — ${esc(trunc(s.method, 140))}</div>`).join("")}` : ""}
       <div class="field" style="margin-top:12px"><label>Roll total (optional)</label><input type="number" inputmode="numeric" name="roll" placeholder="2d6 + ${mod}"></div>
@@ -816,8 +839,9 @@ const A = {
   "untick": (el) => { const p = P(); p.ticks[el.dataset.id] = Math.max(0, (p.ticks[el.dataset.id] || 0) - 1); commit(); },
   "paint-ask": (el) => { const p = P(); p.asked[el.dataset.i] = !p.asked[el.dataset.i]; commit(); },
   "eos": (el) => { const p = P(); p.eos[el.dataset.i] = !p.eos[el.dataset.i]; commit(); },
-  "eos-award": () => { const p = P(), n = Object.values(p.eos).filter(Boolean).length; if (!n) return toast("Tick the questions answered “yes” first"); S.mavens.forEach((mv) => (mv.xp = (mv.xp || 0) + n)); log(`End of session: each Maven +${n} XP`, "session"); p.eos = {}; commit(); toast(`+${n} XP each`); },
-  "new-session": () => { const p = P(); if (!confirm(`Start session ${p.session + 1}? Clues and clocks carry over.`)) return; p.session++; p.asked = {}; p.eos = {}; log(`Session ${p.session} begins`, "session"); commit(); },
+  "eosm": (el) => { const p = P(), a = (p.eosM[el.dataset.mv] ||= {}); a[el.dataset.k] = !a[el.dataset.k]; commit(); },
+  "eos-award": () => { const p = P(); let total = 0; const parts = S.mavens.map((mv) => { const a = p.eosM[mv.id] || {}; const n = eosFor(mv).filter((x) => a[x.k]).length; mv.xp = Math.min(SYS().xpMax, (mv.xp || 0) + n); total += n; return `${mv.name} +${n}`; }); if (!total) return toast("Tick each Maven's questions answered “yes” first"); log(`End of session XP: ${parts.join(", ")}`, "session"); p.eosM = {}; commit(); toast("XP awarded"); },
+  "new-session": () => { const p = P(); if (!confirm(`Start session ${p.session + 1}? Clues and clocks carry over.`)) return; p.session++; p.asked = {}; p.eos = {}; p.eosM = {}; log(`Session ${p.session} begins`, "session"); commit(); },
   "log-del": (el) => { const p = P(); p.log = p.log.filter((e) => e.id !== el.dataset.id); commit(); },
   "complication": () => { const c = M().complications || []; if (!c.length) return toast("No complications listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Complication</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div></div><div class="modal-foot"><button class="btn" data-act="complication">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
   "happening": () => { const c = SET().happenings || []; if (!c.length) return toast("No town happenings listed"); const pick = c[Math.floor(Math.random() * c.length)]; openModal(`<div class="modal-inner"><div class="modal-head"><h2>Meanwhile, in town…</h2><button class="icon-btn" data-act="modal-close">✕</button></div><div class="modal-body"><div class="quote big">${esc(pick)}</div><p class="small muted">Bring it to the Mavens as an interruption, an invitation or an errand. It needn't touch the murder.</p></div><div class="modal-foot"><button class="btn" data-act="happening">Draw again</button><button class="btn primary" data-act="complication-log" data-v="${esc(pick)}">Use it</button></div></div>`); },
@@ -850,7 +874,7 @@ const A = {
   "edit-solution": (el) => editItem("solution", M().solutions, byId(M().solutions, el.dataset.id), "Edit solution"),
   "add-rel": () => editItem("rel", M().relationships, { id: uid("rel"), a: M().victimId || "", b: "", label: "", kind: "other" }, "New link", true),
   "edit-rel": (el) => editItem("rel", M().relationships, byId(M().relationships, el.dataset.id), "Edit link"),
-  "add-maven": () => editItem("maven", S.mavens, { id: uid("mv"), name: "", attrs: {}, xp: 0, conditions: [], crowns: [], advances: [] }, "New Maven", true),
+  "add-maven": () => editItem("maven", S.mavens, { id: uid("mv"), name: "", attrs: {}, xp: 0, conditions: [], crowns: [], queen: [], cozyItems: [], eosMarked: ["1", "2"], eosExtra: [], advances: [] }, "New Maven", true),
   "edit-maven": (el) => editItem("maven", S.mavens, byId(S.mavens, el.dataset.id), "Edit Maven"),
   "xp": (el) => { const mv = byId(S.mavens, el.dataset.id), i = +el.dataset.i; mv.xp = mv.xp === i + 1 ? i : i + 1; commit(); },
   "cond-add": (el) => { const c = prompt("Condition (e.g. Unnerved, Sprained Ankle, Haunted). Max 3; a 4th marks a Crown instead:"); if (c) { byId(S.mavens, el.dataset.id).conditions.push(c.trim()); commit(); } },

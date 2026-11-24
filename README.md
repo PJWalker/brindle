@@ -7,13 +7,13 @@ Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindle
 - **Theorize board** — tick the clues the players' theory incorporates (Void Clues excluded; opens at half the Complexity); shows modifier (clues − complexity), odds for each result band, and closest prepared theories.
 - **Mystery** — hook, establishing question, cast & suspects, clues (suggested locations / who they might point to), threats, possible solutions, relationship web.
 - **Setting** — town map with pins, locations (yacht deck plan for The Regal Lady), recurring townsfolk.
-- **Mavens** — abilities, XP, Conditions, Crowns of the Void.
-- **Moves & rules** — quick reference paraphrased from the rulebook (editable): basic moves, Keeper principles and reactions, Danger & Harm, safety tools, theorize odds table. Optional playtest house rules are kept separate and tagged **added**. Quick "Moves" sheet from any screen.
+- **Mavens** — abilities, Maven move, XP, Conditions, Cozy Little Place items, Crowns of the Queen and of the Void, each Maven's own End of Session questions (XP awarded per Maven).
+- **Moves & rules** — quick reference paraphrased from the rulebook (editable): basic moves, Keeper principles and reactions, Danger & Harm, safety tools, theorize odds table. Includes the classic Maven moves and a player card to read at the start. Optional playtest house rules are kept separate and tagged **added**. Clues can carry content flags with Line-safe alternatives. Quick "Moves" sheet from any screen.
 - **Full editor** for everything; new mysteries, settings and game systems (for The Between, Public Access, hacks).
 - Search (⌘K), JSON export/import, works offline once loaded.
 - Minimal pure black & white UI for eInk tablets: no colour, greys, shadows or animation; state shown by fill, weight and line style. The contrast button inverts to white-on-black.
 
-Content tagged **added** was written for this app (Dad Overboard was revised after blind playtests — see `docs/playtests/dad-overboard.md`); untagged content comes from the published mystery. Rules text is paraphrased — check your rulebook.
+Content tagged **added** was written for this app (Dad Overboard was revised after two rounds of simulated playtests — see `docs/playtests/dad-overboard.md` and `docs/playtests/round2/README.md`); untagged content comes from the published mystery. Rules text is paraphrased — check your rulebook.
 
 ## Run
 Static site, no build. Serve the folder (`python3 -m http.server`) or deploy with GitHub Pages
