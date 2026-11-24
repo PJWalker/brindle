@@ -60,3 +60,61 @@ There were three simulated tables. Each had one Keeper and two or three players.
   - an assist convention
   - when to ask the paint-the-scene questions
 - Complexity stays at the published **6**. The difficulty is now controlled by what counts as a clue and by clue pacing. Raise it to 7–8 for a tougher table.
+
+---
+
+# Round 2 — town life first
+
+Before this round the prep gained three things:
+- Every NPC got *Their life right now* and *If the murder comes up*.
+- The setting got twelve *This week in town* happenings, plus a **Town life** draw button.
+- A new Keeper rule, **Town Life First**, says NPCs are people with their own business, not clue machines. It also asks Keepers to distract the Mavens on purpose.
+
+The night's timeline was cut back to a few certainties, with the rest left as **loose threads** that clues decide in play.
+
+| Table | Player styles | Rounds | Town-life share | Clues found | Theory | Roll |
+|---|---|---|---|---|---|---|
+| D | direct questioner / backstory lover / methodical | ~21 | 35–40% | ~25 | Allison, Andrew cleaning up, Emily at the rail | 14 |
+| E | clue-gamer / gossip / Void-curious | ~20 | ~25% | ~30 | Allison, Andrew helping | 14 |
+
+## What worked
+- Keepers opened NPCs with their own business: Pelletier wanting advice about the dance, Etienne pressing a chowder ladle on a Maven, Hollis's moorings vote, Gil's pies, Prudence's double-booking. Players said the townsfolk "mostly felt like people".
+- **Clues came sideways out of favours.**
+  - Advice about Nadine got Pelletier to let the watch slip.
+  - Agreeing to speak at the moorings vote got Hollis to open his launch log.
+  - Prudence handed over the guest list to get a Maven out of her lobby.
+  - Judging the chowder got a Maven into Etienne's kitchen.
+- With the timeline loose, the culprit stayed open until the players chose. They said the theory felt like **their** answer.
+
+## What still broke
+1. **Too many clues** (25–30). The root cause was the prep's own paraphrase of the Meddling move: "10+: the Keeper hands you a clue". Every success became a clue, so Theorize was automatic again.
+2. **Stonewalling.** The "clam up" rule walled off the direct-questioning player, who missed 5 of 9 rolls and felt steered by NPCs.
+3. **No calendar.** The Festival "Saturday", the Ball "next week" and the election didn't line up.
+4. **Still Allison + Andrew at every table.** Only their suspect clues were physical.
+5. **The Void had nothing to test,** and no payoff.
+6. **Players wanted more personal play.** The Krause child named in the Establishing Question never came back. Side-plots sometimes felt like texture with no ending.
+7. Small gaps: Andrew and João confessed too easily, c15 had an unsupported precondition, and 7–9 costs were thin.
+
+## What changed
+- **Meddling:** a success gets the Maven *what she was after*. That is a clue only if she was digging for one. Otherwise she earns trust, access, a favour or a cozy moment.
+  - A **clue budget** (10–12 by Theorize) caps the count.
+  - A list of **7–9 costs** gives Keepers something other than a clue to hand out.
+  - A **blunt question always earns something**: a half-answer, a tell, or what the NPC would need before they'd talk.
+- **Theorize:**
+  - Counted clues must be explained with who, when and how.
+  - The Keeper asks one hard question, and a clue the Mavens can't answer for drops out.
+  - Players narrate the reveal; the Keeper only plays the NPCs' reactions.
+  - Optionally, cap counted clues at 8 on a clue-rich table.
+- **Town Life First additions:**
+  - Each Maven gives a personal stake at session zero, gets one scene about her own life, and gets one clue through her past.
+  - The Establishing Question child seeks that Maven out on day one.
+  - Every happening reaches an ending by the end of the week.
+  - Two happenings now **cross over** into the case: the lawn-sign thief saw a light on the water, and the cat's rummage box is full of Albert's things.
+- **A calendar** for the week. The death is Saturday night and the mystery opens Tuesday.
+- **Every suspect has a physical clue:**
+  - c21: phone activity at an impossible hour (Emily, Andrew)
+  - c22: David's sketch of two figures at the rail
+  - c23: Sara's wet cardigan
+  - c24: Etienne's muffled oars
+- **The Void can be tested in play:** use the bearing to row out at dusk, and a Crown is offered. The Void clock (t4) ticks less, on fixed triggers.
+- **Each key NPC has a "tell",** and Andrew and João confess only on a 10+ with real leverage.
