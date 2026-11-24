@@ -1,0 +1,37 @@
+# Keeper notes g3 - Dad Overboard
+- Setup: seed gives no ages for the Krause kids. Sara has "three little ones" so she is adult; Leo's player improvised "Sara at sixteen four years ago" -> contradiction; I ruled Sara was an adult in her 30s (anxious, there with father). Establishing question has no guidance on ages/timeframes.
+- Sheriff pickpocket: material has no "what's in the Sheriff's pockets"; Pelletier quote re 'the watch' is the only hook -> c4 (watch) leads there.
+- I fumbled the Meddle roll narration (rolled 6+2+2=10). Fine. Sheriff pickpocket gave c3 via Dalrymple (as listed 'points'); the c3 'where' loc-sheriff worked well to hand over notes. Material has no Finch autopsy facts beyond quote; I invented "head wound, bled first, doesn't sit with 11".
+- Bea's player asked for a suggestion for establishing question; seed has no guidance for a Krause kid link -> I invented ideas.
+- c10 'attempt to collect a debt' 'where' includes loc-docks; I used Crane's log + Sorensen (rel19 crane-sorensen secret link) - worked nicely, gave Bea a clue in 1 beat. But the seed states Hollis log 'shows a trip nobody mentioned' - ambiguous whether it's Sorensen or someone else; I chose Sorensen.
+- Seed has no notion of where Sorensen is staying; I improvised the Inn.
+- Dot missed her roll (6). Took away lead (c16 note), used a Condition (Guilty) per mv-conditions. Emily's hidden 'why mother pulled her out' is entirely player-invented: seed gives nothing for Emily's backstory.
+- Andrew timeline 'precisely 10:58': good use of Andrew's prompt 'corrects timeline too precisely'. But NOTE the seed never says what the true time of death is nor what 'the wrong time' is (c3/c4 'exactly 90 min off' watch).
+- Complication list is useful but un-indexed; used 'Allison invites Mavens to planning lunch'.
+- Duchess dog: Hollis hint (dog bed on aft platform) - c20 where is loc-regal/loc-light; seed has Hollis hide only the launch log; I gave him the dog line improv. Worked as hook; players picked it up immediately.
+- c11 given via Sorensen (seed says binoculars from shore/launch; I used Sorensen leaving by launch - fit 'docks' where list partially).
+- Split party into two scenes (Bea->Inn; Dot+Mavis->Fish Market) - Inn is only a stub in seed (no NPC listed there); Sorensen stays at Inn is my invention.
+- NOTE: I accidentally reused "Gage" for the lobster boat (Gage/Ruiz) and Tommy Gage is a separate NPC (vet). Confusing - avoid surnames overlapping seed NPCs. Not a seed problem.
+- c4: seed says 'exactly 90 minutes off', where loc-fish/loc-sheriff; worked well delivered by Finch. But c4 also needs Albert's real time of death -> seed never decides; players can't triangulate 'wrong time'. c3 and c4 are almost redundant (both about time).
+- Cozy scene placed at loc-fish with Dot feeding cats; matches the 'void clue during cozy' tip. v1 fits.
+- c9 crossed-out name: seed says decide in play; I chose Sheriff Dalrymple (feeds s7). c8 receipts and c9 guest list are both at the Inn: Inn is an under-developed location (no NPC, no paint question).
+- Players mix scenes (Bea addressing Finch from the Inn). Split-party in a text channel is awkward; relay everything each time.
+- Void clue v1 delivered in Dot's cozy scene; player responded immediately and sincerely ('pulled toward it'); no mechanic in seed for 'Crown of the Void' acceptance trigger - mv-void is vague on when to offer. I didn't offer a Crown this session.
+- Bea's player kept the c9 list in her handbag even though I said manager snatched it. Fine; but the list of 'physical evidence' is easy to lose track of.
+- Lunch scene: all 5 family + Andrew at one table with 3 Mavens = good interview density but sprawling for text play. Gave c5 (diary) ambiguous owner via Sara; c17 via David's sketchbook (seed says 'in Albert's study safe' - I moved it; fine).
+- Dot missed: used 'advance Threat' (t1) + 'separate the Mavens'. Material's Keeper Moves list is good.
+- c13 love letter: delivered as text preview on Allison's phone ('My dearest A-'); letter format is 'physical' in notes; adapted. Ambiguity A/E preserved (Allison vs Emily? Emily's name starts E; fine). 
+- c1 rug: seed 'rolled in cold store or crew locker' - I held it back; gave trace evidence instead so rug can still be found later.
+- Note: players now have ~14 clues; solutions' clue lists overlap heavily (c3,c4,c10,c11,c18 appear in 4+ solutions) -> theorize count will be easy to inflate; no guidance how to adjudicate 'incorporates a clue'.
+- Gave c7 (stock certificates) in Duchess's dog bed per seed notes: easy hit. c19 via lawyer slip (Prentiss: invented NPC 'Mr. Prentiss' - the Sara line created him; seed has no lawyer). Need a lawyer NPC in seed (will, c18 'letter to Albert's lawyer').
+- c16 meaning: seed lists 4 interpretations; I picked offshore account (Emily).
+- v3 crew tattoos placed on a crewman during Mavis's complication.
+- Converged everybody at Sheriff's office ~round 11: seed's Sheriff 'hides' (campaign donation) never came up; Bea hasn't pressed. Keeping it available. Gage-Emily romance (rel14) used as reveal: seed's c13 'A or E' resolved as Emily when Gage shows up for her.
+- Pacing: at round 11 players hold ~15 clues; time to move to Theorize.
+- THEORIZE: all three players independently landed on Allison+Andrew (two-culprit theory). Seed solutions are single-culprit; s1/s2 would combine. I rolled 3+3 +12 clues -6 complexity = 12 => clean win. I counted 12 clues after trimming the players' padded list (16 claimed) - no rules on counting; with complexity 6 and 12+ clues the roll almost can't fail (needs 4+ on 2d6). Complexity 6 vs ~20 distinct clues found in ~12 rounds = balance too easy for 3 players.
+- The players' theory was mostly the obvious one because I (unavoidably) steered clue handouts to s1/s2 clues (c1,c4,c14,c17,c19 all handed out) - clues in seed are NOT discriminating between solutions; every solution shares c3/c4/c10/c11/c18. 
+- c6 (handgun) and c12 (vase), c8 (receipts), c15-meaning, c20 were never needed.
+- Seed gaps: no lawyer NPC, no Inn NPC, no true timeline/TOD, no Emily/Gage/Sorensen backstory depth beyond one line; Etienne's role is weakly integrated (only c15,c10,c16,c7). Threats t3/t4/t5 hardly ticked; t1 and t2 ticked via Allison/Etienne lines. Deadline (t1 'noon tomorrow') gave useful pressure.
+- Dalrymple listed as a suspect AND ally; the 'donation' secret worked as a confession scene but is thin as a motive (s7).
+- NPC voices that worked: Hollis (few words), Sorensen (orange, 'friend'), Pelletier (blurting quote), Andrew (precise times). Allison's 'the salad' interruption worked. David's art-world quote is too long to use naturally.
+- Cozy activity + Void clue combination worked; players engaged emotionally (Dot/Emily, Guilty condition). Players (esp. Nina's Bea) padded the clue count.
