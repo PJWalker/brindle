@@ -74,3 +74,59 @@ Table: p1 Imogen (story-game veteran), p2 Raj (freezes when asked to invent), p3
 - EoS: all three answered yes to all three marked questions -> 3 XP each.
 - Chowder: p3 declared a tie and a merger (both pots served at the Tuttle-Beauregard wedding). Town happening #1 resolved.
 - Threats at end: t1 2/4 (held), t2 1/3, t3 1/4, t4 3/4, t5 0/3 (never ticked; Ball is next week).
+- Ex 30-31: Stars & Wishes. Stars: p1 the K card ("establishing a truth, then having the game hand it back as a gut punch"); p2 the round-table Theorize and the locked-cabinet payoff; p3 the library confrontation. Wishes: p1 more Void, "a case where one Clue refuses to fit"; p2 keep the options, and "a Night Move I choose" for Harriet; p3 a rules cheat sheet and "a proper red herring". Midwives stinger played (Sorensen kneeling at the Point, "Three days late, but paid", lamp burns purple, Dewey stares at the K drawer). t4 ended at step 2-3 (lamp purple).
+- Interviews done (ex 32-37, separate say.sh calls, one follow-up each).
+
+## Final report
+
+**One-line summary:** Shared-authorship style (g6) with Imogen (story-gamer), Raj (freezes when inventing) and Margaret (Murder, She Wrote fan); solved: David Krause struck Albert with the heirloom vase while Andrew (his real father) held Albert's wrist, Allison had drugged the brandy and built the "eleven o'clock" lie, and Sorensen watched and now blackmails them; 13 ordinary Clues + the Scarecrow slip (14 counted), 3 Void reveals (v6, the 1998 card from a 12+, v4); Theorize +8, rolled [1,1] = 10; about 37 exchanges, cut short at the organiser's request just as Theorize began (ex 26), so the confrontation, Crown scene, EoS and debrief were each compressed into one exchange.
+
+**Session cut short:** The organiser asked me to wrap up at exchange 26, mid-Theorize discussion. By then we'd covered the loft, fish market, greenhouse (Cozy), diner (Cozy), card catalog, docks/Hollis, Finch, and tea on the Regal Lady. We never reached the Inn/guest list (c9), St. Brendan's/Tommy (c13), the lighthouse/Gil, Prentiss, or Sorensen face to face. Theorize, the confrontation (10+, no rolls), one Crown scene, EoS, Stars & Wishes and the stinger were played in about 6 exchanges.
+
+### App guidance that helped
+- **r-pitch "Say This at the Start"**: folded into CATS. All three players understood "the solution isn't decided; if Theorize hits, your theory IS the truth". p2 later said that line ("nobody, including me, knows") was his turning point.
+- **r-townlife "USE THE ESTABLISHING ANSWER"** plus the book Moment (girl in a black hoodie with Rue Morgue) gave a perfect first scene: Emily seeking out Winnie in the bookshop.
+- **NPC `life` and `guarded` fields**: Etienne's wedding/chowder phone row, Hollis's moorings vote and cribbage feud (which p2 then wove in himself), Finch's chowder judging and dahlias against a Maven's. The fact that Finch's dahlias compete with "a Maven's" let me hand Winnie a personal hook for free. Happening #1 (chowder judge) became Finch's price on a 7-9. Excellent material.
+- **npc-finch forensic facts**: letting me "just say how he died" (book p.49) without spending a Clue. Players used every detail at Theorize.
+- **Fixed Facts timeline (backstory)**: the 11:52 call, Hollis's log and the 12:15 skiff gave me consistent answers under pressure. None of it ever had to be overruled.
+- **mv-theorize gm**: "encourage players to add (even retcon)" plus "draw out quiet players". It shaped the round-table Theorize that p2 asked for.
+- **mv-meddle gm 7-9 advice** ("an easy complication is a Condition, or put the Clue just out of reach") and **r-gmmoves** (Have an official show up) were my go-to complications.
+
+### Where the app contradicted the book, was wrong, or misled
+- **Hook timing**: app `hook` says "several nights ago"; the book says "earlier today", and the book's urgency (Sheriff must let them go "soon"; "he does not need them to solve the whole mystery") is softened. The app compensates with t1, which worked. But a Keeper reading both will notice the change and not know which is canonical. Label it as an app change.
+- **Captain Curly is missing.** The book's Suspect Captain Carl "Curly" Willoughby (Brindlewood native, the reason the family comes here) is not in the app at all. The app gives "skipper Tiago Mendes" in loc-regal details but npc-tiago's role is "Deckhand". That's an internal contradiction and a loss from the book.
+- **Paint the Scene gaps**: the book's "Back of the fish market: you have the feeling you're being watched" question is missing. The marina question is detached from any location.
+- **r-clues "pick one when the Clue lands, log it, and from then on it's true"** is fine for Keeper choices. It's silent on what wins when a *player* has already authored something that conflicts with a clue note, an NPC `hides` line, or a Fixed Fact. The book's principle (Play to find out) says the player wins. The app should say so.
+- **c18 location**: the app note puts the will instructions "in the study safe". The book's own worked example (p.49) puts them waterlogged in Albert's pockets. I used the book's version. Add "or on the body" to the note.
+- **mv-cozy gm "The player names the Clue"** is true to the book, but there's no fallback for a player who can't invent. Offering 2-3 candidate clues fixed it completely (see verdict).
+
+### Gaps and errors in the Dad Overboard data
+- **npc-albert hides**: lawyer is "Gerald Pratt"; everywhere else "Gerald Prentiss" (npc-prentiss, Fixed Facts). Typo.
+- **Andrew/Allison duration**: npc-allison hides "twenty years"; npc-andrew hides and c19 say thirty-five. Pick one (35 is the one that makes David his son).
+- **Two Inn event managers**: setting npc-lavoie "Prudence Lavoie" and mystery npc-hale "Philippa Hale" (also named in loc-inn details), with overlapping, different secrets. Merge them.
+- **Sorensen's times**: npc-sorensen hides "aboard 10pm to 12:25am" vs Fixed Facts 9:50 out, 12:20 radio, 12:40 at the dock. Align them.
+- **No clue card for the launch log.** The most load-bearing Fixed Fact (Sorensen aboard in the window) isn't on any clue. I had to award it as an extra Clue. Either add a clue ("A logbook entry nobody mentioned") or point c3/c10 notes at it.
+- **Scarecrow has no app guidance.** r-flow and r-prep mention Dale Cooper and Jim Rockford but not Scarecrow's start-of-session object. I handed over c16 (the numbers) as the Scarecrow gift, and that worked well, so suggest c16 as the default.
+- **Dark Conspiracy layer thresholds** are not in the app, and the book text puts them on a sheet I didn't have. The app has t4 but no "Void Clues seen / Layer One unlocked?" counter, so I had to assume the stinger applied.
+- **t5 (Warrior's Ball)** never ticked. One in-game day is too slow a clock for a one-shot.
+- **Clue defaults skew to Allison/Andrew/David.** c1, c4, c12, c17, c19, c21 notes all point into the same triangle, and the table converged there again, just as the app's RUNNING IT note says earlier tables did. The "spread suspicion" advice exists (r-house), but the defaults themselves undercut it. Margaret's wish: "a proper red herring".
+
+### Rules friction for new players
+- **Theorize maths**: 14 Clues against Complexity 6 meant +8, and snake eyes still hit. All three players called the roll anticlimactic in the interviews. The cause is compound: book-generous Meddling, two Cozy clues, Columbo's free clue, a 12+, and retcon-to-fit making every clue count.
+- **Stakes before rolls** (p2's follow-up): Meddling results "arrived as finished story". Players couldn't tell a safe roll from a risky one, so Crowns never tempted them (only one Crown in the whole session). The only roll that felt tense was the Night Move, because it states the stakes. Saying the 10+/7-9/miss outcomes before Meddling rolls would help.
+- **Crowns**: p3 didn't know the cost until after she said yes. p1 and p2 never fully grasped them.
+- **Conditions**: "when does Guilty actually hurt me?" (p3). Disadvantage never once applied, because no Condition-relevant roll came up.
+- **Cozy items**: p1 and p2 lost track of which items were marked. The app could track them per Maven.
+- **Retcon permission came late**: p2 said he only understood "you can add details to make a Clue fit" mid-Theorize. Say it at the first Clue.
+
+### Verdict on the style under test (shared authorship)
+It worked, strongly, and better than I expected with a freezing player. Almost every highlight was player-authored and then paid off by the system: Imogen's blank life-list line becoming Walter's 1998 card ("It reads back"); Raj's pick-from-a-list locked cabinet becoming Margaret's "girl's unwritten book"; Margaret's flavour stool becoming the Hendersons'-car Cozy clue. Paint the Scene got answered every time (twice with independent convergence).
+**The app's fixed timeline and clue defaults coexisted fine.** In five logged conflicts, the player version won with no harm. Only one (#5, Margaret retconning Emily's transfer over Emily's own on-screen statement) needed Keeper arbitration, and offering a reconciliation rather than a veto kept it collaborative. The Fixed Facts were valuable precisely as a backstop: when nobody had invented an answer, I had one. The real risk is the opposite one: with retcon-to-fit plus Complexity 6, authorship makes Theorize unlosable.
+**The freezing player:** lettered options (2-3 per prompt, always with "or your own") were the key tool. Raj picked every backstory element, his Cozy clue and his confrontation read-back from options. He then started inventing unprompted (Gil laying out Hollis's cribbage hand, ex 21; the "both" synthesis at Theorize). In his words: "I don't think they were a crutch. They got me started... The ones I'd have frozen on were the open 'tell us what's there' prompts in a row." He asked to go last in creative rounds, which also helped. His one unmet wish was a scary moment of his own.
+
+### Top 5 recommended changes (ranked)
+1. **Add a "player authorship wins" line to r-clues and the backstory's Fixed Facts header.** For example: "Fixed Facts and clue-note defaults are fallbacks. If a player's Paint the Scene, establishing answer, Cozy clue or Theorize retcon contradicts one, the player's version is true. Adjust the Fact, and only veto if it would solve the mystery outright." Add a one-line example (the rug's timing).
+2. **Make Theorize bite at Complexity 6.** Ship two of p1's ideas as optional rules in r-house: (a) each retcon invented at Theorize to make a Clue fit costs −1 (or caps how many Clues can be "explained away" by invention), and (b) the Keeper names one "locked" Clue that must be explained exactly as found. Also show the running "roll + clues − complexity" modifier in the app, so the Keeper can see it's already +6 or more and say "you'd be rolling thin/fat."
+3. **Add an "options for freezing players" tip** to mv-cozy, the Establishing Question and r-townlife's IMPROVISE AND DISCLAIM. For example: "If a player freezes, offer 2-3 concrete options plus 'or your own'; it still counts as theirs." Include a per-clue "Cozy candidates" hint (e.g. c25, c19, c17 as diner-gossip options).
+4. **Fix the data:** restore Captain Curly (or say why he's cut); fix Tiago's skipper/deckhand role; fix Pratt→Prentiss and 20→35 years; merge Lavoie/Hale; align Sorensen's times; add a clue for Hollis's launch log; add "or in his pockets (book p.49)" to c18; add the back-of-the-fish-market Paint the Scene question; label the hook's "several nights ago" as an app change from the book's "earlier today".
+5. **Fill the guidance gaps:** Scarecrow Keeper guidance (suggest c16 as the default gift), a Void Clue / Layer One counter next to t4, a per-Maven tracker for marked Cozy items and Crown boxes, and a pre-roll stakes reminder in mv-meddle gm ("for new players, say what 10+, 7-9 and a miss would mean before they roll").
