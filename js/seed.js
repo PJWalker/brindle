@@ -191,14 +191,14 @@ window.BRINDLE_SEED = {
           wants: "Someone to believe him about the light.", hides: "He was here in 1998 when they pulled Albert Krause out alive. Albert was smiling. Gil has never forgotten it.",
           quote: "She won't leave the rocks, that dog. Sits right where they kneel at dusk.",
           prompts: ["Has been feeding Duchess (c20).", "Points out where the prayer group kneels: the same spot, twice in thirty years."] },
-        { id: "npc-lavoie", name: "Prudence Lavoie", role: "Event manager, The Brindlewood Inn",
+        { id: "npc-hale", name: "Philippa Hale", role: "Event manager, The Brindlewood Inn",
           life: "The Inn is double-booked: the Tuttle–Beauregard wedding and Allison's Warrior's Ball fall on the same Saturday night. The bride's mother (Bev) and Allison both phone her hourly. Secretly, she's interviewing for a job in Bar Harbor.",
-          guarded: "Discretion is her trade. 'I really couldn't say.' Help her solve the double-booking and she'll say a great deal.", src: "added",
-          look: "Headset, clipboard, sensible flats.", personality: "Unflappable in public, venomous in the staff room.",
-          voice: "Bright and professional; drops it instantly in private.", mannerism: "Clicks her pen in threes.",
-          wants: "Her deposit, and Allison off the phone.", hides: "The foundation's cheques have bounced twice.",
+          guarded: "Discretion is her trade. 'I really couldn't say.' Help her solve the double-booking, or with the centrepieces, and she'll say a great deal.", src: "added",
+          look: "Headset, clipboard, three pens in her bun.", personality: "Unflappable in public, venomous in the staff room, desperate to vent.",
+          voice: "Bright and professional; drops it instantly in private.", mannerism: "Answers her phone mid-sentence.",
+          wants: "Her deposit, Allison off the phone, and the Ball to happen without Allison firing her.", hides: "The foundation's cheques have bounced twice. She knows who crossed out the name on the guest list, and when (c9). She has seen Sorensen and Allison talking on the terrace.",
           quote: "Mrs. Krause has changed the seating chart eleven times. Mr. Krause changed it once.",
-          prompts: ["Hands over the guest list (c9) to get the Mavens out of her office.", "Lets slip the foundation is behind on payments (c8)."] }
+          prompts: ["Hands over the guest list (c9) to get the Mavens out of her office, or in exchange for help with centrepieces.", "Lets slip the foundation is behind on payments (c8)."] }
       ]
     }
   ],
@@ -247,7 +247,7 @@ window.BRINDLE_SEED = {
         { id: "npc-allison", name: "Allison Krause", role: "The wife, 62", src: "pdf",
           look: "Thin. Graceful. Well-dressed.", personality: "Upset about Albert, but equally distraught about how this affects her charity gala.",
           voice: "Clipped, theatrical, on the edge of tears or rage.", mannerism: "Checks her phone for RSVPs mid-conversation.",
-          wants: "The 4th Annual Warrior's Ball (a week away) to go off perfectly.", hides: "The charity's books don't balance: she's been paying the family's bills from the foundation (c8). And there's Andrew: twenty years. She told everyone to say they'd gone to bed before eleven.",
+          wants: "The 4th Annual Warrior's Ball (a week away) to go off perfectly.", hides: "The charity's books don't balance: she's been paying the family's bills from the foundation (c8). And there's Andrew: thirty-five years. She told everyone to say they'd gone to bed before eleven.",
           quote: "It's just like Albert to go and get himself killed when I'm on the precipice of charity fundraiser greatness! The man could be so self-involved!",
           prompts: ["Asks a Maven if she'd like to buy a table at the Ball.", "Loses an earring and becomes frantic about it.", "Snaps at Andrew, then touches his arm."] },
         { id: "npc-sara", name: "Sara Krause", role: "Eldest daughter, 38", src: "pdf",
@@ -295,7 +295,7 @@ window.BRINDLE_SEED = {
           guarded: "He gives polite non-answers and turns them into questions about you, your family and your house. It's menacing in a friendly way. He wants the Mavens to like him.", src: "added",
           look: "Good suit, bad shoes for the docks, tourist sunglasses.", personality: "Polite, patient, terrifying.",
           voice: "Calm, lots of 'friend'.", mannerism: "Peels an orange very slowly.",
-          wants: "What he's owed, from whichever Krause can pay.", hides: "He works for the people who saved Krause Capital in '98. He was aboard the Regal Lady from 10pm to 12:25am the night Albert died, which is in Hollis's log. He says Albert was 'alive and unreasonable' when he left. His calling card is blank except for an embossed spiral.",
+          wants: "What he's owed, from whichever Krause can pay.", hides: "He works for the people who saved Krause Capital in '98. He was aboard the Regal Lady from about 10pm until the launch collected him after his 12:20am radio call, which is in Hollis's log. He says Albert was 'alive and unreasonable' when he left. His calling card is blank except for an embossed spiral.",
           quote: "Death doesn't cancel a debt, friend. It just changes the address.",
           prompts: ["Is seen leaving the fish market.", "Leaves a calling card in a Maven's purse.", "Takes breakfast on the Inn terrace and invites a Maven to join him."] },
         { id: "npc-duchess", name: "Duchess", role: "The Krauses' prize samoyed (missing)", src: "added",
@@ -314,15 +314,9 @@ window.BRINDLE_SEED = {
           voice: "Clipped Boston Brahmin.", mannerism: "Says 'I couldn't possibly' right before he does.",
           wants: "To avoid being subpoenaed.", hides: "Albert left him a voicemail at 11:52pm (see Fixed Facts). The planned changes would have cut out whoever you need: the default is David (paternity) and the foundation (Allison).",
           quote: "I couldn't possibly discuss Mr. Krause's testamentary intentions. ...Although, between us, he did call. Rather late.",
-          prompts: ["Confirms the time of Albert's last call.", "Lets slip which child the new will cut out."] },
-        { id: "npc-hale", name: "Philippa Hale", role: "Event manager, The Brindlewood Inn", src: "added",
-          look: "Headset, clipboard, three pens in her bun.", personality: "Frazzled, kind, desperate to vent.",
-          voice: "Fast, apologetic.", mannerism: "Answers her phone mid-sentence.",
-          wants: "The Ball to happen without Allison firing her.", hides: "Knows who crossed out the name on the guest list, and when (c9). Has seen Sorensen and Allison talking on the terrace.",
-          quote: "If I see one more seating chart I will walk into the sea. Sorry. Poor choice of words.",
-          prompts: ["Shows the Mavens the guest list in exchange for help with centrepieces."] }
+          prompts: ["Confirms the time of Albert's last call.", "Lets slip which child the new will cut out."] }
       ],
-      featuredTownsfolk: ["npc-dalrymple", "npc-pelletier", "npc-finch", "npc-crane", "npc-bev", "npc-nadine", "npc-margo"],
+      featuredTownsfolk: ["npc-dalrymple", "npc-pelletier", "npc-finch", "npc-crane", "npc-bev", "npc-nadine", "npc-margo", "npc-hale"],
       suspects: ["npc-dalrymple", "npc-allison", "npc-sara", "npc-david", "npc-emily", "npc-andrew", "npc-etienne", "npc-sorensen", "npc-tommy"],
       relationships: [
         { id: "rel1", a: "npc-albert", b: "npc-allison", label: "Married", kind: "family" },
