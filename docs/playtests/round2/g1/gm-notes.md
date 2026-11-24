@@ -69,3 +69,59 @@ Style: full Session One procedure as written, scripted CATS/safety text read alo
   - App's `endOfSession` list: all three answered 3/3 yes. (#4 cozy activity was satisfied in the vignettes before the mystery started.) XP: Thea 3, Dee 3, Winnie 3.
 - Ex19 (EoS + Stars & Wishes): see transcripts. Stars: Theorize-as-building (Sam, Priya), the shard/wound moment, Arthur's clock line, "Overdue", Mr. Biscuit on the logbook. Wishes: a Crown scene; explain Conditions mechanically up front (Sam); the lighthouse piece; the locked drawer; more Emily; the Harbour vote.
 - Ex20 MIDWIVES STINGER (Layer One, assumed threshold 3 Void Clues).
+- Interviews: done separately with say.sh, 9 questions + one follow-up each. Saved to player-p1/p2/p3-interview.md.
+
+---
+
+# Final report
+
+**One-line summary:** By-the-book style (full Session One procedure, scripted CATS and safety text, no `r-house`), three new players (Sam, PbtA veteran; Priya, 5e only; Ruth, first RPG). Outcome: Allison + David Krause killed Albert (sleeping pills in his nightcap, then the vase in the salon at 11:02, faked phone call after midnight), with Andrew's false alibi and Etienne's skiff; motive: Albert's Brindle Point bargain was to be paid with Emily, so Allison paid with Albert. Clues: 14 ordinary (11 from Meddling, 3 from Cozy Moves) and 3 Void. Theorize: +8 (14 - 6), rolled 6+2+8 = 16 (12+); the lowest possible result was 10. About 20 table exchanges (19 table + 1 private break round, plus interviews). The session was **cut short at the organiser's request** after about 80 of the planned 90 minutes of investigation; the Point/lighthouse dusk scene, Sorensen at the Inn and any Night Move never happened.
+
+## Verdict on what I was testing
+Does the book as written, plus the app's book-aligned reference, carry three new players through Dad Overboard at Complexity 6? **Yes for the experience, no for the challenge.** The procedure carried everyone: Ruth went from "am I allowed to just say what I do?" to co-narrating the confrontation, and Sam and Priya both named "building the theory from the Clues" as a Star. But **Theorize was not earned in the dice sense.** The table passed 3 Clues (Theorize opens) at exchange 6, passed 6 (Complexity) at exchange 8, and reached 14 by exchange 13. That came from 14 Meddling rolls with 11 hits (Reason +2 characters with advantage items never used up) plus 3 Cozy Moves in a single round. At Theorize the roll couldn't fail, and all three players said so unprompted (Sam: "minimum roll is 10"; Ruth: "almost too friendly... earned or just allowed"; Priya: "no tension in the dice"). The effort went into the *discussion*, and that part felt earned: it took two exchanges and my four "holes" (book: "challenge assumptions, interrogate theories") to merge three theories into one.
+
+Knock-on effects of plenty: nobody ever put on a Crown, so no Crown scenes; only three misses all session (all Thea's, so Sam's +3 Sensitivity Maven saw the least success); no real danger; nobody picked EoS #5. With the app's house rules off and the book's "be very generous" on, **Complexity 6 caps out about 40% of the way through a Session One**.
+
+Players didn't want fewer Clues ("fewer Clues would have felt worse", Priya). What they asked for was a *fictional clock* that makes waiting cost something (Sam: "the body goes on the afternoon truck to Boston"), the *choice* to Theorize early for a tenser roll (Priya), and the chance to be wrong in a recoverable, Christie-like way (Ruth).
+
+## App guidance that helped
+- `mv-meddle.gm`, `mv-theorize.gm`, `r-clues`, `r-gmmoves`, `mv-conditions.gm`: faithful to the book and usable at the table. The Theorize gm text (offer thoughts, challenge assumptions, draw out quiet players, invite retcons) is what made the consensus discussion work.
+- Finch's facts (`npc-finch.hides`): exactly what the book's "Examining a Corpse" advice needs. Gave forensic detail freely; players built the grip-bruise and vase-wound reasoning on it.
+- Fixed Facts (`mysteries[0].backstory`): "Everyone uses the same words" / Andrew's "11:00 precisely" gave a great c3 moment; Hollis's log time for Sorensen gave c10 a concrete hook.
+- NPC `guarded` + `prompts` gave natural 7-9 complications: Hollis's price (`npc-crane`), Andrew "tea and an alibi in the same breath", Sara "breaks down and almost confesses, then is interrupted", Etienne "goes pale at a stranger in a good suit".
+- `loc-church` put Tommy, Sara and the rector in one scene, which was very efficient.
+
+## Where the app contradicted the book, was wrong, or misled
+1. **Hook timing:** app hook "several nights ago" and Fixed Facts "three nights ago"; book "earlier today". The app also drops the book's urgency line ("if he can't produce evidence soon, he'll be forced to let the family take Albert back to Boston"), which is exactly the fictional clock players asked for afterwards. The book's "he does not need them to solve the whole mystery" is also missing.
+2. **Captain Curly Willoughby** (a book Suspect) is missing. `loc-regal.details` calls Tiago "skipper", but `npc-tiago` says "Deckhand".
+3. **Book Moments missing**, though `r-prep` says "Pick 2-3 Moments". The book's "Back of the fish market" location and its Paint the Scene are missing; the marina Paint the Scene has `locationId: ""`. I used the book's.
+4. **`r-pitch` (added)** says a Crown "costs you a scene". The book says you mark a box and must do what its text says. Close, but misleading.
+5. **Fixed Facts vs. "you don't know the explanation until Theorize":** the facts never name a culprit, but they are presented as truth. Thea's Cozy-invented Clue (an 11:10pm boat from the yacht to the slip) contradicted "12:15 skiff rows out". Book rule: the player's Clue stands. The app should say plainly that player-invented Clues and Theorize override Fixed Facts.
+6. **Threat clocks t1-t5** are app inventions with no book basis. Per my style I didn't tick them. Yet their *fiction* (body to Boston, Ball deadline) is what players wanted as stakes. The book does say to "charge the environment".
+7. **No Maven moves in the app.** I had to answer "does Dale Cooper stack past +2?" (book: max 3) and summarise all 18 classic moves from the book. A Keeper with only the app couldn't run character creation.
+8. **`crownsMax: 7`, no Crown box text, no Layer thresholds.** `r-flow` includes a "Midwives stinger (if Layer One unlocked)" step, but nothing says when Layer One unlocks. I assumed 3 Void Clues.
+
+## Gaps and errors in the Dad Overboard data
+- `npc-lavoie` (Prudence Lavoie) and `npc-hale` (Philippa Hale) are both "Event manager, The Brindlewood Inn", with different secrets. `loc-inn` and c9 use Philippa. Duplicate entry.
+- Lawyer is "Gerald Prentiss" (npc-prentiss, Fixed Facts) but "Gerald Pratt" in `npc-albert.hides`.
+- Andrew/Allison: "twenty years" (`npc-allison.hides`) vs "thirty-five years" (`npc-andrew`, c19).
+- Sorensen: Fixed Facts say Albert "receives him in the study" at 9:50, while "the whole family" dines until 10:30. Times also differ: aboard 10pm-12:25 (`npc-sorensen.hides`) vs radio 12:20 and dock 12:40 (Fixed Facts, `npc-crane`).
+- c1 offers the rug in the cold store OR a crew locker, but `npc-etienne.hides` hard-codes "took in the rolled rug at dawn". Mark it as an alternative.
+- **Animal-harm content vs a common Line:** two players set a Line on harm to animals. c15 (rat stuffed in a cod), v1 (dying fish oozing from its eyes) and Duchess ("Albert's blood in her fur") all brush against it, and the app has no flag or alternatives. I avoided c15 and v1.
+- c11's pair isn't fixed, so fine, but there is no guidance on what "something thrown over the rail" might be. The players invented it at Theorize, which is OK.
+- `endOfSession` #4 ("indulge her cozy activity") is satisfied by the Cozy Vignettes step before the mystery starts. All three players picked it, so it's a free XP.
+
+## Rules friction for new players
+- **Crowns never taught by use.** The book explains them, but with plentiful Clues and soft misses nobody needed one. All three said in interview they don't understand Crowns.
+- **Conditions arrived as surprises** (Sam and Priya). Both asked for a 30-second explanation up front, which the book's Step Fourteen ("focus on teaching the gameplay basics") implies but doesn't script.
+- **"Incorporated" at Theorize:** Priya thought it meant "mentioned", Ruth was unsure, and neither the book nor `mv-theorize.text` gives an example. Two of 14 Clues (Tommy's letter, the struck name) were mostly hand-waved as red herrings, which the book allows ("otherwise explained away"). Even so, a short example would help.
+- **One search, one roll:** three Mavens repeatedly declared the same search (the alley, the deck, Tommy, Thea's house). Neither the book nor the app has a help or group-action rule. I gave one roll to the best-placed Maven. Sam felt this cost him spotlight.
+- **Three Cozy Moves in one round** produced 3 player-authored Clues risk-free. That's legal by the book and lovely in play, but it is the second Clue firehose. Also, a Cozy Clue that duplicates a found Clue (Ruth's Arthur line restated c4) has no rule.
+- Ruth never saw the dice (the tool rolls them for the Keeper) and still doesn't know why 7-9 differs from 10+. She asked for one reference card.
+
+## Top 5 recommended changes (ranked)
+1. **Give Dad Overboard a fictional clock from the book's own hook.** Restore "if he can't produce evidence soon, he'll be forced to let the family take Albert back to Boston" to `mysteries[0].hook`, and add one line to `mv-theorize.gm`/`r-flow`: "Say when the body leaves (e.g. 'the afternoon truck tomorrow'); each scene change brings it closer." That makes hoarding Clues cost something without touching book rules or Complexity. All three players asked for exactly this.
+2. **Add a "teach before the first roll" card to `r-pitch`**: Conditions (disadvantage, cleared by the Cozy Move), Crowns (after a roll: mark a box, bump one tier, owe its scene), what 7-9 vs 10+ means, and a worked Theorize example of "incorporated" (one Clue explained vs. merely named). Fix "costs you a scene" to the book's wording.
+3. **Add the missing book content to the mystery:** Captain Curly (and fix "skipper Tiago" vs "deckhand"), the six Moments, "Back of the fish market" with its Paint the Scene, and the marina `locationId`. Also add the classic Maven moves as reference entries (with Dale Cooper's "max 3"), since character creation can't run from the app without them.
+4. **Fix data inconsistencies:** merge `npc-lavoie` into `npc-hale`; Prentiss vs Pratt; 20 vs 35 years; Sorensen times and "study during dinner"; c1 vs `npc-etienne.hides` on the rug. Add a note to the Fixed Facts: "player-invented Clues and a successful Theorize override these."
+5. **Add a group-action note and Line-safe alternatives.** One line in `mv-meddle.gm`: "When several Mavens search the same thing, one rolls; let the others pick a different lead," which keeps the spotlight moving. Give c15, v1 and Duchess animal-safe alternative wordings, since harm to animals is a common Line.
