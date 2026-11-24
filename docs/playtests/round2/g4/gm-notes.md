@@ -55,3 +55,64 @@ Table: p1 Nina (relationships/drama), p2 Tom (goal-focused, impatient with side 
   - David leaves the yacht with Dot for her spare room (Nina's earlier invitation paid off).
   - Data note: npc-albert.hides says the safe holds "the paternity test"; the backstory's ALBERT'S STUDY puts c17 + c18 + ledger + black 1998 letter in it. Useful: one roll at the safe could have produced four Clues; I gave one and left the rest visible-but-unread.
   - Clues: 11 (c16, c3, c4, c10, c23, c11, c20, c17, c24, c5, c18). Void: v6 (dream), v3, v4. Conditions: Dot Responsible for Etienne; Pru Rattled, Furious; Marian Something Walter Never Told Me, Seen by the Kneelers.
+- Correction on exchange counts: the counts above (8, 13, 19) were estimates I made as I went. The transcripts show 15 table messages up to the safe scene. The whole session took **19 table exchanges** plus the interviews.
+
+## Session cut short
+The organiser stopped the session after the safe scene (exchange 15, Thursday about 10:30pm in the fiction, 11 Clues found) because of a usage limit, and asked me to wrap up. Then:
+- Ex 16: dock (Sheriff holds the yacht and the body, so t1/t2 stop), and the Cozy Move in Dot's kitchen. I told the table we were going to Theorize "because of time". Left alone, Nina and Lena would probably have played on into Friday (Festival, Finch's autopsy, Emily, Tiago).
+- **Cozy Move** (Dot baking + Marian knitting): Dot cleared Responsible for Etienne, Marian cleared Something Walter Never Told Me. Both Mavens were at their own Cozy Activity, so I allowed **two player-authored Clues**: Nina's **cz1**, flour shows pencil impressions on Sorensen's card, a Boston number and "G.P." (Prentiss tied to Sorensen); Lena's **cz2**, navy wool on Duchess's collar in the Mendes family gansey pattern (Tiago). My ruling: the book says "If it's your Cozy Activity, you can also stumble on a Clue". The app's mv-cozy doesn't cover two activities in one scene. Both Clues fitted the list and the theory with no effort. cz2 was better than anything on the clue list: it came from Lena's own hobby and pointed at the NPC her backstory had found.
+- Ex 16–17 **Theorize**: consensus was Allison killed Albert with the brandy bottle, and Andrew cleaned up, stopped the watch, coached "precisely eleven" and locked Pru in. Tiago rowed the body out in Etienne's skiff at 12:15 on Andrew's word. Sorensen watched from the aft deck. Prentiss had tipped Sorensen's people off. I accepted a retcon offered from the table: Sara's diary records that she saw her mother go aft. That counts **13/13** Clues explained. 2d6+13−6 = 6+1+7 = **14, 12+**. A miss was impossible: the lowest possible roll was 9.
+- Ex 17–18 confrontation: on a 10+, no rolls. Each player wrote one beat and Allison confessed. For the 12+, Sorensen spoke cryptically to them on the dock (Layer 1–2 per mv-theorize gm text).
+- Crown scene: Nina's Queen (d) with her sister Marguerite, played well. End of Session: 3 XP each. Stars & Wishes done.
+- Ex 19 Midwives stinger. With 3 Void Clues found, I treated Layer One as unlocked; the text I had gives no number for this. Stinger: kneelers doubled, Sorensen behind them, something surfaces, the hooded girl types "The clerk has the numbers. The teacher has the lamp. The baker has the son. ...Three. Same as last time." This uses the three husbands who all "died six years ago", a detail the players invented.
+- Interviews done; see player-pN-interview.md.
+
+## Final report
+
+**Summary:** Cozy/town-life style with Nina (relationships), Tom (goal-focused) and Lena (quiet, brought a lighthouse backstory). Outcome: solved. The theory was Allison (brandy bottle) with Andrew covering up and Tiago moving the body, and Sorensen watching. Clues: 13 ordinary (11 rolled or Scarecrow, plus 2 from the Cozy Move) and 3 Void (v6 in the Dale Cooper dream, v3, v4; the purple lamp was t4 narration). Theorize was +7 and rolled 14 (12+). 19 table exchanges; the session was cut short at the organiser's request at exchange 15 and then wrapped up quickly.
+
+**App guidance that helped**
+- **r-townlife "LEAD WITH THEIR LIFE"** together with the NPC `life` fields. This was the best material in the app tonight. Etienne's chowder rivalry, Hollis's moorings vote, Lou wanting dating advice and Gil's bake sale each gave me an entrance line, and each became a Meddling Move that produced a Clue. Nina rated these scenes her favourites.
+- **`guarded` fields** gave me a price for each NPC to ask (a pie for Hollis's log), a tell (Etienne wipes his hands on his apron) and a way information could slip (Lou, mid-advice). This played exactly as written.
+- **npc-wexford + loc-light + the backstory's Void thread** gave Lena's lighthouse widow a central place. The Cooper dream, Walter's 1998 note, Gil's story and Duchess at the cottage gave her the best arc of the night. r-townlife "route a Clue to her through her past" is excellent advice.
+- **r-townlife "USE THE ESTABLISHING ANSWER"**: David seeking Dot out on the yacht paid off Nina's answer and ended with him moving into her spare room.
+- **Fixed Facts** (Hollis's log times, the 12:15 skiff, ALBERT'S STUDY). I never had to invent a timeline, and Tom built his notebook from them.
+- **mv-conditions / mv-dice gm text**: "check Conditions before each roll" led to the compass cancelling disadvantage. That was the moment two players said advantage and Conditions clicked.
+- **mv-theorize gm text** (interrogate, guide to a consensus) and the book's retcon advice both worked as written.
+- **r-pitch** made the "half Complexity" and "explained Clues" maths clear. Tom was doing the odds himself by exchange 13.
+
+**Where the app contradicted the book, was wrong, or misled**
+- **Hook**: the app has "several nights ago... until it can be shipped back to Boston". The book has "earlier today", the Sheriff needing proof of foul play "soon" or the family takes the body, and "he does not need them to solve the whole mystery". The app drops the book's built-in deadline; t1/t2 have to supply it. I added the Sheriff's "I need ONE thing that says foul play" line back in. It gave the evening a mid-point goal, and Lena used it ("That's your foul play, Wyman").
+- **r-townlife says "Every NPC has 'Their life right now'"**, and its own example is Bev, but npc-bev has no `life` or `guarded` field. Albert, the Krauses, Andrew, Tiago, Prentiss and Hale don't have them either. The suspects are exactly the people with no life to lead with.
+- **mv-cozy** doesn't say what happens when both Mavens are at their own Cozy Activity: one Clue or two? The book's "If it's your Cozy Activity" reads per Maven. I allowed two.
+- **t4 "Something Beneath the Bay"** ticks on every Void Clue revealed or Void Crown mark. Add the book's 2–3 Void Clues per mystery, the Dale Cooper dream (a Void Clue every session) and 12+ bonuses, and it reached 3/4 in about an hour. Its pace doesn't match the session.
+- **r-house / Fixed Facts "RUNNING IT"** warn correctly that Complexity 6 is too easy. Tonight confirmed it: 9 Clues by exchange 13, and the final roll could not miss. What held Theorize back was the consensus requirement, with two players saying "not yet", not the clue count.
+- **The brief/app has the Keeper roll every die.** All three players said in interviews that they "never rolled" and lacked a feel for the dice. That comes from the playtest tooling, not the app, but at a real table r-pitch should tell players they roll.
+
+**Gaps and errors in the Dad Overboard data**
+- The Inn's event manager appears twice: settings **npc-lavoie** (Prudence Lavoie: double-booking, bounced cheques) and mystery **npc-hale** (Philippa Hale). loc-inn and c9 name Philippa. Merge them.
+- **npc-albert.hides** says "meeting Gerald Pratt on Monday". Everywhere else it's Gerald Prentiss.
+- **npc-allison.hides** says Andrew for "twenty years"; npc-andrew and c19 say thirty-five.
+- **npc-sorensen** is "aboard 10pm to 12:25am" against the Fixed Facts' 9:50 out / 12:20 radio / 12:40 at the dock.
+- The two readings of **c16** compete. The c16 note says "pick one meaning (default: safe)"; loc-light's Void thread needs the bearing reading. Say which one wins, or make the bearing a 12+ extra.
+- **Several `life` fields assume facts about the Mavens** ("his mother was once a Maven's piano student", Finch's dahlias "against a Maven's"). Rephrase them as questions to ask the player.
+- The **Festival week happenings** are rich, but none of them is tagged with the Clue it can carry. Only the election and Hemingway have "(Crossover: ...)". Tom's main complaint was a town scene where the Clue was "tucked inside the romance" (Lou). Adding a crossover to every happening would fix this.
+- **Emily** is the planted Scarecrow giver and knows the safe and the phones, but no scene in the app brings her out of her cabin, and no player reached her. A prompt that pushes her into a public place (the diner, the bookshop) would help.
+- The **v-clues and Fixed Facts** gave me no answer to "what the tide is owed" (my own dream line). That's my fault, but the Void thread could offer one resolvable answer per session.
+
+**Rules friction for new players**
+- Players only understood Conditions and disadvantage when they saw them cancel (the compass). Before that, Nina found a Condition "a label with no teeth". Tom's two Conditions were barely felt.
+- Crowns: two of the three never understood why you'd take one. Nina took one because she wanted the scene, and wondered if that was a loophole. The book's Queen boxes aren't in the app (brief assumption), so I made them up. Without box texts, players can't see what a Crown costs.
+- Players forgot their Cozy Little Place items unless I prompted them (Nina never used hers).
+- Lena: "go anywhere, talk to anyone" read to her as about moves. She didn't think she was allowed to cut into someone else's scene while split up. r-split covers cutting, not inviting.
+- The rule for what counts as an "explained" Clue at Theorize was unclear to all three (Tom: "fits or required?"; Lena: "where's the line?").
+
+**Verdict on the cozy/town-life style**
+It enriched play a great deal, and it did not slow the mystery down. If anything it sped it up. Every town scene was also a Meddling Move, so cozy material became a clue firehose, and the problem that remained was the Complexity-6 ceiling. For the goal-focused player (Tom), town scenes were fine when they carried a lead (Etienne's chowder "never felt like a detour"). They grated when the lead was buried or missing (Lou and Nadine, while a clock was running). The Cozy Move was used once, late, and was everyone's emotional high point. Its player-written Clues fitted the clue list and the theory without friction; Lena's was the best Clue of the night. Liberal Conditions (two each for Pru and Marian, one or two for Dot) gave the Cozy Move a reason to happen, as the book promises. Biggest lesson: run the Cozy Move earlier, around the midpoint, instead of waiting for players to propose it.
+
+**Top 5 recommended changes (ranked)**
+1. **Tag every "This week in town" happening with a crossover Clue or lead** (like the election and Hemingway entries), and add to r-townlife: "lead with the clue, then the life" for players who are there for the case. This fixes Tom's one real complaint without cutting town scenes.
+2. **Add `life` and `guarded` to every suspect and to Bev** (Allison: the Ball seating chart war; Sara: the kids' bedtime calls; David: a lender phoning; Emily: the journalist DM; Andrew: the secret baking-contest entry from the happenings). r-townlife promises these fields and the suspects lack them.
+3. **Write a Cozy Move timing cue into r-townlife/mv-cozy**: "by the midpoint, or when two Mavens hold Conditions, offer the Cozy Move: name the scene for them." Also rule on two simultaneous Cozy Activities (suggest one Clue per Maven whose activity it is) and say how to log a player-made Clue (id, text, who wrote it).
+4. **Make Complexity 8 the app's default for Dad Overboard**, or turn the r-house clue budget on by default, and show a one-line "counts as explained when the theory says why it exists and who left it" rule on the Theorize card that players see. All three players asked for that rule, and tonight's roll could not miss.
+5. **Fix the data collisions**: merge Lavoie/Hale; Pratt → Prentiss; Andrew's 20 vs 35 years; Sorensen's times; decide whether c16 is the combination or the bearing. Retune **t4** so that it ticks once per scene with a Void Clue, not once per Void Clue, and so that the Dale Cooper dream doesn't tick it.
