@@ -157,7 +157,7 @@ function vPlay() {
   const sceneLoc = locById(sc.locationId);
   return `
   <div class="page-head"><div class="grow"><div class="eyebrow">Session ${p.session} · Complexity ${m.complexity}</div><h1>${esc(m.title)}</h1></div>
-    <div class="btn-row"><button class="btn" data-act="theorize">Theorize</button><button class="btn" data-act="happening">Town life</button><button class="btn" data-act="complication">Complication</button></div></div>
+    <div class="btn-row"><button class="btn" data-act="theorize">Theorize</button><button class="btn" data-act="happening">Town life</button><button class="btn" data-act="complication">Complication</button>${aiOn() ? `<button class="btn" data-act="ai-names">Names</button>` : ""}</div></div>
 
   <div class="play-grid">
   <div>
@@ -165,7 +165,8 @@ function vPlay() {
       <div class="card-head"><h3>Current scene</h3><button class="btn sm" data-act="scene-edit">Set scene</button></div>
       ${sceneLoc ? `<div><a href="#/loc/${esc(sceneLoc.id)}" class="serif" style="font-size:1.15rem;font-weight:600">${esc(sceneLoc.name)}</a> <span class="muted small">${esc(sceneLoc.kind || "")}</span></div>
         <p class="small muted" style="margin-top:4px">${esc(trunc(sceneLoc.desc, 220))}</p>
-        ${(sceneLoc.paint || []).map((q) => `<div class="small"><b>Paint the scene:</b> ${esc(q)}</div>`).join("")}` : `<p class="muted">No scene set. Opening location: ${esc(locName(m.openingLocationId) || "—")}.</p>`}
+        ${(sceneLoc.paint || []).map((q) => `<div class="small"><b>Paint the scene:</b> ${esc(q)}</div>`).join("")}
+        ${aiOn() ? `<div class="btn-row" style="margin-top:8px"><button class="btn sm" data-act="ai-paint">Details</button><button class="btn sm" data-act="ai-clues">Clue ideas</button></div>` : ""}` : `<p class="muted">No scene set. Opening location: ${esc(locName(m.openingLocationId) || "—")}.</p>`}
       <div class="section-label">On stage</div>
       <div class="chips">${sc.npcs.map((id) => `<span class="chip"><a href="#/npc/${esc(id)}" style="color:inherit;text-decoration:none">${esc(npcName(id))}</a><button data-act="scene-drop" data-id="${esc(id)}" aria-label="Remove">×</button></span>`).join("") || `<span class="muted small">Nobody yet.</span>`}</div>
       ${sc.npcs.length ? `<div class="hr"></div>${sc.npcs.map((id) => npcCue(npcById(id))).join("")}` : ""}
@@ -185,7 +186,7 @@ function vPlay() {
     </div>
 
     <div class="card">
-      <div class="card-head"><h3>Session log</h3><button class="btn sm ghost" data-act="new-session">New session</button></div>
+      <div class="card-head"><h3>Session log</h3><div class="btn-row"><button class="btn sm ghost" data-act="recap">Recap</button><button class="btn sm ghost" data-act="new-session">New session</button></div></div>
       <form class="inline-input" data-form="log"><input type="text" name="text" placeholder="Quick note… (Enter to add)" autocomplete="off"><button class="btn primary">Add</button></form>
       <ul class="log" style="margin-top:10px">${p.log.map((e) => `<li class="k-${esc(e.kind)}"><span class="t">${esc(hhmm(e.at))}</span><span class="x">${esc(e.text)}</span><button data-act="log-del" data-id="${esc(e.id)}" aria-label="Delete">×</button></li>`).join("") || `<li class="muted">Log is empty.</li>`}</ul>
     </div>
@@ -226,7 +227,8 @@ function npcCue(n) {
   ${n.guarded ? `<div class="small"><b>If the murder comes up:</b> ${esc(n.guarded)}</div>` : ""}
   ${n.wants ? `<div class="small"><b>Wants:</b> ${esc(n.wants)}</div>` : ""}
   ${n.hides ? `<div class="small"><b>Hides:</b> ${esc(n.hides)}</div>` : ""}
-  ${(n.prompts || []).length ? `<div class="small"><b>Play it:</b> ${n.prompts.map(esc).join(" / ")}</div>` : ""}</div>`;
+  ${(n.prompts || []).length ? `<div class="small"><b>Play it:</b> ${n.prompts.map(esc).join(" / ")}</div>` : ""}
+  ${aiOn() ? `<button class="btn sm ghost" style="margin-top:4px" data-act="ai-npc" data-id="${esc(n.id)}">Line ideas</button>` : ""}</div>`;
 }
 
 function clockSvg(t, ticks, size = 64) {
@@ -544,6 +546,12 @@ function vLibrary() {
       <div class="hr"></div>
       <div class="btn-row"><button class="btn" data-act="reset-play">Reset session state</button><button class="btn" data-act="restore-dad">Restore “Dad Overboard”</button><button class="btn ghost danger" data-act="factory">Erase all & reload defaults</button></div>
       <p class="small muted" style="margin-top:10px">Tip: on iPad, tap Share → Add to Home Screen to install. It then works fully offline.</p></div>
+    <div class="card"><h2>On-device AI <span class="badge">experimental</span></h2>
+      <p class="small">A small language model (SmolLM2 360M) that runs on this device: NPC line ideas, scene details, ideas for how a clue turns up, and townsfolk names. Nothing is sent anywhere. One-time download of about ${AI?.SIZE_MB || 400} MB, then it works offline.</p>
+      <p class="small muted">It's tiny, so results are rough and often miss. Treat them as prompts, not canon. It never sees the solutions.</p>
+      <p class="small"><b id="aiStatus">${esc(aiStatusText())}</b></p>
+      <div class="btn-row">${!AI?.supported ? "" : !S.ui.aiOn ? `<button class="btn primary" data-act="ai-enable">${aiDownloaded ? "Turn on" : "Turn on & download"}</button>` : `<button class="btn" data-act="ai-disable">Turn off</button>`}
+        ${AI?.supported && (aiDownloaded || S.ui.aiOn) ? `<button class="btn ghost danger" data-act="ai-delete">Delete model</button>` : ""}</div></div>
   </div>`;
 }
 
@@ -554,7 +562,7 @@ function openModal(html, keepScroll) {
   d.innerHTML = html; if (!d.open) d.showModal();
   if (y) $(".modal-body", d).scrollTop = y;
 }
-function closeModal() { const d = modal(); if (d.open) d.close(); d.innerHTML = ""; }
+function closeModal() { const d = modal(); if (d.open) d.close(); d.innerHTML = ""; if (aiView) { aiStop(); aiView = null; } }
 
 function fieldHtml(f, v) {
   const id = "f-" + f.key.replace(/\W/g, "_");
@@ -692,7 +700,7 @@ function openClue(id) {
       <div class="field"><label>Where</label><select name="where"><option value="">—</option>${allLocs().map((l) => `<option value="${esc(l.id)}" ${(f.where || P().scene.locationId) === l.id ? "selected" : ""}>${esc(l.name)}</option>`).join("")}</select></div>
       <div class="field"><label>How it came up</label><input type="text" name="note" value="${esc(f.note || "")}" placeholder="e.g. Rolled up behind the pollock"></div>
     </div>
-    <div class="modal-foot"><button type="button" class="btn ghost" data-act="edit-clue" data-id="${esc(id)}">Edit clue</button><span class="spacer"></span><button type="button" class="btn" data-act="modal-close">Cancel</button><button class="btn primary">Save</button></div></form>`);
+    <div class="modal-foot"><button type="button" class="btn ghost" data-act="edit-clue" data-id="${esc(id)}">Edit clue</button>${aiOn() && c.type !== "void" ? `<button type="button" class="btn ghost" data-act="ai-clue" data-id="${esc(id)}">Ideas</button>` : ""}<span class="spacer"></span><button type="button" class="btn" data-act="modal-close">Cancel</button><button class="btn primary">Save</button></div></form>`);
 }
 function markClue(id, on, extra = {}) {
   const p = P(), c = byId(M().clues, id); if (!c) return;
@@ -734,6 +742,122 @@ function setScene(locId, npcs) {
   const p = P(), changed = p.scene.locationId !== locId;
   p.scene.locationId = locId; if (npcs) p.scene.npcs = npcs;
   if (changed && locId) log(`Scene: ${locName(locId)}`, "scene");
+}
+
+/* ---------------- Session recap (built from the log, no AI) ---------------- */
+function recapText(p, session) {
+  const es = p.log.filter((e) => (e.session || 1) === session).slice().reverse();
+  const pick = (k, strip) => es.filter((e) => e.kind === k).map((e) => (strip ? e.text.replace(strip, "") : e.text));
+  const uniq = (a) => [...new Set(a)];
+  const parts = [
+    ["Places visited", uniq(pick("scene", /^Scene:\s*/))],
+    ["Clues found", pick("clue", /^Clue:\s*/)],
+    ["Strange things (Void)", pick("void", /^Void clue:\s*/)],
+    ["Threats advanced", pick("threat")],
+    ["Theories", pick("theory", /^Theory:\s*/)],
+    ["Notes", pick("note")],
+  ].filter(([, xs]) => xs.length);
+  return { session, parts, text: `Session ${session} recap\n\n` + parts.map(([h, xs]) => `${h}:\n${xs.map((x) => "• " + x).join("\n")}`).join("\n\n") };
+}
+function openRecap(session) {
+  const p = P(); session = session || p.session;
+  const r = recapText(p, session);
+  const sessions = [...new Set(p.log.map((e) => e.session || 1))].sort((a, b) => a - b);
+  openModal(`<div class="modal-inner"><div class="modal-head"><h2>Session ${session} recap</h2><button class="icon-btn" data-act="modal-close">✕</button></div>
+    <div class="modal-body">${sessions.length > 1 ? `<div class="seg-ctl" style="margin-bottom:10px">${sessions.map((s) => `<button class="${s === session ? "on" : ""}" data-act="recap" data-v="${s}">${s}</button>`).join("")}</div>` : ""}
+      ${r.parts.map(([h, xs]) => `<div class="section-label">${esc(h)}</div><ul class="list">${xs.map((x) => `<li><div class="body">${esc(x)}</div></li>`).join("")}</ul>`).join("") || `<p class="muted">Nothing logged in this session yet.</p>`}</div>
+    <div class="modal-foot"><span class="spacer"></span><button class="btn" data-act="recap-copy" data-v="${session}">Copy text</button><button class="btn primary" data-act="modal-close">Done</button></div></div>`);
+}
+
+/* ---------------- On-device AI (optional; see js/ai.js) ---------------- */
+const AI = window.KDAI;
+const aiOn = () => !!(S.ui.aiOn && AI?.supported);
+let aiView = null, aiRun = 0, aiDownloaded = null;
+const mb = (b) => Math.round((b || 0) / 1e6);
+function aiStatusText() {
+  if (!AI?.supported) return "Not supported in this browser.";
+  const s = AI.state;
+  if (s.status === "loading") return s.total ? `Downloading / loading model… ${mb(s.loaded)} of ${mb(s.total)} MB` : "Loading model…";
+  if (s.status === "error") return "Problem: " + s.error;
+  if (s.status === "ready") return `Model loaded (${AI.device === "webgpu" ? "GPU" : "CPU"}).`;
+  if (!S.ui.aiOn) return aiDownloaded ? "Off. Model is downloaded." : "Off.";
+  return aiDownloaded ? "On. Model downloaded; loads when first used." : "On. Model not downloaded yet.";
+}
+function aiNoteLine() {
+  return !AI || AI.state.status === "ready" ? "" : aiStatusText();
+}
+let aiTick = 0;
+AI?.onChange(() => {
+  const now = Date.now(); if (AI.state.status === "loading" && now - aiTick < 800) return; aiTick = now; // gentle on eInk
+  const a = $("#aiStatus"); if (a) a.textContent = aiStatusText();
+  const b = $("#aiModalStatus"); if (b) b.textContent = aiNoteLine();
+  if (AI.state.status === "ready") aiCheck();
+});
+
+/* groups: [{ label, make(i) -> task, n, use: "log"|"npc", logFmt(text) }] */
+function openAi(title, groups, intro = "") {
+  aiView = { title, intro, groups: groups.map((g) => ({ ...g, results: [] })) };
+  aiQueue(groups.map((g, gi) => [gi, g.n || 1]));
+}
+function aiQueue(plan) {
+  const run = ++aiRun, v = aiView;
+  plan.forEach(([gi, n]) => { for (let k = 0; k < n; k++) v.groups[gi].results.push({ busy: true }); });
+  renderAi();
+  (async () => {
+    for (const g of v.groups) for (let i = 0; i < g.results.length; i++) {
+      const r = g.results[i]; if (!r.busy) continue;
+      if (run !== aiRun) return;
+      try { const out = await AI.run(g.make(i)); r.text = typeof out === "string" ? out : out ? `${out.name} — ${out.role}` : ""; r.data = out; }
+      catch (e) { r.text = ""; r.err = e.message; }
+      r.busy = false;
+      if (run !== aiRun) return;
+      renderAi();
+    }
+  })();
+}
+function renderAi() {
+  const v = aiView; if (!v) return;
+  const busy = v.groups.some((g) => g.results.some((r) => r.busy));
+  openModal(`<div class="modal-inner"><div class="modal-head"><h2>${esc(v.title)}</h2><button class="icon-btn" data-act="modal-close">✕</button></div>
+    <div class="modal-body">${v.intro ? `<p class="small muted">${esc(v.intro)}</p>` : ""}
+      <div class="small muted" id="aiModalStatus">${esc(aiNoteLine())}</div>
+      ${v.groups.map((g, gi) => `${g.label ? `<div class="section-label">${esc(g.label)}</div>` : ""}<ul class="list">${g.results.map((r, ri) =>
+        `<li><div class="body">${r.busy ? `<span class="muted">Writing…</span>` : r.err ? `<span class="muted">Failed: ${esc(r.err)}</span>` : r.text ? esc(r.text) : `<span class="muted">(nothing usable — try More)</span>`}</div>
+        ${!r.busy && r.text ? `<button class="btn sm ${r.used ? "" : "ghost"}" data-act="ai-use" data-g="${gi}" data-i="${ri}" ${r.used ? "disabled" : ""}>${r.used ? "✓" : g.use === "npc" ? "Add to town" : "Log"}</button>` : ""}</li>`).join("")}</ul>`).join("")}
+      <p class="small muted" style="margin-top:10px">Small on-device model: expect odd or off-topic results. Use what helps, ignore the rest.</p></div>
+    <div class="modal-foot"><span class="spacer"></span>${busy ? `<button class="btn" data-act="ai-stop">Stop</button>` : `<button class="btn" data-act="ai-more">More</button>`}<button class="btn primary" data-act="modal-close">Done</button></div></div>`, true);
+}
+function aiCheck() { AI?.isDownloaded().then((d) => { if (d !== aiDownloaded) { aiDownloaded = d; if (location.hash.startsWith("#/library")) render(); } }); }
+function aiStop() { aiRun++; AI?.stop(); if (aiView) aiView.groups.forEach((g) => (g.results = g.results.filter((r) => !r.busy))); }
+
+const NPC_TOPICS = [null, "what happened last night", "someone else in town", "the weather and the sea"];
+const SENSES = ["sight", "sound", "smell", "touch"];
+function aiNpc(id) {
+  const n = npcById(id); if (!n) return;
+  openAi(`${n.name}: lines`, [{ n: 3, use: "log", logFmt: (t) => `${n.name}: ${t}`, make: (i) => AI.tasks.npcLine(n, NPC_TOPICS[i % NPC_TOPICS.length]) }]);
+}
+function aiPaint() {
+  const l = locById(P().scene.locationId); if (!l) return toast("Set a scene first");
+  openAi(`${l.name}: details`, [{ n: 3, use: "log", logFmt: (t) => `${l.name}: ${t}`, make: (i) => AI.tasks.sceneDetail(l, SENSES[i % SENSES.length]) }]);
+}
+function cluesForScene() {
+  const m = M(), p = P(), sc = p.scene;
+  const open = m.clues.filter((c) => c.type !== "void" && !p.found[c.id]);
+  const here = open.filter((c) => (c.where || []).includes(sc.locationId));
+  const linked = open.filter((c) => !here.includes(c) && (c.points || []).some((id) => sc.npcs.includes(id)));
+  const rest = open.filter((c) => !here.includes(c) && !linked.includes(c)).sort(() => Math.random() - 0.5);
+  return [...here, ...linked, ...rest].slice(0, 3);
+}
+function aiClues(ids) {
+  const p = P(), loc = locById(p.scene.locationId), npcs = p.scene.npcs.map((id) => npcById(id)).filter(Boolean);
+  const clues = ids ? ids.map((id) => byId(M().clues, id)).filter(Boolean) : cluesForScene();
+  if (!clues.length) return toast("No unfound clues left");
+  openAi(`Clue ideas${loc ? ": " + loc.name : ""}`, clues.map((c) => ({ label: trunc(c.text, 90), n: ids ? 2 : 1, use: "log", logFmt: (t) => `Clue idea (${trunc(c.text, 40)}): ${t}`, make: () => AI.tasks.clueIdea(c, loc, npcs) })),
+    ids ? "" : "Unfound clues tied to this place or the people here come first.");
+}
+function aiNames() {
+  const st = SET();
+  openAi("New townsfolk", [{ n: 5, use: "npc", make: () => AI.tasks.townsperson(st) }]);
 }
 
 /* ---------------- Sheet: moves & search ---------------- */
@@ -825,6 +949,24 @@ const A = {
   "scene-here": (el) => { setScene(el.dataset.id); commit(); toast(`Scene: ${locName(el.dataset.id)}`); },
   "stage-toggle": (el) => { const p = P(), id = el.dataset.id; p.scene.npcs = p.scene.npcs.includes(id) ? p.scene.npcs.filter((x) => x !== id) : [...p.scene.npcs, id]; commit(); },
   "theorize": () => openTheorize(),
+  "recap": (el) => openRecap(+el.dataset.v || 0),
+  "recap-copy": (el) => { const t = recapText(P(), +el.dataset.v).text; navigator.clipboard?.writeText(t).then(() => toast("Copied"), () => toast("Couldn't copy")); },
+  "ai-npc": (el) => aiNpc(el.dataset.id),
+  "ai-paint": () => aiPaint(),
+  "ai-clues": () => aiClues(),
+  "ai-clue": (el) => aiClues([el.dataset.id]),
+  "ai-names": () => aiNames(),
+  "ai-more": () => { if (aiView) aiQueue(aiView.groups.map((g, gi) => [gi, g.n || 1])); },
+  "ai-stop": () => { aiStop(); renderAi(); },
+  "ai-use": (el) => {
+    const g = aiView?.groups[+el.dataset.g], r = g?.results[+el.dataset.i]; if (!r || r.used) return;
+    if (g.use === "npc") { SET().npcs.push({ id: uid("npc"), name: r.data.name, role: r.data.role, src: "added", prompts: [] }); toast(`${r.data.name} added to ${SET().name}`); }
+    else { log(g.logFmt ? g.logFmt(r.text) : r.text, "note"); toast("Logged"); }
+    r.used = true; save(); renderAi(); render();
+  },
+  "ai-enable": () => { S.ui.aiOn = true; commit(); AI.start().then(aiCheck, (e) => toast("AI: " + e.message)); },
+  "ai-disable": () => { S.ui.aiOn = false; commit(); },
+  "ai-delete": () => { if (!confirm("Delete the downloaded model from this device? You can download it again later.")) return; S.ui.aiOn = false; AI.remove().then(aiCheck); commit(); },
   "theory-clear": () => { S.ui.theory = { culprit: "", text: "", clues: [] }; save(); openTheorize(); },
   "cast-filter": (el) => { S.ui.castFilter = el.dataset.v; commit(); },
 
@@ -943,7 +1085,7 @@ document.addEventListener("submit", (ev) => {
   }
 });
 modal().addEventListener("click", (ev) => { if (ev.target === modal()) closeModal(); });
-modal().addEventListener("close", () => { modal().innerHTML = ""; });
+modal().addEventListener("close", () => { modal().innerHTML = ""; if (aiView) { aiStop(); aiView = null; } });
 document.addEventListener("keydown", (ev) => {
   if (ev.key === "Escape") closeSheet();
   if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "k") { ev.preventDefault(); openSearch(); }
@@ -959,6 +1101,7 @@ applyTheme();
 render();
 save();
 if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
+aiCheck();
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
 window.KD = { get state() { return S; } };
 })();

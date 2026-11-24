@@ -10,6 +10,8 @@ Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindle
 - **Mavens** — abilities, XP, Conditions, Crowns of the Void.
 - **Moves & rules** — paraphrased quick reference (editable), Keeper moves, safety tools, theorize odds table. Quick "Moves" sheet from any screen.
 - **Full editor** for everything; new mysteries, settings and game systems (for The Between, Public Access, hacks).
+- **Session recap** — places, clues, threats, theories and notes from the log, grouped per session, with copy.
+- **On-device AI (optional, experimental)** — Library → On-device AI. Runs SmolLM2 360M in the browser via [transformers.js](https://github.com/huggingface/transformers.js) (WebGPU when available, otherwise multi-threaded CPU). One-time ~400 MB download, then offline. Adds: NPC line ideas on cue cards, scene details, ideas for how unfound clues turn up in the current scene, and townsfolk names. Prompts never include solutions. Output is rough; treat it as prompts.
 - Search (⌘K), JSON export/import, works offline once loaded.
 - Minimal pure black & white UI for eInk tablets: no colour, greys, shadows or animation; state shown by fill, weight and line style. The contrast button inverts to white-on-black.
 
