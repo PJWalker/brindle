@@ -155,3 +155,111 @@ He says it without sitting down: a wealthy Boston financier, Albert Krause, was 
 **Recap at cut (Keeper, one line each):** Connie has the stopped watch (11:02), Finch's wound facts, and a hearse booked; Dot has a dying purple fish, and Hollis said "since Sunday, the night after the yacht"; Irene has Sara's diary and a torn-out page, and Allison's heels in the corridor.
 
 *(1:26. Leon says he feels like he's going to get a lot out of this scene. Bea is loudly impatient: "Cut to me!")*
+
+---
+
+## 1:26 — Scene 5: The Regal Lady, Irene (and Sara)  (~14 min)
+
+**KEEPER:** Allison Krause comes down the companionway like she's descending to receive an award: thin, graceful, black silk, phone in her hand. *"Sara, darling, who is this? ...Oh. A teacher. How *quaint.* How delightful of you to call. Please, I've an *enormous* favour: would you consider a table at the Ball? The Warrior's Ball, a week Saturday. For the veterans."* Behind her, at precisely the right distance, a grey-haired man with a silver tray: Andrew. *"Madam, tea for the visitor."* He offers tea and, in the same breath, the evening: *"Mrs. Krause and the family retired at eleven precisely on Sunday. I served the last brandy myself at ten-forty."* Nobody asked him.
+**Leon:** Oh, that's a *tell.* Nobody asked him a thing. Irene smiles and says, "How lovely, Andrew, what a memory." And she's thinking *precisely.* I don't say it.
+**OOC (Bea):** I'm writing "precisely" down.
+**KEEPER:** *(Bea's Connie isn't there. She doesn't know. Bea notes the habit of writing; Keeper decides: table knowledge, but Connie hasn't heard it. Noted; Bea will have to say Connie got it from Irene in a scene.)*
+
+**Harriet (OOC):** Can Allison snap at him?
+**KEEPER:** She snaps at Andrew about the tea ("not the *Meissen*"), then touches his sleeve. It lasts a second. Sara looks at her shoes.
+**Leon:** Irene *watches the hand.*
+
+**KEEPER:** Allison, tilting her head, delivers the real ask: *"Mrs. Voss, you're clever, aren't you? There are some... papers. Certificates, family papers, Albert kept them in the safe. They've gone astray. If you could find them, quietly, for the family, we would be, well, *generous.* The Sheriff needn't know."* *(Complication, "Allison asks the Mavens to find the certificates for the family and offers to pay.")*
+**Leon:** Irene says she'll keep her eyes open. Can I say yes to the money and not mean it?
+**KEEPER:** Allison smiles. It's the smile of a woman who has heard that before. *"Of course you will."*
+
+**Leon:** Okay. While Sara shows me the ship (she said she would) I want to find the *engine room.* There's a thing under the floor: I want to hear it. Sensitivity. I'm listening, not sneaking.
+
+> **Roll, 1:36: Irene, Meddling, Sensitivity +2 = 4+1 = 7 (total). 7-9: clue with complication.**
+
+**KEEPER:** Down the iron companionway the heat comes up to meet you, and the noise, the growl of a machine in the dark. But as you stand at the hatch you realise it isn't a machine. It *rises and falls.* It's got breath in it. It's chanting, a long, low, patient chant in a language that's not Portuguese, coming from *somewhere dark and down below.* *(Clue **v2** found. **t4 ticks to 2/4**, the prayer group grows.)* The deckhand on watch, a wiry sunburnt man (Tiago, you don't know the name yet), straightens at the hatch, touches his wrist, then goes still. There's a spiral inked on the inside of it. It isn't quite where it was a moment ago.
+**Leon:** *(delighted)* Oh my GOD. Spiral. *Spiral.* The body had a spiral! Irene doesn't know that, Connie knows that — Bea knows that — they said it out loud.
+**KEEPER:** *(Players use table knowledge, in this instance Leon openly recognises he's holding it. He decides to play Irene as ignorant.)* You hold back. Fair.
+**Leon:** Irene thinks "That's an odd tattoo," and says "God bless you, young man," and nothing else.
+**KEEPER:** The complication: Andrew appears behind you on the iron stair, a silent grey figure, hands folded. *"Madam has lost her way?"* He has the tray. He's an eloquent man who is not smiling. *"One does so easily on a yacht. The family dislikes the crew disturbed. They're... devout."* He takes your elbow. Irene would like to say she was looking for the powder room. And she feels a chill that's from the engine room and not the engine.
+**Leon:** Irene takes a **Condition**. I want to say *Unsettled.* Is that allowed? The rules just said "mark one that fits".
+**KEEPER:** Mark *Unsettled.* *(Seed lists Angry, Frightened, Guilty, Hopeless, Insecure, Exhausted as examples; "Unsettled" is a variant. Note.)*
+
+**Harriet (OOC):** Is Sara okay?
+**KEEPER:** She's holding your hand, tightly, the whole way back up. At the rail, so quietly the wind nearly eats it: *"Mrs. Voss, would you come back? Tomorrow. Please."* The launch is waiting. Petey holds the line. Hollis's lights are coming on in the shack.
+
+**Recap:** Irene has the diary and a stub of a missing page, a chant that isn't a machine, a clue that Andrew corrects times he's not been asked about, and a request from Sara to come again.
+
+*(1:40 — Leon is thrilled; Bea says "I'm over the lamp-ing, I want my scene.")*
+
+---
+
+## 1:40 — Scene 6: The Brindlewood Inn, Connie  (~13 min)
+
+**KEEPER:** The Brindlewood Inn on the hill, a grand Victorian wedding cake of a building, with the wedding florist's van half on the lawn and two enormous tables-for-twelve being carried in through the front door by a man swearing in French. From the terrace a smell of orange peel. *(Connie is there to get the guest list; nobody asked her to.)*
+**Bea:** I go to the event manager. I say I'm on the Ball committee.
+**KEEPER:** Philippa Hale, headset, clipboard, three pens in her bun. She answers the phone mid-sentence. *"Hello — yes — no, Mrs. Krause, I did it already — I'm sorry, who are you?"*
+**Bea:** I lie. Composure, I'm cool. "Constance Atwood. Mrs. Krause's committee chair asked me to proof the guest list." Composure +1.
+
+> **Roll, 1:47: Connie, Meddling, Composure +1 = 1+3 = 5 (total). 6-: miss. Keeper move.**
+
+**Bea:** *Ugh.* A five!
+**KEEPER:** *(Move: Turn their move back on them, plus a rival.)* Philippa's eyebrows are halfway up her hairline. Across the lobby, loud and bright: *"Connie Atwood! On the Ball committee? Since WHEN?"* Bunny Hallworth, pearls and a Hermès scarf, a fresh gin in her hand, the yacht crowd's ornament this summer. Your old bridge rival. *"Darling, you can't even keep a seating chart for bridge."* Philippa shuts the office door in your face with a polite, apologetic *click*.
+**Bea:** I hate her. Connie *hates* her. She's going to be at the Harbour Committee vote, isn't she?
+**KEEPER:** Thursday. She'll be offering cocktails to anyone who'll speak for the moorings. She's already told Hollis you're "available."
+**Bea:** Oh, now that's *mean*.
+
+**KEEPER:** On the terrace, a man with a good suit, bad shoes and tourist sunglasses is peeling an orange in one very long unbroken curl. *"Mrs. Atwood. Friend. Please. Sit. I've heard so much. Lyle Sorensen. I'm just here for the puffins."* He's already pouring a second cup of coffee. He asks about your house. Where is it? Does it have a view? His daughter's applying to college, would you look at an essay? *(Everything he says is a question about you.)* **t3, The Debt Comes Due, ticks to 2/4** (a warning will follow).
+**Bea:** I don't sit. But I say: "Lyle Sorensen. Room Nine. You're a long way from Boston." I wanted to get his name out of him.
+**KEEPER:** He peels a bit more orange. *"It's amazing what a small town knows."* He knows which hand you type with. *(Beat. He smiles.)* *"Do give my best to Etienne."* *(Connie noted the pale Etienne.)* He tucks a card into the pocket of your cardigan; you don't see him do it. Later you'll find it: blank, white, a spiral embossed in the corner. *(c10-adjacent: not a clue yet; I'll mark it only if he demands a debt from someone while she's there.)*
+**Bea:** That's... an actual threat. I like it.
+
+*(1:53 — Bea's a bit cheered up; her miss was the most fun she's had. Harriet asks, "Is Hollis going to the Harbour Committee? What's Dot wearing?")*
+
+---
+
+## 1:53 — Scene 7: St. Brendan's Chapel, Dot (and Hemingway)  (~12 min)
+
+**KEEPER:** Margo Thibodeau arrives at the Candlelight's back kitchen, where Dot has just put an apron on and found the loft's oven is older than she is, wringing her hands and her cardigan pockets: *"Dorothy, Hemingway's gone again. The rummage sale box at St. Brendan's. And Seaside Reads has put out a sandwich board that says* Books Without the Dust, *the little wretches."* She presses a hardback into your hands, *The Cat Who Walks Through Walls*. *(Sorry: that's Heinlein. Margo says it's "suspiciously relevant." It is not. Nine in ten.)*
+**Harriet:** I go. It's on the way to nothing but I love a missing cat. Does Dot take a pie?
+**KEEPER:** St. Brendan's: white steeple, sea captains in the graveyard, the parish hall full of folding chairs for Allison's Ball planning lunch. A buzz-cut young man with a prosthetic left hand is setting out chairs in perfect rows and stands at parade rest when you walk in. Cpl. Tommy Gage. *"Ma'am."* A half-built wheelchair ramp at the side door.
+**Harriet:** I pick up the other end of a plank. "Corporal, you're going to hurt yourself." I'm babbling about his speech for the veterans' table; I *know* he's terrified. That's Presence. +2.
+
+> **Roll, 2:03: Dot, Meddling, Presence +2 = 1+4 = 7 (total). 7-9: clue with complication.**
+
+**KEEPER:** He lets you carry the plank. He talks: the team, the ramp, the Ball. Mrs. Krause has been very kind to the veterans, he says. *"Mr. Krause... less so."* Under the pew where the rummage sale boxes are stacked, Hemingway, an enormous marmalade cat, is asleep on a heap of men's clothes. *(Crossover happening: the box is one of Allison's "donations" from the yacht and it's Albert's things.)* A grey cashmere cardigan, a pair of tan deck shoes, a blazer with brass buttons. In the blazer's inside pocket, folded small, on **blue stationery**: *"My dearest E—"*, signed *T.* *(Clue **c13** found.)* Three pages. It's very tender. And very careful: he never writes her whole name.
+**Harriet:** *(gasping)* Dot reads the *first line* and then folds it right back.
+**KEEPER:** Too late: Tommy has seen. He goes absolutely rigid at parade rest and for the first time he loses his formality. *"Ma'am. Please. That is — it isn't — the Sheriff — Mr. Krause found them. He said he'd have me taken off the foundation and the veterans' fund. I haven't been near that yacht."*
+**Harriet:** Oh, the poor boy. Dot says "Tommy, I've never told on a nice boy in my life." Does she *promise?* ...She promises not to tell the Sheriff.
+**KEEPER:** *(Complication, the hard choice: promise, and a door opens; refuse, and he shuts down.)* He says *"Thank you, ma'am."* He sits down on a folding chair. He says where he was after midnight on Sunday: "walking the shore, alone." And his eyes go, for a second, toward the water. *(Dot now has a secret and a promise she'll have to decide whether to keep. He's a charity case, and a favour.)*
+**Harriet:** I carry Hemingway back in the apron. He puts his tail in the buttercream.
+
+**Bea (OOC):** Wait, Tommy was in love with Emily? Connie *knows* Emily.
+**KEEPER:** Connie doesn't know that; *Bea* does. Table knowledge.
+**Bea:** I'm going to be extra nice to Emily tomorrow, because I'm going to ask her about Tommy.
+
+*(2:05)*
+
+---
+
+## 2:05 — Scene 8: The Loft Kitchen, that night  (~12 min, mostly in character)
+
+**KEEPER:** Rain's back. The loft windows are the colour of tea. The back kitchen smells of rhubarb and butter. Dot has the oven going, ten pies' worth of pastry chilling on the sill, and Margo's put a kettle on and is pretending she isn't listening. You've all come back to the loft. Say what you've been up to: in character.
+
+*(In character, for about 10 minutes the three players trade finds, which functions as the free recap. Highlights:)*
+- **Connie** reads her court-reporter notes aloud: the watch stopped at 11:02, Finch's head wound that bled before the water, *merry, not legless*, Etienne volunteering that the watch is waterproof. "Which means somebody wanted to say eleven. And the butler says eleven. *Precisely.*" *(Irene supplied "precisely.")*
+- **Irene** puts Sara's diary page on the table, tells them about the engine room; Dot holds her hand and refuses to let her talk about it until she's eaten a slice of pie. *(Cozy beat.)* Connie: "A chant? In a boat?" Irene, quiet: "Walter used to say the Point was never quiet."
+- **Dot** tells of Bev's dying cod and Hollis's "Sunday, the night after the yacht." She says nothing about Tommy's letter, then at the end looks at her hands and tells them: "I made a promise, but I'm going to tell *you,* because you're my friends." *(Harriet has Dot break the spirit of the promise only for the Mavens; Tommy said "don't tell the Sheriff.")* Connie: "Emily and Tommy? That's what's in the blazer?" Bea sits very still. She is thinking "motive."
+- **Connie** gives the card: the blank white card with the embossed spiral. Irene reaches for it. Her hand stops. *"That's the same spiral."* "The same as what?" "Tiago's wrist." "Whose wrist?" "The deckhand's." *(Leon names the link in character, with a wry glance at Keeper, ignoring that the spiral on Albert's chest was mentioned only in Bea's scene.)* Bea: "And on the dead man's chest. Finch said. Oh, *that's* three spirals."
+**KEEPER:** *(The mundane thread forms on its own: tattoo to Tiago to Sorensen. Players have solved the Void thread's first step at the table, aloud. Noted in gm-notes.)*
+
+**Bea:** Okay, Andrew and Allison. We have the butler lying about time, the Rolex, Allison and the tea. And Etienne wiped his hands.
+**Leon:** I'm interested in *Sunday night, a thing in the water.*
+**Harriet:** I just want to bake. Gil's pies; Margo says Gil Wexford needs a dozen by Saturday for the lighthouse bake sale. Irene, that's your Gil. He knew Walter. Take him the pies.
+**Leon:** *(lighting up)* Oh. *Oh.* That's what the seed — I mean — Irene says: "I'd like that. Gil kept the logbooks. Walter's last one is in my cellar. I've never read it."
+**KEEPER:** *(Note: Leon has just found the Gil pies / logbook hook himself; that is the Void thread seed, so he found it.)*
+**Harriet:** Hollis got a pie, Gil gets a dozen. Dot's planning to put their pies side by side. They're not speaking. *(Cribbage feud.)* It's a *plan.*
+
+**Recap:** Open leads: the 11:02 watch and Andrew's "precisely"; Sara's torn page and her invitation back; the spiral (Tiago / Sorensen's card / Albert); Tommy's letter (promise made); Hollis's "Sunday" and his launch log (a pie got the door half open); Gil's pies and the Point; the Sheriff's deadline is *noon tomorrow* unless they give him something solid; the rug, the money and the numbers nobody's found.
+
+*(2:17: Bea says "I want to do the yacht, tomorrow, first thing." Harriet wants a breakfast scene. Leon wants the dawn at the Point. Keeper: "All three, and you'll hear each other's.")*

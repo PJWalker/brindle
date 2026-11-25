@@ -117,3 +117,82 @@ She sees the dog has a collar with a tag: a name and a Boston phone number, cake
 **Threat t4 ticks to 1**: dead fish on the tide line; the prayer group is larger than it was last month.
 
 Cut on Agnes crouched among the rocks as the last kneeler turns and looks directly into the dark where she is.
+
+---
+
+## 2:05 — Scene 4: The Point, still dusk (5 min)
+
+**Keeper** (picking up the cliffhanger after a long silence): "The last kneeler turns. It's the man with the spiral on his wrist. He walks across the rocks, not hurrying, and holds out a green towel. Hers. She dropped it ten feet back."
+**Kneeler** (quiet, Portuguese-accented): "Boa noite, Mrs. Quill. The water is cold tonight. It will be colder."
+**Jo:** (after a pause) "Agnes takes the towel. She says, 'Thank you.' She doesn't ask how he knows her name." **Keeper:** "He nods. The group leaves in ones and twos, and the dog watches them go. Then the dog watches you."
+**Jo** (OOC): "Okay. That was creepy. Agnes goes home and she doesn't swim." **Keeper:** "Noted."
+*(Keeper did not ask for a roll; Jo used the cut as her own Void moment. No ticks.)*
+
+---
+
+## 2:10 — Scene 5: The Fish Market, Wednesday 9am (20 min)
+
+*Cut to Dot and Lu. Concrete floors always wet; gulls; a hand-painted sign. Etienne in a long rubber apron, silver beard, booming.*
+
+**Etienne:** "Mesdames! You have come about Albert. Come, come, I will walk you to the cold store myself." He doesn't wait to be asked; he insists on going in with them.
+**Ellen** (OOC, giggling): "Dot has brought a fruitcake. It's what she does at wakes." **Keeper:** "Good. He takes it like it's evidence."
+**Keeper** (town life first): Etienne, steering them round the ice beds, can't stop talking about Saturday: Rémy and Tammy's wedding, the families fighting over the cake table, and that "that witch Bev" will win the chowder four years running unless a "wise old woman with an honest tongue" is on the panel. He glances at Lu. **Frank:** "Lu realises she's about to be asked to judge a chowder contest and says nothing." *(Table laughs; Frank: "It's a trap. Lu knows it's a trap.")*
+
+At the back of the cold store, on a fish-gutting table under a tarp, Albert Krause. **Dr. Harold Finch** is already there in tweed with his bow tie, polishing his glasses and complaining. **Finch:** "I've been conscripted to judge a *chowder contest*, Mrs. Abernathy. I'm a medical examiner. I judge *deaths*." **Frank/Lu** (impulsive): "Lu says: 'Harold, I'll judge it for you.'" **Keeper:** "He puts his glasses back on very slowly." **Finch:** "You'd *do* that? Mrs. Abernathy, I would tell you anything. What would you like to know?" *(Favour opens a door, per Town Life First. No roll: the player offered a favour.)*
+
+Finch, sheepish, tells them what he can: a wound above the left ear that bled freely *before* Albert went into the water; very little water in the lungs ("dead or senseless when he went in"); a grip-shaped bruise on the right forearm; blood alcohol "merry, not legless," which contradicts the family; he can't say blunt object versus a small-calibre graze without a proper autopsy and that needs the body to stay. And, grudgingly, "He's got an odd old tattoo on the chest." **Ellen:** "Dot asks about marks." **Keeper:** "A spiral. Old. Faded." **Ellen:** OOC "A spiral. Like the thing in the Sheriff's file?" **Keeper:** "There's nothing like that in the file." *(Ellen was reaching; the Keeper refused to confirm. Table knowledge: Jo, at the table, now knows Albert has a spiral tattoo; Agnes saw a spiral on the kneeler's wrist. Jo says OOC, "I know what I know. Agnes isn't here. I'm not saying a word." Keeper writes this down as Jo using restraint with table knowledge.)*
+
+**Dot Meddles to look at the watch while Etienne hovers: Presence +2** (she charms Etienne into telling the wedding-cake saga so Lu can lean over). **Roll 1+5 = 8, mixed.** A clue and a complication.
+
+> **Clue c4 (found, on the body).** Albert's Rolex: the crown is pulled out and the hands are frozen at 11:02. Still on the wrist.
+
+Lu, leaning over: "Waterproof, that. My Harold had one; he wore it in the bath." (Frank is improvising Lu's late husband Harold. Keeper: "Fine, it's a Rolex. They're waterproof." Frank grins: he has just given Lu a husband and a reason to know it. Note: Dr. Finch is also named Harold; they both laugh.)
+**Complication:** Etienne is wiping his hands on his apron. "Lovely watch. Albert never took it off. The sea, she stops *everything*, eh?" It's a lie. Then, firmly: "No more visitors to the body after today, Mesdames. Dr. Finch is nearly finished. The funeral home is ringing me." **Threat t2 (The Body Goes to Boston) ticks to 1: the funeral home books a hearse.** Finch, white: "I need two more days." Etienne: "Tomorrow."
+
+As they leave through the back door a man in a good suit and bad shoes, tourist sunglasses on, is just going out the other side, slowly peeling an orange. **Ellen:** "Dot says, 'Good morning.'" **Sorensen** (politely, not stopping): "Good morning, friend." Lu notices that the orange is peeled in one unbroken spiral. *(Not a clue. Keeper only describes.)*
+
+**Frank** (OOC): "Wait, so Lu is a *chowder judge* now?" **Keeper:** "Saturday at the Festival." **Frank:** "She's going to make Bev cry." **Ellen:** "We could make a *pot*." *(They derail into recipe talk for six minutes. Keeper lets it run: this is the XP question about cozy activities and nobody is rolling.)*
+
+---
+
+## 2:30 — Scene 6: Wednesday morning, the Gull & Anchor (12 min)
+
+*Cut to Agnes alone. She swam at dawn (Jo: "Agnes swims. Cold. Always cold. It's the only thing she does for herself") and decided on a pie run for Gil.*
+
+**Jo:** "Agnes needs twelve pies. Gil needs twelve pies. The only pie case in town is Bev Tuttle's." **Keeper:** "Bev has a Maven's grudge on her side of the counter too." **Jo:** (deadpan) "She sat on the cake."
+**Bev** (HON!): "Agnes Quill! Twelve pies! For *Gil*? Hon, you must be sweet on him." *(Booths turn.)* Agnes wants to buy them without letting Bev know why, and keep it cool. **Keeper:** "Keep cool or lie is Composure." **Jo:** "+1."
+**Agnes Meddles: Composure +1. Roll 1+3 = 4, total 5. A miss.** Keeper move: *turn the move back on her / reveal an unwelcome truth.*
+**Keeper:** "Bev leans across the counter and, at a whisper that carries to the kitchen, says: 'Hon, you were out on the Point last night. Doris saw. Funny thing, a *nice man staying at the Inn*, Mr. Sorensen, was in here this morning asking if I knew a Mrs. Quill. Says he took a liking to the idea of a stenographer. Wants advice on his daughter's college essays.' Then she refills Agnes's coffee, which Agnes didn't order."
+**Jo:** (long pause, then quietly) "That is a bad morning." *(Agnes marks the condition **Insecure** about being watched; Jo chose it herself.)*
+Pies: Bev gives her twelve, "on the house, hon, for the lighthouse." **Jo:** "That's *worse*." *(Keeper: Bev's favour is a debt. Table laughs.)* Agnes leaves with twelve pies, a debt, and the knowledge that a man she's never met knows her name.
+No clue. **Threat t3** isn't ticked (she hasn't met Sorensen yet) but the Keeper notes it's about to be.
+
+**Keeper:** "At this point the Sheriff's phone rings at the loft." *(Cut.)*
+
+---
+
+## 2:42 — Scene 7: The loft, Wednesday evening (8 min)
+
+*The three Mavens in the loft after supper. Rain again on the skylight. Margo has left a Seaside Reads petition on every chair.*
+
+The Mavens reunite and tell each other what they found *in character*. **Ellen/Dot:** "Dot's been told by Wyman, by text, that Allison Krause's lawyer called: *noon tomorrow*." **Threat t1 (The Krauses Set Sail) ticks to 1** (the lawyer phoned; the Sheriff has set a deadline: noon tomorrow). **Threat t5 ticks to 1** (invitations reprinted, per the in-game day).
+**Frank/Lu** shares: Finch's autopsy, the watch, the lie. **Ellen/Dot** shares: the file, the 'about eleven', Emily's DM plea. **Jo/Agnes** shares: "There's a group at the Point at dusk. They kneel. One of them knew my name. And Bev says a Mr. Sorensen is looking for me." She does *not* mention the dog. **Ellen** (OOC): "Wait, you were out *alone*?" **Jo:** "Agnes always is." *(Ellen/Frank are disappointed; Keeper notes it's a real pull on the table's friendship thread.)*
+**Frank** (OOC): "Lu gives Agnes a jar of dahlia tubers and says she's not to go out at night without telling her." **Jo:** "Agnes takes the jar." (small warm beat)
+
+**Theo (Dot's grandson).** A bang at the bookshop door and Margo shouts up the stairs. **Ellen:** "It's Theo. With a duffel bag. He has dyed his hair green." *(Cozy interruption and Ellen's personal scene.)* Keeper plays Theo: 19, hopeful, hungry, has "taken a semester to figure things out." **Ellen/Dot:** "Dot says: 'There's a murder in town. You can help.' Lu says: 'Dot!'" *(They talk about how long it's been since he's visited. Dot plays "Abide With Me" badly on purpose to see if he'll laugh. He does. Cozy activity: indulged.)*
+
+Keeper cuts the scene with the last line unresolved: Hollis's launch lights, a quarter mile out, are heading toward the yacht in the rain, and nobody has any idea who's aboard.
+
+---
+
+## 2:50 — Wrap-up: end-of-session questions (10 min)
+
+No Theorize. The table is in the middle of the story. The Keeper reads the questions; players decide together.
+
+1. **Did we solve a mystery?** No, but the table is intrigued. (0 XP)
+2. **Did we learn something new about the Void or the town's secrets?** Yes: the prayer group at the Point, the spiral on Albert and on the kneeler, Sorensen's spiral peel. (+1 XP, each)
+3. **Did a Maven share a memory or reveal something about her past?** Yes: Dot and Hollis's prom, Agnes's cake, Lu's postal-counter reading, Emily's piano. (+1 XP, each)
+4. **Did a Maven indulge her cozy activity?** Yes: Agnes swam at dawn; Dot played hymns; Lu discussed dahlias with Finch. (+1 XP, each)
+5. **Did we get ourselves into real danger?** The table argues. Ellen: "No." Jo: "A man knew her name." Keeper: "Close but no." (Ellen/Dot and Lu: 0; Agnes: 0.)
+
+**Table summary:** Ellen and Frank want more time with each other's Mavens and more scenes of the two of them together. Jo wants the dog and Sorensen to matter next time. Everyone says they'd come back. Time: 3:00.

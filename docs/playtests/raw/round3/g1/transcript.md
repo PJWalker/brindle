@@ -153,7 +153,7 @@ The Sheriff, rattled, plays his own Move: **Ida.** "My mother, Ida Dalrymple, ni
 
 ---
 
-## 1:45 — SCENE 5: The Bench at the Harbour, Wednesday dusk (to 1:58)
+## 1:45 — SCENE 5: The Bench at the Harbour, Wednesday ~5:45pm, golden hour (to 1:58)
 
 *Dot (Maureen). K asks for a cozy scene; this one doubles as the Establishing Answer.*
 
@@ -172,4 +172,39 @@ Meanwhile K plays the deckhand tying up: he reaches to cleat the line and, as th
 **(Out loud: clue — *A diary entry: "I just can't take it anymore."* **c5**. K picks: Sara's diary, written the night of the dinner; a page torn out; written in her cabin under the toddler drawings.)** Ruth: "The *missing page* — that's a second clue inside the first. Who tore it?" **Maureen (OOC):** "I'll — I'll ask her again tomorrow." *(Maureen's first spontaneous plan. K notes it.)*
 
 The tender pulls out. Tiago does not look back, but Dot sees him touch his wrist as the boat swings toward the dark water past the yacht — toward Brindle Point, not the Regal Lady, for the first hundred yards. **K cut.**
+
+---
+
+## 1:58 — SCENE 6: Vivian Starling Arrives, the diner, Wednesday ~6:15pm (to 2:08)
+
+*Bunny (Dev). Pure town-life scene; no roll, no clue. About a rival.*
+
+K, picking up the cliffhanger: Vivian Starling, in a scarf like a collapsed parachute, takes a booth *facing the door* and orders "a pot of tea and a *conversation*." She has "heard the Sheriff has hired local talent." Dev is thrilled and committed within seconds; the pair play out a ten-minute improv war — Vivian offering "a *little notice* in the Gazette's Festival piece," Bunny retorting that she's already been cast as the Stage Manager in *Our Town* (K, off the happenings list: "Yes — you were cast this afternoon. The director's name is Father Brian and he's very tired."). Vivian pales. "*The Stage Manager.* They've given you the *Stage Manager*." **Dev (OOC, glowing):** "I'm going to be the best Stage Manager this town has ever seen and I'm going to do it *directly at her*."
+
+Bev, topping off coffee: "Hon, you want her on the Tuttle side of the aisle or the fish man's?" Vivian: "Whoever has the better lighting." **Dev:** "Oh, the best of them aren't lit at all." (K: nice.) Vivian says she is at the Inn "for the Ball," and has noticed "a Boston gentleman who peels oranges at dawn on the terrace and speaks to the sea." That's colour only, K does not list it as a clue. Hollis, at the counter, mutters "Ayuh" with feeling.
+
+Dev ends the scene by making a deal with Vivian — mutual hostility until Saturday, at which point a duel at the Festival, with chowder. K: "That is going to happen. I'm writing it down." *(Ruth OOC, laughing: "I came to solve a murder and I'm learning about the Vivian situation.")* Cut at 2:08 on Vivian leaving a ten-dollar bill on the table and Bev saying "*That's not enough for the pie she ate.*"
+
+---
+
+## 2:08 — SCENE 7: The Fish Market, Wednesday ~6:45pm (to 2:22)
+
+*Evelyn (Ruth). Maureen and Dev's players listen. The table asks to cut to this because "Ruth hasn't done anything in a while."*
+
+K frames: the wharf, ice beds, gulls, concrete always wet, a hand-painted sign "Beauregard & Sons — Since 1987". Etienne's booming voice is already going as she arrives: "*Madame!* A Maven! In my humble market!" He is wiping his hands on his apron. K plays his life first: he is furious at Bev, the chowder, the wedding. "She wants the *Gull and Anchor* to cater her own daughter's wedding! My son is marrying into a *chowder house*!" Evelyn commiserates for a few minutes (Ruth is a natural; she takes notes on the wedding).
+
+Ruth asks about the body. Etienne, genial, bustles her toward the cold store — "of course, of course, I will walk you in, you must not slip, the floor is *wet*" — and insists on coming with her. K notes the steel door and the combination padlock hanging open; inside, the body under a tarpaulin on a fish-gutting table, wooden crates of cod, a wall of pollock. **K:** "It's cold. Etienne has a hand on the door."
+
+**Ruth:** "I look at the pollock. Not the body. Something in a cold store that *shouldn't* be — a rolled thing, a bag. I'm deducing where I'd hide it." **K:** "Reason." *Roll: Evelyn, Meddling Move, Reason +2: **1+2 = 3 + 2 = 5. Miss.***
+
+**K (Keeper moves, taking the miss):** Etienne wipes his hands on his apron — *twice* — and, still smiling, steps in front of the pollock. "Madame will catch her death. This is not a place for ladies." He steers her out, boom boom boom, the whole way, and as they reach the daylight a long black funeral car is idling at the market door; a man in a black suit is signing something on a clipboard. **(T2 *The Body Goes to Boston*, segment 1: "The funeral home books a hearse.")** Etienne: "Ah — tomorrow, the Krauses decide. Or Friday." Ruth sees Etienne's face over the clipboard as the undertaker's pen scratches. 
+
+Then the second move: a broad man in a good suit, bad shoes and tourist sunglasses comes out of the *back* of the fish market with a bag of something wrapped in paper, peeling an orange. **Lyle Sorensen:** "Friend. Mrs. Marsh, isn't it? Lovely hair. Do you have a nice garden? I always say you can tell everything about a woman from her garden." Evelyn says nothing about dahlias. Sorensen's smile doesn't change. "My daughter's applying to colleges. I'd love your advice on an essay. Sometime." He bows and walks off. The market suddenly smells of cold.
+**Ruth (OOC):** "He knows I garden. *How does he know I garden?*" **K:** "That's the polite visit." **(T3 *The Debt Comes Due*, segment 1.)** 
+
+**Condition:** Evelyn takes **Rattled** (K offers; Ruth accepts, "she wouldn't admit it, but she's gripping her bag.") To be cleared by a cozy activity (crosswords).
+
+**Maureen (OOC):** "Can I knit with her tomorrow? Like — be a friend?" **K:** "That's a lovely idea. Hold it."
+
+Etienne, at the door: "You will judge the chowder, madame? Bev has told the whole town she has a Maven on her side!" **Ruth (OOC):** "Oh — I was going to say Bunny's judging for Bev —" **K:** "Evelyn wasn't at the diner. She doesn't know that." **Ruth:** "Right. No. Evelyn says: 'I'm sure I couldn't say.'" (Table-knowledge slip, caught and resisted. Dev, OOC: "I regret nothing.") Etienne eyes her narrowly. Cut.
 
