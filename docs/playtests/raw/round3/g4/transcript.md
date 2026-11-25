@@ -263,3 +263,134 @@ He says it without sitting down: a wealthy Boston financier, Albert Krause, was 
 **Recap:** Open leads: the 11:02 watch and Andrew's "precisely"; Sara's torn page and her invitation back; the spiral (Tiago / Sorensen's card / Albert); Tommy's letter (promise made); Hollis's "Sunday" and his launch log (a pie got the door half open); Gil's pies and the Point; the Sheriff's deadline is *noon tomorrow* unless they give him something solid; the rug, the money and the numbers nobody's found.
 
 *(2:17: Bea says "I want to do the yacht, tomorrow, first thing." Harriet wants a breakfast scene. Leon wants the dawn at the Point. Keeper: "All three, and you'll hear each other's.")*
+
+---
+
+## 2:17 — Scene 9: The Regal Lady, Thursday morning, Connie and Emily  (~11 min)
+
+**KEEPER:** Morning, a high white sky, the water like hammered tin. Hollis's launch, which Petey runs, takes you out for twenty dollars, which is a little sullen of him. The yacht is 140 feet of teak, brass and bad taste. As you step aboard, what do you see that indicates these people have more money than they know what to do with?
+**Bea:** Connie *counts* it. A hundred and forty feet, a helipad that nobody uses, and a bidet in the guest corridor, which she notices through an open door. A fully stocked bar cart next to the fire extinguisher.
+**KEEPER:** Andrew meets you at the rail. *"Madam is expected. Miss Emily has asked for you."* *(Establishing: the child you met.)* He says it as though he regrets it.
+
+**KEEPER:** Emily's cabin: three laptops, blackout curtains, hoodie, headphones round her neck, the glow of screens on her face. *"Umm... can we put a pin in this for a sec? I just have to reply to this DM real quick."* She's typing. She remembers you. *"You're the stenographer. You did the ninety-word quick-fire. I came second. I never forgave you."*
+**Bea:** Connie says, "You were sixteen. You'd have beaten me with a better handicap." And then I sit down on the bed and say, "Emily, what are you working on?" I'm reading the screen as I talk. Reason, deducing what I see.
+
+> **Roll, 2:25: Connie, Meddling, Reason +2 = 5+6 = 13 (total). 10+: a clue.**
+
+**KEEPER:** A good one. Emily doesn't hide it: Emily, who never stops typing, is *puzzling,* on a slip of paper next to the keyboard, in pencil, in Albert's cramped hand: **3-27-9-14.** *(Clue **c16** found.)* *"It's the safe,"* she says. *"The study safe. I've been trying to get in for two days. I know the bearer certificates are missing from it, somebody emptied it already, and I know that's a number my dad has used his whole life. His luggage, his gym locker, the gate to the house in Beacon Hill. I'm just not sure if it's a combination or a map."*
+**Bea:** *"A map."* Why does she say a map?
+**KEEPER:** Emily shrugs. *"He wrote it twice. Once in the study, once in the margin of a 1998 chart. It's too, like, specific for a safe."*
+**Leon (OOC):** Lat-long? A bearing? *Bearing.* Irene's at the lighthouse tonight. I'm *so* going to say it.
+**KEEPER:** *(Note, the seed's c16 gives one meaning to choose and the lighthouse Void thread assumes a second. Ruling: it is both. Albert used the same numbers for everything. Gil's 1998 logbook will have it.)*
+**Bea:** Connie says: "Emily, can you tell me when everyone's phone was last used? On the night."
+**KEEPER:** She doesn't need to look. *"Dad's phone. 11:52. One call. To his lawyer, Gerald Prentiss. Sixteen seconds. I unlocked the phone Monday."* *(Not a new clue; deepening c3 once they find the time testimony. I'll hold it as a talk-fact for the player to use.)*
+**Bea:** *(sits up)* ELEVEN FIFTY-TWO. Connie is *writing.* "So he was alive at eleven fifty-two, and the family says eleven."
+**Harriet (OOC):** And Andrew said *eleven precisely.*
+**Bea:** And the watch says 11:02! Fifty minutes off! Oh, that's *so good.*
+**KEEPER:** *(Players are connecting a stopped watch, a butler and a phone record out loud. The solutions are clearly working.)*
+
+**Bea:** And then I ask about Tommy. Gently. "Emily, there's a young veteran..."
+**KEEPER:** Emily goes pink to her ears. She looks at the screen. *"He writes really nice letters. I haven't answered them. Dad found out. I... I didn't want to hurt him."* *(A beat.)* *"Is it, like, a thing that if someone's sweet it's suspicious?"*
+**Bea:** Connie says, "Dear, everyone's suspicious. I'm very fond of you."
+**KEEPER:** *(Soft beat, then the cut.)* Footsteps. Andrew in the corridor: *"Miss Emily, Madam wishes the luncheon table laid in the salon. Mrs. Atwood, the launch returns at noon."* **t5 The Warrior's Ball: invitations reprinted (1/3)** when Allison's staff mention the Ball. *(I'll tick t5 per in-game day: 1/3.)*
+
+**Recap:** Connie has Albert's numbers 3-27-9-14 (safe? map?), the 11:52 call (talk-fact), and Emily's soft spot for Tommy.
+
+*(2:28. Bea, who's been sulking all night, says: "Okay *that* was good.")*
+
+---
+
+## 2:28 — Scene 10: The Harbourmaster's Shack, Dot and Hollis  (~9 min)
+
+**KEEPER:** A wooden shack at the end of the pier, a stove, three barometers that disagree, tide tables, a cribbage board on the sill that has not had a peg moved in six weeks. Hollis Crane sits on an upturned bucket mending a net he isn't mending, squinting at the horizon through a window with no horizon. He's drafting his speech. It's on the back of a chowder menu. *"Ain't my business,"* he says, to the cribbage board, as you come through the door with a tin and a full second pie.
+**Harriet:** Oh, I've been *waiting* for this. Dot puts the pie on the barometer. "I'm not here about murders, Hollis, I'm here about the moorings. Read me the speech." And I sit.
+**KEEPER:** *(Town life first.)* He reads it, in a whisper, with long pauses for the weather. It's about the mooring field and the yachts that block it. It is the best speech anyone in Brindlewood has ever drafted and it's *five sentences* long. He asks her to say which sentence is worst. She tells him: all of them need *you*. He goes red under the weather.
+**Harriet:** Dot says, "Gil wants a dozen pies. I'm baking them. I could use someone to tell me whether to put a lattice on the third." *(She's trying to make peace. Hollis hears Gil's name.)*
+**KEEPER:** The squint. *"Ayuh. Pegging short. Thirty years. He says."* But you're two pies and a speech in; his shoulders go down a quarter-inch.
+**Harriet:** And then I ask, *so carelessly,* "Hollis, anybody go out to the yacht Sunday?" I'm just *wondering,* with my hand on his sleeve. That's Presence. 
+
+> **Roll, 2:35: Dot, Meddling, Presence +2 = 4+6 = 12 (total). 10+: a clue.**
+
+**KEEPER:** He puts down the net. A long squint at the horizon that isn't there. Then he opens the bottom drawer of the barometer table and takes out the launch logbook, a green clothbound ledger with brass corners, and sets it in front of you without a word, open at Sunday. Times, names, in a harbour hand: **9:50pm, out to R. Lady, L. Sorensen. 12:20, radio. 12:40, back at dock.** *(Clue **c3** found: the testimony that the night was busy, and the lie at 11:00.)* "Nobody's asked," he says. "Sheriff don't think to." You turn the page. Below it, in pencil, an entry that isn't a launch, with no name: *12:15 skiff, no light. Fish-market slip. Out.* *(He logs launches, not rowboats; he's written it anyway.)* *"Wasn't the family,"* he says. *"Ayuh. Somebody went out that night. Wasn't the family."*
+**Harriet:** *(thrilled)* He *wrote it down.* Because *I* asked. Dot does *not* say anything clever; she says "Thank you, Hollis," and kisses the top of his head. No — she squeezes his arm. *(laughing)* Okay, she kisses his head.
+**KEEPER:** He does not squint for fourteen seconds.
+**Bea (OOC):** *"Etienne's skiff."* We have the *skiff.* Etienne's an unlit-skiff man. And Etienne wiped his hands.
+**KEEPER:** *(Bea has heard "fish-market slip" and "skiff" from Harriet's scene and puts it together with a name Dot hasn't said. Etienne's skiff is the seed's fixed fact; "an unlit dinghy under the wharf" is Etienne's. Good: the table is converging on Etienne independently.)*
+
+**Harriet:** Dot takes the log to the Sheriff? Or just copies it?
+**KEEPER:** You copy it by hand, with Hollis's pencil, and he lets you take the photocopy to the Sheriff, who is, at noon, hitching his belt over the Krause file. When you hand it over he says "Ladies..." and a long sigh, *"Nobody asked Crane for the launch log."* He says it into his hand. Then: *"I'll give you till tomorrow noon. Not a minute more."* **t1, The Krauses Set Sail: stalled** (they gave the Sheriff something solid). Threat t2 remains 1/3.
+
+*(2:37 — Time check: 43 minutes left. Leon, who's been waiting: "Can we do the Point now?")*
+
+---
+
+## 2:37 — Scene 11: Brindle Point Lighthouse, dusk, Irene  (~13 min)
+
+**KEEPER:** Thursday, dusk. Dot has baked twelve pies since dawn (Margo's oven has never been so used) and they ride out to the Point in two crates on the back of Petey's truck, with a smell like a Sunday. Tucked in the lid of the top crate, a small brass **cribbage peg** with a note in a harbour hand: *"Moved it back. — H."* *(Harriet gets the feud ending: Dot did that at the shack.)* The lighthouse, white, automated since the seventies, black rocks below. A keeper's cottage with one lit window. A pile of dead fish on the tide line, the gulls strangely absent. And the air: warm for a Maine evening. A muddy white dog sits on the rocks and won't come up.
+
+**Leon:** I'm going to start with the tide pools. That's Irene's cozy activity. She goes down on the rocks first, with the jar, before the cottage. Can I do that?
+**KEEPER:** *(Cozy activity.)* Describe the moment.
+**Leon:** Pools full of anemones and a green crab, and the water is *warm,* and she thinks of Walter. She's calm. Tide-pooling is how she shakes off the engine room. She clears Unsettled.
+**KEEPER:** Cleared. *(Cozy clears a Condition; it worked.)* The dog watches you. It's wearing a collar under the mud: *Duchess — Krause.* Samoyed, fur stiff and rust-coloured at the ruff. She won't leave the rocks; she'd sit right where they kneel at dusk. *(Clue **c20** found.)* Irene scratches her ears and comes away with brown flakes under her nails. It's not mud.
+**Leon:** Oh no. She doesn't say it.
+**Harriet (OOC):** She's *fine,* right? The dog? Line!
+**KEEPER:** She's fine. Cold, tired and very loved already.
+
+**KEEPER:** Gil Wexford opens the cottage door in a cardigan over a fisherman's sweater, binoculars round his neck, polishing them on his sleeve. Thick glasses. *"Mrs. Voss. I'm so sorry about the dog hair. Walter's wife. I... I didn't think anyone remembered."* Then the pies, and he cries a little, and apologises for that too. He talks about the lamp, the dog, the bake sale. He asks if you'd like tea. He says nothing, nothing at all, about the murder, until you say Walter's name three times.
+**Leon:** Irene brings out the cribbage peg and tells him about Hollis.
+**KEEPER:** He holds the peg a long while. *"Thirty years. He never — oh. Well."* He puts it in his breast pocket. He says, quieter: *"Mrs. Voss. I've got something I never showed anyone. The 1998 logbook."*
+
+The log: a green hardback in Gil's slow hand. A night in July. *Pulled a man from the water off the Point, alive. Boston. He was smiling.* And in the margin, in Albert Krause's cramped hand, written a week later as a thank-you note: **3-27-9-14.**
+**Leon:** *(whooping)* IT'S THE SAME. I mean — the numbers Connie found. Irene doesn't know them. I know them. Hang on. Bea, can I say Connie said the numbers to Irene in the loft kitchen?
+**Bea:** She told you. In the kitchen. I read them out for the crossword.
+**KEEPER:** *(Table knowledge becomes character knowledge via an offscreen conversation; fair. The Keeper just accepts it. Noted.)* Then it's a bearing. From the lamp room, three degrees, twenty-seven, nine, fourteen. A patch of water off the Point.
+**Gil:** *"They kneel there,"* he says, pointing. At the rocks, where Duchess sits. *"Twice in thirty years. Same spot. I've been scared to say."*
+
+**KEEPER:** *(Void thread: v4.)* At the water's edge, as the last light leaves, they come. Eight or nine figures in waterproofs, coming across the rocks in a line without lanterns. They kneel at the tide line, not looking at you or the cottage. Among them a wiry, sunburnt man, hands palms-down on the stones. The spiral on his wrist. *(Clue **v4** found.)* When you step toward them they stop humming and *disperse,* silently, like dropped ink, up the beach. *"They won't talk,"* Gil says. *"If you're pushy."* **t4 ticks to 3/4: "Chanting heard across town; a Maven dreams of drowning."**
+**Leon:** Irene wants to go out. *Along the bearing.* At dusk, in Gil's skiff. Gil, will you row?
+**KEEPER:** *(Seed: "Row out along the bearing at dusk, in Gil's skiff or Hollis's launch.")* He doesn't want to. He does. *"For Walter."*
+
+*(2:44 — Leon is leaning on the table. Bea: "Please tell me something's going to happen." Harriet: "I'm worried about Gil.")*
+
+**KEEPER:** The skiff is a grey clinker-built rowing boat, and Gil rows with the oars muffled in rags. Out past the rocks the light is almost gone. And the water is *warm.* Not tide-warm, bath-warm, with steam off it in a thin line. In the water under the hull the dark swirls like ink in a glass, plumes and slow curls, rising. *(Clue **v6** found.)* And under the planking, rhythmic as a heartbeat: the chant. You can feel it through your feet. The same words as the engine room.
+**KEEPER:** Then something brushes the boat. Long. Slow. Along the keel, and *around.* Composure to keep your seat and your head, Irene. I'll call it Composure, 2d6+0.
+
+> **Roll, 2:46: Irene, Meddling-style, Composure +0 = 1+3 = 4 (total). 6-: miss. Keeper move.**
+
+**Leon:** *Four.* Of course.
+**KEEPER:** *(Move: put someone in a spot (an NPC she likes) and show a sign of the Void.)* Gil makes a sound you'll hear in your sleep. He drops an oar; it floats away, turning. The skiff is drifting with the ebb *toward* the rocks, and the shape beneath it rolls under the keel again, slower. The chant stops. In the silence, very close, from nowhere: **"You promised."** In *Albert's* voice. Warm, amused, ruined.
+**Leon:** Irene takes a Condition. *Frightened.* And...she *reaches in.* She's got to. She puts her hand in the warm water.
+**KEEPER:** *(The seed's Crown offer: "A Maven who reaches into the water hears 'You promised' in Albert's voice and is offered a Crown of the Void.")* Something takes her hand, and it's not unkind. It isn't a grip. It's a *recognition.* And a thought arrives that isn't hers: *Albert left the door open. You could walk through it. You'd always know what the water knows.* The Crown of the Void is offered. A black thing, patient, like a held breath.
+**Leon:** I take it. Obviously.
+**KEEPER:** *(Crown 1 of 7.)* What does it do? *(Seed doesn't say; I rule: once per session, Irene may ask the water one question about the night Albert died and receive one true image, and Keeper must show it; and each use brings her closer to the tide.)* **t4 ticks to 4/4, "Something surfaces at Brindle Point."** **Epilogue note: the epilogue ends on this step.**
+**KEEPER:** Gil gets the oar back. He rows. Neither of you speak. The light on the Point, as you come in, burns for a single heartbeat **purple.**
+**Leon:** *(low)* That is *so good.*
+**Harriet (OOC):** I'm so glad it's not *my* Maven.
+
+*(2:50)*
+
+---
+
+## 2:50 — Scene 12: The Loft, that night — Theorize? (~3 min)  and Wrap
+
+**KEEPER:** You come in out of the dark, Irene with sea-water to the wrist, and the loft's lamps on, tea poured. Connie has been waiting with a legal pad. Dot's brought a clean towel.
+**Bea:** Right. Can we theorise? We've got — what — Andrew, the watch, the 11:50 call, Etienne's skiff, Tommy's letters, the numbers, the dog with blood, the guy with the card...
+**Leon:** I want to say the Void is a *part* of it. Irene says: "Whoever did this was doing something the water wanted."
+**Harriet:** Dot says, "I don't *know* who. I don't think we've got the *why.* We haven't even been in the cold store, or the safe. And Tommy..." *(She holds the promise.)*
+**Bea:** *(groaning)* Okay. Okay. Connie says: it's Allison and Andrew, they staged the fall and the butler stopped the watch. But where's the *rug,* and the skiff doesn't fit.
+**KEEPER:** *(They have 5 mundane clues plus Duchess = 6 and four Void clues. Complexity is 8. Without the rug, Etienne's skiff paint and the safe, the table feels it's thin, and says so.)* You can Theorize now, if you like. Complexity is 8; you'd be rolling 2d6 plus whatever clues you can *explain,* minus 8. I'd tell you that you'd need at least nine to feel safe.
+**Bea:** *(thinks)* No. Tomorrow. First thing. Cold store and the safe. I want the rug.
+**Harriet:** And the noon deadline!
+**KEEPER:** Noon, Friday. Fine. We stop here: it's a quarter to three plus.
+
+### End-of-session questions (2:52–3:00)
+Read aloud, the table decides together.
+1. **Did we solve a mystery?** No: they declined to Theorize. *(No XP.)*
+2. **Did we learn something new about the Void or the town's secrets?** Yes, enormously. **XP all.**
+3. **Did a Maven share a memory or reveal something about her past?** Yes: Irene and Walter (Leon), Dot's wedding cake and Bev (Harriet). **XP.**
+4. **Did a Maven indulge her cozy activity?** Yes: Dot baking and Irene tide-pooling (and Connie's crossword at the table, Bea insists). **XP.**
+5. **Did we get ourselves into real danger?** Yes: Irene in the skiff, Gil too. **XP (Irene; table agreed the others shared it through Sorensen's card and Etienne's pallor).**
+
+Epilogue (t4 at 4/4): in Brindlewood Bay that night, the lighthouse lamp turns purple once. At the Gull & Anchor Bev looks out the window and sees something standing on the rocks of the Point that is not Duchess. *(Table: "Oh no." "Sold.")*
+
+*(3:00. End of session. Harriet asks if she gets to keep the cribbage-peg ending. Leon asks if the Crown has a chart. Bea: "Next time, the rug.")*

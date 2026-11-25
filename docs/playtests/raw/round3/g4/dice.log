@@ -1,1 +1,11 @@
 clock | who | move | ability | dice | total | outcome
+# NOTE: the next 8 rows (0:55-2:35) were rolled by this Keeper with a shared scratchpad script that, due to a filename collision with another table's agent, logged them to round3/g1/dice.log. They were copied here by hand from this Keeper's own tool output. The dice were real; only the file was wrong.
+0:55 | Connie | Meddling | Reason +2 | 5+2 | total 9 | 7-9 clue+complication
+1:08 | Dot | Meddling | Presence +2 | 2+1 | total 5 | 6- Keeper move
+1:20 | Irene | Meddling | Sensitivity +2 | 4+6 | total 12 | 10+ clue
+1:36 | Irene | Meddling | Sensitivity +2 | 4+1 | total 7 | 7-9 clue+complication
+1:47 | Connie | Meddling | Composure +1 | 1+3 | total 5 | 6- Keeper move
+2:03 | Dot | Meddling | Presence +2 | 1+4 | total 7 | 7-9 clue+complication
+2:25 | Connie | Meddling | Reason +2 | 5+6 | total 13 | 10+ clue
+2:35 | Dot | Meddling | Presence +2 | 4+6 | total 12 | 10+ clue
+2:46 | Irene | Meddling/Composure | Composure (keep her seat when something brushes the skiff) +0 | 1+3 | total 4 | 6- Keeper move

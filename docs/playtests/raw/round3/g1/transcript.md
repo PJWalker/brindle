@@ -264,3 +264,40 @@ At dusk, figures come down the path from the road — six or seven in coats and 
 
 **Gil's 1998 logbook:** after the group leaves, Gil, who has decided he can trust Dot, takes a battered logbook from his coat. "I was here in '98 when they pulled him out. He was *smiling*." He shows her a page with an entry in his own hand — a compass bearing and a time — and does not say what it means. *(K improvises; the bearing's meaning is tied to c16, the numbers on a slip, which no one has found. K does not offer the Void thread.)* **Maureen (OOC):** "I could ask Hollis about this tomorrow." **Dev (OOC):** "Hollis plays cribbage. Go with the pie." **K:** "You'd have to get the pies done by Saturday. Gil needs a dozen." Maureen: "…I'll bake. Badly. For him." (K: "That's the end of the scene.")
 
+---
+
+## 2:50 — SCENE 11: The Loft, Thursday night — Recap and "Are we ready?" (to 2:53)
+
+K cuts to the loft: tea, the hat stand with six hats, Maureen with the yellow baby hat half done, Ruth's notebook open, Dev already mid-story. Per the split-up rule, each player tells the others what her Maven found, in character. Ruth (OOC) asks the Keeper to read the card pile back. Cards on the table:
+
+| Clue | What the table says it is |
+|---|---|
+| **c4** Rolex stopped at 11:02 | Someone stopped it to back up "eleven." Ruth: Andrew. Dev: "Or someone who wanted us to think Andrew." |
+| **c3** "About eleven" + "precisely"; launch log, Sorensen 9:50–12:40 | Family rehearsed it; Sorensen was on board for most of the window. |
+| **c17** David not Albert's son (Bev's rumour) | David knows; Dev wants it to be "the tragic one." |
+| **c5** Sara's diary, torn page | Sara's lines are sincere; who tore the page? Maureen: "I'll ask again." |
+| **c23** Unlit skiff, white paint (Hollis) | Etienne's skiff; someone rowed out at 12:15. |
+| **c11** Etienne and Allison on the swim platform, "the arrangement" | Ruth: "Money, not romance." |
+| **c20** Duchess, blood in her fur | Dev: "A dog doesn't lie. Unless it's Duchess." |
+| **v3** shifting spiral on Tiago's wrist | Table: "same as the tattoo Finch might have seen on Albert" — nobody has talked to Finch. |
+| **v4** Prayer group, Tiago among them | Gil's logbook has a bearing. "It's *something*." |
+
+**Ruth (OOC):** "Okay. Can we theorize? I've got a theory." She lays it out: Andrew stopped the watch (c4) and drilled the family (c3); Etienne rowed out because Allison and he had "an arrangement" (c11, c23); Duchess was on deck (c20); David's paternity (c17) is why Albert was angry; Sara's diary (c5) is a red herring. **Dev (OOC):** "Wait — who *hit* him?" Ruth: "…I haven't decided." **Maureen (small):** "Maybe we should go onto the yacht first? We haven't been *on* it." (K: "She's right. Nobody's been aboard, nobody's seen the study, Finch hasn't spoken.") 
+
+**Ruth:** "I'd have to count c3, c4, c11, c23, c20 — and I can't say what c17 or c5 mean in the story yet. I'd be rolling with maybe five. Two dice plus five minus eight is…" **K:** "Minus three. You'd need a ten or better on the dice just to get a seven-to-nine, and a clean win isn't even on the table." **Ruth:** "That's… no. I'd rather have the study." The table agrees to hold off — **no Theorize roll.** Dev (OOC): "Friday, then. I go to the yacht as Bunny the Sherry Lady." Ruth: "Finch first." Maureen: "Pies." 
+
+## 2:53 — Wrap-up: end-of-session questions (to 3:00)
+
+K reads the five XP questions aloud; the table decides together.
+
+1. **Did we solve a mystery?** No. (No roll.)
+2. **Did we learn something new about the Void or the town's secrets?** Yes — Tiago's tattoo, the prayer group, Gil's logbook, Duchess on the rocks. ✔
+3. **Did a Maven share a memory or reveal something about her past?** Yes — Maureen's hospital hat, Dev's gallery-opening insult, Ruth's library summer with Emily. ✔
+4. **Did a Maven indulge her cozy activity?** Yes — Maureen's knitting on the bench and the tea cosy. (Ruth's crosswords and Dev's sherry: not played.) ✔
+5. **Did we get ourselves into real danger?** The table's verdict: Sorensen's polite visit and the cold-store brush with the undertaker are menace, not danger. No.
+
+**XP:** each Maven marks 3 of 5.
+
+**Final state (3:00):** Threats — T1 1/4, T2 1/3, T3 1/4, T4 2/4, T5 1/3. Conditions — Evelyn *Rattled* (uncleared). Open plans — Friday: the yacht (Bunny), Finch's autopsy and the dahlias (Ruth), pies and Hollis's cribbage peace (Maureen).
+
+**Table's closing banter:** Maureen: "Can we play again? I didn't know I'd like it." Dev: "I'm *Stage Manager*." Ruth: "I'm still thinking about the oranges." Session ends at 3:00.
