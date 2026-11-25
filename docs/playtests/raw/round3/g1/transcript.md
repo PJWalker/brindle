@@ -208,3 +208,59 @@ Then the second move: a broad man in a good suit, bad shoes and tourist sunglass
 
 Etienne, at the door: "You will judge the chowder, madame? Bev has told the whole town she has a Maven on her side!" **Ruth (OOC):** "Oh — I was going to say Bunny's judging for Bev —" **K:** "Evelyn wasn't at the diner. She doesn't know that." **Ruth:** "Right. No. Evelyn says: 'I'm sure I couldn't say.'" (Table-knowledge slip, caught and resisted. Dev, OOC: "I regret nothing.") Etienne eyes her narrowly. Cut.
 
+---
+
+## 2:22 — SCENE 8: Harbour Committee, Thursday ~10:00am (to 2:34)
+
+*Bunny (Dev). Town-life scene with a clue riding on it.*
+
+K frames Thursday morning: the harbourmaster's shack, the committee's folding table set up on the dock, the yacht crowd handing out little plastic cups of cocktails at ten in the morning. Hollis is in his yellow slicker holding a speech on an index card that has clearly been rewritten forty times.
+
+**Dev as Bunny** delivers the promised speech. K gives Hollis's index card to Dev as a prop: "You can use it or not." Dev reads it out in the voice of a Shakespearean sea-captain, abandons it halfway, and improvises about "the right of a lobster boat to *find its mooring in the dark*." The committee (and a cocktail-sipping yacht lady) are visibly moved. Hollis, at the end, squints at the horizon: "Ayuh." (Dev, OOC: "That's a *standing ovation* in Hollis.") The motion is tabled until next month.
+
+**Dev (OOC):** "I want the logbook." **K:** "You've done him a favour; you can ask." Dev, in a low voice at the shack: "Hollis. Anything else go out the night Albert died? Anything at all."
+*Roll: Bunny, Meddling Move, Presence +2: **6+4 = 10 + 2 = 12. Clue.***
+
+Hollis pulls out the launch log, tapping the line: **"L. Sorensen — out 9:50pm, back 12:40am."** Then, squinting: "Didn't log it. Skiff. Unlit. Around quarter past twelve, rowing out from the fish-market slip. Wasn't the family." He points across the wharf at a rowboat tied under the Beauregard & Sons sign. "That one." **(Out loud: clue — *A rowing skiff with a fresh smear of white marine paint along its bow.* **c23**; K adds c3 deepened with the log — "the time of Albert's death was a lie, and Sorensen was aboard for most of it.")**
+
+**Dev (OOC):** "SORENSEN! Orange man! He was on the yacht!" **Ruth (OOC):** "And he knows where I garden." **Dev:** "We're going to arrest him." **K:** "On a launch log?" **Dev:** "…Fine. I'll make a speech about it."
+
+**Table note (clue count so far):** c4, c17, c3 (twice), c5, c23, v3. Ruth has a card for each.
+
+Hollis, on the way out: "Gil Wexford owes me a game." Dev: "Do you *want* to play him?" Hollis: "…Ain't my business." (K: "That's a yes.") Cut.
+
+---
+
+## 2:34 — SCENE 9: Seaview Home, Thursday ~3:30pm (to 2:42)
+
+*Evelyn (Ruth). Pure town-life scene with a rolled opportunity.*
+
+K frames: the Seaview Home, a sunroom full of ferns, an enormous bay window with a brass telescope, and **Ida Dalrymple**, 93, in a cardigan the colour of a traffic cone, who has been waiting a month for "those clever ladies." She has opinions about everyone in town. She addresses Evelyn as "Mrs. Marsh, dear, you're taller than I'd heard." Ruth is in her element. Evelyn brings dahlias from the garden (Ruth: "Of course I do. They're better than Finch's.") Ida takes them, tells her the Finch dahlias are "dreadful, he feeds them like a man feeding a grudge."
+
+**Ruth (OOC):** "I steer the gossip to the Krause yacht. Ida's got a telescope; she'd *see* things." **K:** "Roll it." *Roll: Evelyn, Meddling Move, Presence +0 (charm, flatter): **4+3 = 7. Clue with a complication.***
+
+Ida, fixing Evelyn with a sharp eye: "I don't sleep, dear. I saw those people at dinner on the Tuesday, lights strung up like a pier. And *earlier* — about eight, dusk — that fishmonger fellow, in his little boat, at the back of the yacht on the little platform. Arguing with the wife. Very loud, very red-faced. 'The arrangement,' she said. I heard it from here, I've got *excellent* ears." **(Out loud: clue — *An argument between two Suspects on the deck of The Regal Lady.* **c11**, pair chosen by the Keeper: **Etienne and Allison on the swim platform, about "the arrangement."**)**
+
+**Complication (7–9):** Ida lowers her voice. "And my Wyman came home at *four in the morning* that night. Smelling of the Elks Lodge and shame. He *thinks* I don't know." **K (hard choice):** "You can use that, Ruth, but she makes you promise not to tell Wyman where it came from — and you've got to come back Sunday with more dahlias." **Ruth (OOC):** "That is the best deal I've ever been offered. Yes." **Ruth (as Evelyn):** "My lips are sealed, Ida." *(K notes: **Table knowledge: the Sheriff's alibi is murky.** Ruth hasn't told the table what he did. She writes it on her own card. Dev: "Oh, you're keeping a SECRET." Ruth: "I'm keeping an *index*.")*
+
+**Threat ticks (clock-driven):** T5 *The Warrior's Ball*: Thursday is Day 2 — K ticks segment 1 ("Invitations reprinted"): Allison has reprinted the invitations; Ida has one pinned to her bulletin board with "Albert" struck through in her own hand. Colour.
+
+Ida, at the door: "That Sorensen fellow who peels oranges — he came to see *me* last week, you know. Asked if Wyman was a reasonable man." **K (colour, not a clue):** "He'd been to see the Sheriff's *mother*." Evelyn, to herself: "He knows everyone's *mother*." Cut.
+
+---
+
+## 2:42 — SCENE 10: Brindle Point Lighthouse, Thursday dusk (to 2:50)
+
+*Dot (Maureen). The last scene. Maureen asked for it — "I want to see the dog."*
+
+K frames: Brindle Point at dusk, the cottage at the foot of the tower, the rocks below shining with the ebb. **Gil Wexford** — thick glasses, binoculars, cardigan over a fisherman's sweater — is feeding a very large, very dirty white dog from a pie plate. "I'm sorry about the dog hair, Mrs. Fennimore. She won't leave the rocks." Dot has brought the knitted lighthouse tea cosy for his bake sale. **Gil**, shy, delighted, turns it over in his hands and says he'll put it on the main table.
+
+**Maureen (OOC, to K):** "I… sit on the rock with the dog. She smells awful. I let her sniff the yarn." **K:** "That's pushing past what Gil's saying — what are you leaning on?" **Maureen:** "Sensitivity. I'm just — I'm *feeling* for her."
+*Roll: Maureen, Meddling Move, Sensitivity +2: **6+4 = 10 + 2 = 12. Clue.***
+
+K: under the grime the dog's fur is stiff and brown along one flank — dried blood. A collar half-buried in the white: DUCHESS. **(Out loud: clue — *An expensive samoyed, missing.* **c20**: Duchess found, on the rocks, Albert's blood in her fur.)** Gil, in a low voice: "She sits right where they kneel at dusk. The prayer group. Same spot twice in thirty years." He looks at the sky. "They'll come soon."
+
+At dusk, figures come down the path from the road — six or seven in coats and boots, and at the back, a wiry man with a sunburnt face who isn't wearing his deckhand's polo shirt. **Tiago.** They kneel, facing the water. A low murmur in a language that isn't Portuguese. The tide hums. **(Out loud: Void clue, **v4**: *A group of people gathering and praying near the spot where Mr. Krause's body was found.* T4 ticks to segment 2: "The lighthouse burns purple." K lights the lamp above them — it burns for a moment the wrong colour.)** **Gil:** "Don't go over. They don't like it." **Dot** (Maureen, quiet, after a long beat): "I won't. But I'll stay here with the dog." K lets the scene breathe. Nobody speaks.
+
+**Gil's 1998 logbook:** after the group leaves, Gil, who has decided he can trust Dot, takes a battered logbook from his coat. "I was here in '98 when they pulled him out. He was *smiling*." He shows her a page with an entry in his own hand — a compass bearing and a time — and does not say what it means. *(K improvises; the bearing's meaning is tied to c16, the numbers on a slip, which no one has found. K does not offer the Void thread.)* **Maureen (OOC):** "I could ask Hollis about this tomorrow." **Dev (OOC):** "Hollis plays cribbage. Go with the pie." **K:** "You'd have to get the pies done by Saturday. Gil needs a dozen." Maureen: "…I'll bake. Badly. For him." (K: "That's the end of the scene.")
+
