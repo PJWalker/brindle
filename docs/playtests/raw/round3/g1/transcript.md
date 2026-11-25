@@ -151,3 +151,25 @@ The Sheriff, rattled, plays his own Move: **Ida.** "My mother, Ida Dalrymple, ni
 
 **Table decision:** Ruth now wants to go to the fish market and see the body and the cold store. Maureen: "Can I go home and knit? I have a *feeling* about Lou's story." (K: "A cozy scene: yes, but let's hold it until dusk; right now I'd like to take you somewhere.")
 
+---
+
+## 1:45 — SCENE 5: The Bench at the Harbour, Wednesday dusk (to 1:58)
+
+*Dot (Maureen). K asks for a cozy scene; this one doubles as the Establishing Answer.*
+
+K frames: the harbour bench at golden hour, gulls settling, the yacht lit up like a wedding cake a quarter mile out. Dot is knitting — K asks what. **Maureen:** "A baby hat. Yellow. For my niece's daughter." K: "You've knit one of those before." **Maureen (shy grin):** "…Yes."
+
+A small tender putters in from the Regal Lady, a wiry deckhand at the tiller (**Tiago Mendes**) and one passenger, a frumpy woman in a cardigan clutching a phone. She steps onto the dock, twists a wedding ring, and stops dead. **Sara Krause:** "Mrs. Fennimore? Dot? The — the hat. The little one wore it home from the hospital." **Maureen (OOC):** "Oh! She remembered!" K: "She did. She's crying a little."
+
+**Table:** Maureen warms right up — five minutes of in-character conversation (Sara: "I haven't talked to anyone *outside* in three days. They told us not to leave, and Mother changes the seating chart every hour. I can't even call my children without Mother saying don't tell them anything.") The table doesn't interrupt. Dev, OOC: "I'm going to go get tea so I don't ruin this." (He doesn't leave the room; he brings Maureen a lemon bar.)
+
+Meanwhile K plays the deckhand tying up: he reaches to cleat the line and, as the sleeve rides up, there's a spiral tattoo on the inside of his wrist. When Dot glances back it's on the *outside* of his wrist, near the thumb. He touches it and looks away. **K (out loud, cozy Void moment, not a roll):** "That's a Void clue. *Strange tattoos that seem to shift position when you look at them again.* **v3**." Maureen's face goes completely still. Ruth, quietly: "I'm writing 'tattoo, the deckhand, shifts.'" T4 *Something Beneath the Bay*: K ticks segment 1 ("Dead fish on the tide line…" — K narrates a gull picking at a silvery fish on the tideline, its eye leaking something purplish and thin; *no extra clue, v1 is not claimed.*) K mentions that the seed's Void clue v1 is at the fish market and does NOT use it. 
+
+**Sara, back on the bench:** Dot, kindly, says nothing about the case — just: "You must be exhausted." Sara, after a moment: "I write things down. When I can't sleep. I always have. I wrote it all down that night, how Daddy looked at dinner, what Mother said, and — and I wrote 'I just can't take it anymore.' I meant *Mother and Daddy fighting*. I meant the whole — and now a page is *gone*, Dot, I looked this morning and the page is torn out, and I don't know who—" Her phone rings (it's Mother). She straightens, wipes her face, and says "I have to go. Thank you for the hat, again."
+
+*Roll: Maureen, Meddling Move (gentle intuiting), Sensitivity +2: **6+3+2 = 11. Clue.***
+
+**(Out loud: clue — *A diary entry: "I just can't take it anymore."* **c5**. K picks: Sara's diary, written the night of the dinner; a page torn out; written in her cabin under the toddler drawings.)** Ruth: "The *missing page* — that's a second clue inside the first. Who tore it?" **Maureen (OOC):** "I'll — I'll ask her again tomorrow." *(Maureen's first spontaneous plan. K notes it.)*
+
+The tender pulls out. Tiago does not look back, but Dot sees him touch his wrist as the boat swings toward the dark water past the yacht — toward Brindle Point, not the Regal Lady, for the first hundred yards. **K cut.**
+
