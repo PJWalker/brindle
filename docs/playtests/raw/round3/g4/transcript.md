@@ -210,8 +210,8 @@ He says it without sitting down: a wealthy Boston financier, Albert Krause, was 
 **Bea:** Oh, now that's *mean*.
 
 **KEEPER:** On the terrace, a man with a good suit, bad shoes and tourist sunglasses is peeling an orange in one very long unbroken curl. *"Mrs. Atwood. Friend. Please. Sit. I've heard so much. Lyle Sorensen. I'm just here for the puffins."* He's already pouring a second cup of coffee. He asks about your house. Where is it? Does it have a view? His daughter's applying to college, would you look at an essay? *(Everything he says is a question about you.)* **t3, The Debt Comes Due, ticks to 2/4** (a warning will follow).
-**Bea:** I don't sit. But I say: "Lyle Sorensen. Room Nine. You're a long way from Boston." I wanted to get his name out of him.
-**KEEPER:** He peels a bit more orange. *"It's amazing what a small town knows."* He knows which hand you type with. *(Beat. He smiles.)* *"Do give my best to Etienne."* *(Connie noted the pale Etienne.)* He tucks a card into the pocket of your cardigan; you don't see him do it. Later you'll find it: blank, white, a spiral embossed in the corner. *(c10-adjacent: not a clue yet; I'll mark it only if he demands a debt from someone while she's there.)*
+**Bea:** I don't sit. But I say: "Mr. Sorensen. You're a long way from Boston." I wanted to see what he'd do with it.
+**KEEPER:** He peels a bit more orange. *"It's amazing what a small town knows."* He knows which hand you type with. *(Beat. He smiles.)* *"Do give my best to Etienne."* *(Connie noted Etienne's pallor.)* He tucks a card into the pocket of your cardigan; you don't see him do it. Later you'll find it: blank, white, a spiral embossed in the corner. *(c10-adjacent: not a clue yet; I'll mark it only if he demands a debt from someone while she's there.)*
 **Bea:** That's... an actual threat. I like it.
 
 *(1:53 — Bea's a bit cheered up; her miss was the most fun she's had. Harriet asks, "Is Hollis going to the Harbour Committee? What's Dot wearing?")*
@@ -342,8 +342,8 @@ He says it without sitting down: a wealthy Boston financier, Albert Krause, was 
 
 The log: a green hardback in Gil's slow hand. A night in July. *Pulled a man from the water off the Point, alive. Boston. He was smiling.* And in the margin, in Albert Krause's cramped hand, written a week later as a thank-you note: **3-27-9-14.**
 **Leon:** *(whooping)* IT'S THE SAME. I mean — the numbers Connie found. Irene doesn't know them. I know them. Hang on. Bea, can I say Connie said the numbers to Irene in the loft kitchen?
-**Bea:** She told you. In the kitchen. I read them out for the crossword.
-**KEEPER:** *(Table knowledge becomes character knowledge via an offscreen conversation; fair. The Keeper just accepts it. Noted.)* Then it's a bearing. From the lamp room, three degrees, twenty-seven, nine, fourteen. A patch of water off the Point.
+**Bea:** She told you. Thursday at noon at the loft, before the launch back. I read them out like a clue.
+**KEEPER:** *(Table knowledge converted into character knowledge via an offscreen conversation. Fair; noted.)* Then it's a bearing. From the lamp room, three degrees, twenty-seven, nine, fourteen. A patch of water off the Point.
 **Gil:** *"They kneel there,"* he says, pointing. At the rocks, where Duchess sits. *"Twice in thirty years. Same spot. I've been scared to say."*
 
 **KEEPER:** *(Void thread: v4.)* At the water's edge, as the last light leaves, they come. Eight or nine figures in waterproofs, coming across the rocks in a line without lanterns. They kneel at the tide line, not looking at you or the cottage. Among them a wiry, sunburnt man, hands palms-down on the stones. The spiral on his wrist. *(Clue **v4** found.)* When you step toward them they stop humming and *disperse,* silently, like dropped ink, up the beach. *"They won't talk,"* Gil says. *"If you're pushy."* **t4 ticks to 3/4: "Chanting heard across town; a Maven dreams of drowning."**
