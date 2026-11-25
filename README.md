@@ -17,6 +17,9 @@ Offline GM prep & session tool for *Brindlewood Bay* and other Carved-in-Brindle
 
 Content tagged **added** was written for this app (Dad Overboard was revised after blind playtests — see `docs/playtests/dad-overboard.md`); untagged content comes from the published mystery. Rules text is paraphrased — check your rulebook.
 
+## One-shot player sheets
+Printable playbooks and move references for a single session: `print/playbooks.html`, `print/moves.html`, PDFs in `print/pdf/`. Design notes and house rules: `docs/oneshot.md`.
+
 ## Run
 Static site, no build. Serve the folder (`python3 -m http.server`) or deploy with GitHub Pages
 (Settings → Pages → Source: **GitHub Actions**; the included workflow deploys `main`).
